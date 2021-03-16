@@ -1,0 +1,58 @@
+﻿@model Plataforma.ViewModels.EmpresasEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>EmpresasCurso</h4>
+<hr />
+@foreach (var item in Model.Empresas)
+{
+    <ul>
+        <li>@item.Nombre_Empresa</li>
+        <li>@item.Nombre_Comercial</li>
+
+    </ul>
+}
+
+
+<form method="post" asp-action="Edit">
+   
+    <div>
+        <label asp-for="CursoNome"></label>
+    </div>
+    <select asp-for="CursoNome" name="CursoNome">
+        @foreach (var item in Model.Curso)
+        {
+            <option value="@item.Name">@item.Name</option>
+
+        }
+    </select>
+    <div>
+        <label asp-for="Inicio"></label>
+    </div>
+    <div>
+        <input type="date" asp-for="Inicio" />
+    </div>
+    <div>
+        <label asp-for="Final"></label>
+    </div>
+    <div>
+        <input type="date" asp-for="Final" />
+    </div>
+    <input type="submit" class="btn btn-info w-100" value="Save" />
+</form>
+
+@foreach (var item in Model.CursosNome)
+{
+<div>
+    <span>@item.CursoNome</span>
+    <span>@item.Inicio</span>
+    <span>@item.Final</span>
+</div>
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

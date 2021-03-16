@@ -1,0 +1,149 @@
+﻿@model Plataforma.ViewModels.EmpresasIndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div>
+    <h1>Empresas participantes</h1>
+    <form method="post" asp-action="Index" class="row g-3">
+        <select asp-for="anos" name="anos" class="form-select">
+            @foreach (var item in Model.anos)
+            {
+                <option value="@item.ano">@item.ano</option>
+            }
+        </select>
+        <input type="submit" class="btn btn-info " value="Cambiar Año" />
+    </form>
+</div>
+    <p>
+        <a asp-action="Create">Añadir Empresa</a>
+    </p>
+    
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+           
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+    <tbody>
+        <h2>Enero</h2>
+        @foreach (var item in Model.Enero)
+        {
+
+            <tr class="@item.Nombre_Empresa">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">@item.Final</a>
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)))
+            {
+                <style>
+                .@item.Nombre_Empresa {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nombre_Empresa {
+                        background-color: darkseagreen;
+                    }
+                </style>
+                
+            }
+        }
+    </tbody>
+    <tbody>
+     
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Febrero</h2>
+        @foreach (var item in Model.Febrero)
+        {
+
+            <tr class="@item.Nombre_Empresa">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">@item.Final</a>
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)))
+            {
+                <style>
+                .@item.Nombre_Empresa {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nombre_Empresa {
+                        background-color: darkseagreen;
+                    }
+                </style>
+                
+            }
+        }
+    </tbody>
+    
+</table>
