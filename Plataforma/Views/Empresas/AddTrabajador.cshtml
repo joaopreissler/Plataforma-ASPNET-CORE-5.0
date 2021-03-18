@@ -1,0 +1,65 @@
+﻿@model Plataforma.Models.Trabajadores
+
+@{
+    ViewData["Title"] = "AddTrabajador";
+}
+
+<h1>AddTrabajador</h1>
+
+<h4>Trabajadores</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddTrabajador">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TrabajadorNome" class="control-label"></label>
+                <input asp-for="TrabajadorNome" class="form-control" />
+                <span asp-validation-for="TrabajadorNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrabajadorNif" class="control-label"></label>
+                <input asp-for="TrabajadorNif" class="form-control" />
+                <span asp-validation-for="TrabajadorNif" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Fundae" /> @Html.DisplayNameFor(model => model.Fundae)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="SeguridadSocial" class="control-label"></label>
+                <input asp-for="SeguridadSocial" class="form-control" />
+                <span asp-validation-for="SeguridadSocial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaTrabajador" class="control-label"></label>
+                <input asp-for="FechaTrabajador" class="form-control" />
+                <span asp-validation-for="FechaTrabajador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trabajadortipo" class="control-label"></label>
+                <input asp-for="Trabajadortipo" class="form-control" />
+                <span asp-validation-for="Trabajadortipo" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TrabajadorAlta" /> @Html.DisplayNameFor(model => model.TrabajadorAlta)
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

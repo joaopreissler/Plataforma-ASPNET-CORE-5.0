@@ -12,6 +12,8 @@ namespace Plataforma.ViewModels
         public IEnumerable<Empresa> Empresas;
         public IEnumerable<Cursos> Curso;
         public IEnumerable<EmpresaCurso> CursosNome;
+        public IEnumerable<Trabajadores> Trabajadores;
+        public IEnumerable<Trabajadores> TrabajadoresBaja;
         public Cursos NewCurso;
         public EmpresaCurso Inicio;
         public EmpresaCurso Final;

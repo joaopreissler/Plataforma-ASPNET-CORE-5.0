@@ -10,16 +10,18 @@
 <hr />
 @foreach (var item in Model.Empresas)
 {
+
     <ul>
         <li>@item.Nombre_Empresa</li>
         <li>@item.Nombre_Comercial</li>
 
     </ul>
+    <a asp-action="AddTrabajador" asp-route-id="@item.Id">Añadir Trabajador</a>
 }
 
 
 <form method="post" asp-action="Edit">
-   
+
     <div>
         <label asp-for="CursoNome"></label>
     </div>
@@ -47,12 +49,78 @@
 
 @foreach (var item in Model.CursosNome)
 {
-<div>
-    <span>@item.CursoNome</span>
-    <span>@item.Inicio</span>
-    <span>@item.Final</span>
-</div>
+    <div>
+        <span>@item.CursoNome</span>
+        <span>@item.Inicio</span>
+        <span>@item.Final</span>
+    </div>
 }
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nif</th>
+            <th scope="col">Seguridad Social</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Trabajadores)
+        {
+
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.TrabajadorNome</td>
+            <td>@item.TrabajadorNif</td>
+            <td>@item.SeguridadSocial</td>
+            <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
+            <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+        </tr>
+
+
+        }
+
+
+    </tbody>
+</table>
+<table class="table">
+    <thead class="table-danger">
+    <th>Trabajadores Baja</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nif</th>
+            <th scope="col">Seguridad Social</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.TrabajadoresBaja)
+        {
+
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.TrabajadorNome</td>
+                <td>@item.TrabajadorNif</td>
+                <td>@item.SeguridadSocial</td>
+                <td><a asp-action="AltaTrabajador" asp-route-id="@item.Id">Dar Alta</a></td>
+                <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+            </tr>
+
+
+        }
+
+
+    </tbody>
+</table>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -123,16 +123,23 @@ namespace Plataforma.Controllers
             var query2= (from a in _context.Empresa
                           where a.Id.Equals(id)
                           select a).ToList();
+            var anoempresa = (from a in _context.Empresa
+                          where a.Id.Equals(id)
+                          select a).FirstOrDefault();
             var query3 = (from s in _context.EmpresaCurso
                           where s.IdEmpresa.Equals(id)
                           select s).ToList();
             /*ViewBag.EmpresaQuery = query2;*/
-
+            
+            var query4 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Fundae.Equals(true) select s).ToList();
+            var query5 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Fundae.Equals(false) select s).ToList();
             EmpresasEditViewModel empresascurso = new EmpresasEditViewModel()
             {
                 Empresas = query2,
                 Curso = query,
-                CursosNome = query3 
+                CursosNome = query3,
+                Trabajadores = query4,
+                TrabajadoresBaja = query5
             };
             return View(empresascurso);
         }
@@ -199,5 +206,94 @@ namespace Plataforma.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult AddTrabajador()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddTrabajador(int id, Trabajadores obj)
+        {
+            var anoempresa = (from a in _context.Empresa
+                              where a.Id.Equals(id)
+                              select a).FirstOrDefault();
+            Trabajadores trabajador = new Trabajadores()
+            {
+                TrabajadorNome = obj.TrabajadorNome,
+                TrabajadorNif = obj.TrabajadorNif,
+                IdEmpresa = id,
+                Fundae = obj.Fundae,
+                SeguridadSocial = obj.SeguridadSocial,
+                FechaTrabajador = obj.FechaTrabajador,
+                Trabajadortipo = obj.Trabajadortipo,
+                TrabajadorAlta = obj.TrabajadorAlta,
+                AnoTrabajador = anoempresa.ano,
+
+            };
+            _context.Trabajadores.Add(trabajador);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("Index");
+        }
+        public IActionResult BajaTrabajador(int id)
+        {
+            var trabajadores = (from a in _context.Trabajadores
+                              where a.Id.Equals(id)
+                              select a).FirstOrDefault();
+            trabajadores.Fundae = false;
+            _context.SaveChanges();
+            return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
+        }
+        public IActionResult AltaTrabajador(int id)
+        {
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.Id.Equals(id)
+                                select a).FirstOrDefault();
+            trabajadores.Fundae = true;
+            _context.SaveChanges();
+            return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
+        }
+        public IActionResult EditTrabajador(int id)
+        {
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.Id.Equals(id)
+                                select a).FirstOrDefault();
+            Trabajadores nuevo = new Trabajadores()
+            {
+                IdEmpresa = trabajadores.IdEmpresa,
+                Id = id
+
+            };
+            TempData["Empresa"] = trabajadores.IdEmpresa;
+            TempData["Id"] = trabajadores.Id;
+            
+            return View();
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditarTrabajador(Trabajadores obj)
+        {
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.Id.Equals(TempData["Id"])
+                                select a).FirstOrDefault();
+
+            obj.AnoTrabajador = trabajadores.AnoTrabajador;
+            
+
+            trabajadores.IdEmpresa = (int)TempData["Empresa"];
+            trabajadores.AnoTrabajador = obj.AnoTrabajador;
+            trabajadores.TrabajadorNome = obj.TrabajadorNome;
+            trabajadores.Fundae = obj.Fundae;
+            trabajadores.SeguridadSocial = obj.SeguridadSocial;
+            trabajadores.TrabajadorAlta = obj.TrabajadorAlta;
+            trabajadores.TrabajadorNif = obj.TrabajadorNif;
+            _context.SaveChanges();
+            
+            return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
+        }
+      
     }
+    
 }

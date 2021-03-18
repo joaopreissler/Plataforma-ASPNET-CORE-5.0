@@ -19,5 +19,7 @@ namespace Plataforma.Data
         public DbSet<Cursos> Cursos { get; set; }
         public DbSet<EmpresaCurso> EmpresaCurso { get; set; }
         public DbSet<Plataforma.ViewModels.EmpresasEditViewModel> EmpresasCurso { get; set; }
+        public DbSet<Trabajadores> Trabajadores { get; set; }
+
     }
 }

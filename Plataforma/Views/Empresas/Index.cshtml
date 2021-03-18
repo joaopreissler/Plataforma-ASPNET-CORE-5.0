@@ -3,16 +3,19 @@
 @{
     ViewData["Title"] = "Index";
 }
-<div>
+
+<div style="display:flex;justify-content:space-between">
     <h1>Empresas participantes</h1>
-    <form method="post" asp-action="Index" class="row g-3">
-        <select asp-for="anos" name="anos" class="form-select">
-            @foreach (var item in Model.anos)
-            {
-                <option value="@item.ano">@item.ano</option>
-            }
-        </select>
-        <input type="submit" class="btn btn-info " value="Cambiar Año" />
+    <form method="post" asp-action="Index" class="form-select">
+        <div >
+            <select asp-for="anos" name="anos" style="height: 23px;">
+                @foreach (var item in Model.anos)
+                {
+                    <option value="@item.ano">@item.ano</option>
+                }
+            </select>
+        </div>
+        <input type="submit" class="btn btn-info " value="Cambiar Año" style="height: 40px"/>
     </form>
 </div>
     <p>
@@ -58,7 +61,7 @@
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id">@item.Final</a>
+                    
                 </td>
             </tr>
             @if (item.Final <= ((DateTime.Now).AddDays(3)))
@@ -121,7 +124,7 @@
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id">@item.Final</a>
+                    
 
                 </td>
             </tr>
