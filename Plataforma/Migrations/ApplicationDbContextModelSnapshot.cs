@@ -194,6 +194,9 @@ namespace Plataforma.Migrations
                     b.Property<int>("IdEmpresa")
                         .HasColumnType("int");
 
+                    b.Property<int>("Mestrabajador")
+                        .HasColumnType("int");
+
                     b.Property<string>("SeguridadSocial")
                         .HasColumnType("nvarchar(max)");
 

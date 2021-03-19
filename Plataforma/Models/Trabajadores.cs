@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Plataforma.Models
 {
     public class Trabajadores
-    {   [Key]
+    {[Key]
         public int Id { get; set; }
         public string TrabajadorNome { get; set; }
         public string TrabajadorNif { get; set; }
@@ -18,6 +18,7 @@ namespace Plataforma.Models
         public string Trabajadortipo { get; set; }
         public Boolean TrabajadorAlta { get; set; }
         public int AnoTrabajador { get; set; }
+        public int Mestrabajador { get; set; }
 
     }
 }

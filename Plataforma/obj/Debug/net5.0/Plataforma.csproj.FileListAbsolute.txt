@@ -203,3 +203,4 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\AddTrabajador.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\EditTrabajador.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\teste.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\Empresaano.cshtml.g.cs

@@ -131,9 +131,9 @@ namespace Plataforma.Controllers
                           select s).ToList();
             /*ViewBag.EmpresaQuery = query2;*/
             
-            var query4 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Fundae.Equals(true) select s).ToList();
-            var query5 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Fundae.Equals(false) select s).ToList();
-            EmpresasEditViewModel empresascurso = new EmpresasEditViewModel()
+            var query4 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Mestrabajador.Equals(anoempresa.Idcurso) where s.TrabajadorAlta.Equals(true) select s).ToList();
+            var query5 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Mestrabajador.Equals(anoempresa.Idcurso) where s.TrabajadorAlta.Equals(false) select s).ToList();
+            EmpresasEditViewModel empresascurso = new EmpresasEditViewModel()  
             {
                 Empresas = query2,
                 Curso = query,
@@ -228,6 +228,7 @@ namespace Plataforma.Controllers
                 Trabajadortipo = obj.Trabajadortipo,
                 TrabajadorAlta = obj.TrabajadorAlta,
                 AnoTrabajador = anoempresa.ano,
+                Mestrabajador = anoempresa.Idcurso
 
             };
             _context.Trabajadores.Add(trabajador);
@@ -241,7 +242,7 @@ namespace Plataforma.Controllers
             var trabajadores = (from a in _context.Trabajadores
                               where a.Id.Equals(id)
                               select a).FirstOrDefault();
-            trabajadores.Fundae = false;
+            trabajadores.TrabajadorAlta = false;
             _context.SaveChanges();
             return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
         }
@@ -250,7 +251,7 @@ namespace Plataforma.Controllers
             var trabajadores = (from a in _context.Trabajadores
                                 where a.Id.Equals(id)
                                 select a).FirstOrDefault();
-            trabajadores.Fundae = true;
+            trabajadores.TrabajadorAlta = true;
             _context.SaveChanges();
             return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
         }
@@ -293,7 +294,95 @@ namespace Plataforma.Controllers
             
             return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
         }
-      
+        public IActionResult Empresaano(int id)
+        {
+            var vm = new EmpresaanoViewModel() { 
+            EmpresaId = id
+            };
+            return View(vm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult InsertarEmpresaAno(EmpresaanoViewModel obj)
+        {
+            var empresas = (from a in _context.Empresa
+                                where a.Id.Equals(obj.EmpresaId)
+                                select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                            where a.IdEmpresa.Equals(obj.EmpresaId)
+                            where a.AnoTrabajador.Equals(empresas.ano)
+                            where a.Mestrabajador.Equals(empresas.Idcurso)
+                            select a).ToList();
+
+            Empresa empresa = new Empresa()
+            {
+               Nombre_Empresa = empresas.Nombre_Empresa,
+               Nombre_Comercial = empresas.Nombre_Comercial,
+               Nif = empresas.Nif,
+               Direccion = empresas.Direccion,
+               Cp = empresas.Cp,
+               Provincia = empresas.Provincia,
+               Localidad = empresas.Localidad,
+               DireccionComercial = empresas.DireccionComercial,
+               CPComercial = empresas.CPComercial,
+               ProvinciaComercial = empresas.ProvinciaComercial,
+               LocalidadComercial = empresas.LocalidadComercial,
+               Telefono = empresas.Telefono,
+               email = empresas.email,
+               CuentaCotizacion = empresas.CuentaCotizacion,
+               sector = empresas.sector,
+               convenio = empresas.convenio,
+               actividadprincial = empresas.actividadprincial,
+               CNAE = empresas.CNAE,
+               Representacionlegal = empresas.Representacionlegal,
+               nuevacreacion = empresas.nuevacreacion,
+               creditodisponible = empresas.creditodisponible,
+               Banco = empresas.Banco,
+               Cuenta = empresas.Cuenta,
+               creacion = empresas.creacion,
+               venta = empresas.venta,
+               Nombrereprensentante = empresas.Nombrereprensentante,
+               Generorepresentante = empresas.Generorepresentante,
+               nifrepresentante = empresas.nifrepresentante,
+               Fechafirma = empresas.Fechafirma,
+               nombregestoria = empresas.nombregestoria,
+               contatogestoria = empresas.contatogestoria,
+               emailgestoria = empresas.emailgestoria,
+               telefonogestoria = empresas.telefonogestoria,
+               ano = obj.Ano,
+               Idcurso = obj.mes
+
+            };
+            _context.Empresa.Add(empresa);
+            _context.SaveChanges();
+
+            var nuevaempresa = (from a in _context.Empresa
+                            where a.ano.Equals(obj.Ano)
+                            where a.Idcurso.Equals(obj.mes)
+                            orderby a.Id
+                            select a).LastOrDefault();
+            foreach (var item in trabajadores) 
+            {
+                Trabajadores trabajador = new Trabajadores
+                {
+                    TrabajadorNome = item.TrabajadorNome,
+                    TrabajadorNif = item.TrabajadorNif,
+                    IdEmpresa = nuevaempresa.Id,
+                    Fundae = item.Fundae,
+                    SeguridadSocial = item.SeguridadSocial,
+                    FechaTrabajador = item.FechaTrabajador,
+                    Trabajadortipo = item.Trabajadortipo,
+                    TrabajadorAlta = item.TrabajadorAlta,
+                    AnoTrabajador = obj.Ano,
+                    Mestrabajador = obj.mes
+                };
+                _context.Trabajadores.Add(trabajador);
+                _context.SaveChanges();
+            }
+            return View();
+        }
+
     }
     
 }

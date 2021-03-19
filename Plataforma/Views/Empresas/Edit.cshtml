@@ -3,124 +3,140 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<div style="display:flex;">
 
-<h1>Edit</h1>
-
-<h4>EmpresasCurso</h4>
-<hr />
-@foreach (var item in Model.Empresas)
-{
-
-    <ul>
-        <li>@item.Nombre_Empresa</li>
-        <li>@item.Nombre_Comercial</li>
-
-    </ul>
-    <a asp-action="AddTrabajador" asp-route-id="@item.Id">Añadir Trabajador</a>
-}
-
-
-<form method="post" asp-action="Edit">
+    @foreach (var item in Model.Empresas)
+    {
 
     <div>
-        <label asp-for="CursoNome"></label>
+        <ul>
+            <li>@item.Nombre_Empresa</li>
+            <li>@item.Nombre_Comercial</li>
+
+        </ul>
+        <a asp-action="AddTrabajador" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Añadir Trabajador</a>
+        <a asp-action="Empresaano" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Insertar empresa al otro año</a>
     </div>
-    <select asp-for="CursoNome" name="CursoNome">
-        @foreach (var item in Model.Curso)
-        {
-            <option value="@item.Name">@item.Name</option>
-
-        }
-    </select>
-    <div>
-        <label asp-for="Inicio"></label>
-    </div>
-    <div>
-        <input type="date" asp-for="Inicio" />
-    </div>
-    <div>
-        <label asp-for="Final"></label>
-    </div>
-    <div>
-        <input type="date" asp-for="Final" />
-    </div>
-    <input type="submit" class="btn btn-info w-100" value="Save" />
-</form>
-
-@foreach (var item in Model.CursosNome)
-{
-    <div>
-        <span>@item.CursoNome</span>
-        <span>@item.Inicio</span>
-        <span>@item.Final</span>
-    </div>
-}
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Nif</th>
-            <th scope="col">Seguridad Social</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Trabajadores)
-        {
-
-        <tr>
-            <th scope="row">@item.Id</th>
-            <td>@item.TrabajadorNome</td>
-            <td>@item.TrabajadorNif</td>
-            <td>@item.SeguridadSocial</td>
-            <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
-            <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
-        </tr>
+    }
 
 
-        }
+    <form method="post" asp-action="Edit" style="max-width: 22rem; float: right;  margin-bottom: 10px;">
 
+        <div>
+            <label asp-for="CursoNome"></label>
+        </div>
+        <select asp-for="CursoNome" name="CursoNome">
+            @foreach (var item in Model.Curso)
+            {
+                <option value="@item.Name">@item.Name</option>
 
-    </tbody>
-</table>
-<table class="table">
-    <thead class="table-danger">
-    <th>Trabajadores Baja</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Nif</th>
-            <th scope="col">Seguridad Social</th>
-            <th></th>
-            <th></th>
-        </tr>
-        @foreach (var item in Model.TrabajadoresBaja)
-        {
-
+            }
+        </select>
+        <div>
+            <label asp-for="Inicio"></label>
+        </div>
+        <div>
+            <input type="date" asp-for="Inicio" />
+        </div>
+        <div>
+            <label asp-for="Final"></label>
+        </div>
+        <div>
+            <input type="date" asp-for="Final" />
+        </div>
+        <input type="submit" class="btn btn-info w-100" value="Save" />
+    </form>
+</div>
+    <table class="table table-dark">
+        <thead>
             <tr>
-                <th scope="row">@item.Id</th>
-                <td>@item.TrabajadorNome</td>
-                <td>@item.TrabajadorNif</td>
-                <td>@item.SeguridadSocial</td>
-                <td><a asp-action="AltaTrabajador" asp-route-id="@item.Id">Dar Alta</a></td>
-                <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                <th scope="col">Curso</th>
+                <th scope="col">Inicio</th>
+                <th scope="col">Final</th>
+
             </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CursosNome)
+            {
+
+                <tr>
+                    <th>@item.CursoNome</th>
+                    <td>@item.Inicio</td>
+                    <td>@item.Final</td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Nif</th>
+                <th scope="col">Seguridad Social</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Trabajadores)
+            {
+
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.TrabajadorNome</td>
+                    <td>@item.TrabajadorNif</td>
+                    <td>@item.SeguridadSocial</td>
+                    <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
+                    <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                </tr>
 
 
-        }
+            }
 
 
-    </tbody>
-</table>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+        </tbody>
+    </table>
+    <table class="table">
+        <thead class="table-danger">
+        <th>Trabajadores Baja</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Nif</th>
+                <th scope="col">Seguridad Social</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.TrabajadoresBaja)
+            {
+
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.TrabajadorNome</td>
+                    <td>@item.TrabajadorNif</td>
+                    <td>@item.SeguridadSocial</td>
+                    <td><a asp-action="AltaTrabajador" asp-route-id="@item.Id">Dar Alta</a></td>
+                    <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                </tr>
+
+
+            }
+
+
+        </tbody>
+    </table>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

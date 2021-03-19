@@ -10,8 +10,8 @@ using Plataforma.Data;
 namespace Plataforma.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210317093448_AddTrabajadoresTable")]
-    partial class AddTrabajadoresTable
+    [Migration("20210319104552_addTabajadoresToDatabase")]
+    partial class addTabajadoresToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -194,6 +194,9 @@ namespace Plataforma.Migrations
                         .HasColumnType("bit");
 
                     b.Property<int>("IdEmpresa")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Mestrabajador")
                         .HasColumnType("int");
 
                     b.Property<string>("SeguridadSocial")
