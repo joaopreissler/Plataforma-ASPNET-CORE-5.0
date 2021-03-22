@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<div style="display:flex;">
+<div style=" justify-content: space-between">
 
     @foreach (var item in Model.Empresas)
     {
@@ -20,7 +20,7 @@
     }
 
 
-    <form method="post" asp-action="Edit" style="max-width: 22rem; float: right;  margin-bottom: 10px;">
+    <form method="post" asp-action="Edit" style="max-width: 22rem; float: right;  margin-bottom: 10px; " >
 
         <div>
             <label asp-for="CursoNome"></label>
