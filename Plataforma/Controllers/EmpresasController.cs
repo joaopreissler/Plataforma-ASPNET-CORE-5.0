@@ -269,7 +269,7 @@ namespace Plataforma.Controllers
             TempData["Empresa"] = trabajadores.IdEmpresa;
             TempData["Id"] = trabajadores.Id;
             
-            return View();
+            return View(trabajadores);
 
         }
         [HttpPost]

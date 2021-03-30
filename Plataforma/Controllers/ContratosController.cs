@@ -129,6 +129,32 @@ namespace Plataforma.Controllers
             };
             return View(viewmodel);
         }
+        public IActionResult Factura(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+           
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            FacturaViewModel viewmodel = new FacturaViewModel()
+            {
+                empresa = empresa,
+                cursos = curso,
+            };
+            return View(viewmodel);
+        }
+        public IActionResult Boni(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+
+          
+            return View(empresa);
+        }
     }
 
 

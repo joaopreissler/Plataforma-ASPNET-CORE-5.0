@@ -1,0 +1,300 @@
+﻿@model Plataforma.ViewModels.FacturaViewModel
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <!--
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />-->
+
+    <title>Factura</title>
+
+    <link href="css/estilo2.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<body>
+
+    <table width="1000" border="0" align="center">
+
+        <tr>
+
+            <td>
+                <table width="1000" border="1" align="center" cellpadding="2" cellspacing="2">
+
+                    <tr>
+
+                        <td width="283" valign="top">
+                            <p><img width="200" height="92" src="img/EBR-.jpg" alt="Descripción: Descripción: Descripción: Digitalizado a 23-07-2014 18-55 p" /></p>
+
+                            <p class="texto">
+                                NIF B-66335472 <br />
+
+                                C/ Gran via de les Corts    Catalanes Nr. 584 1er 2 <br />
+
+                                08011 Barcelona <br />
+
+                                Tel&eacute;fono / Fax 93 122 09 38 <br />
+
+                                <a href="mailto:eurobrazilinvestments@gmail.com">eurobrazilinvestments@gmail.com</a><br />
+
+                            </p>
+                        </td>
+
+                        <td width="292" align="center" valign="middle">
+                            <h2>
+                                FACTURA
+
+                            </h2>
+
+                            <table width="100%" border="0">
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">FECHA :</td>
+
+                                    <td class="texto">@Model.empresa.Fechafirma</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">N DE FACTURA</td>
+
+                                    <td class="texto">
+
+                                        <?=$fila123["mes"];?>-
+
+                                        <?=$fila123["codigo"];?>-
+
+                                        <?=$fila["tipo"];?>-
+
+                                        <?=$fila["comercial"];?> -<?=$fila123["anyo"];?>
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="0" align="center">
+
+                    <tr>
+
+                        <td colspan="4"><h1><strong>Factura a</strong> :</h1></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="139" bgcolor="#CCCCCC" class="texto">Raz&oacute;n social:</td>
+
+                        <td width="344" class="texto">@Model.empresa.Nombre_Empresa</td>
+
+                        <td width="110" bgcolor="#CCCCCC" class="texto">C.I.F:</td>
+
+                        <td width="389" class="texto">@Model.empresa.Nif</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC" class="texto">Direcci&oacute;n :</td>
+
+                        <td class="texto">@Model.empresa.Direccion</td>
+
+                        <td bgcolor="#CCCCCC" class="texto">Tel&eacute;fono :</td>
+
+                        <td class="texto">
+
+                           @Model.empresa.Telefono
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC" class="texto">Poblacion :</td>
+
+                        <td class="texto">@Model.empresa.Localidad</td>
+
+                        <td bgcolor="#CCCCCC" class="texto">CP:</td>
+
+                        <td class="texto">
+                            @Model.empresa.Cp
+
+                        </td>
+
+                    </tr>
+
+                </table><br />
+
+                <span class="texto">
+                    Numero de cuenta:
+
+                    @Model.empresa.CuentaCotizacion
+
+                </span> <br />
+
+
+
+
+
+                
+
+
+
+                <table width="1000" border="1" align="center" cellpadding="0" cellspacing="0">
+
+                    <tr>
+
+                        <td width="481" align="center" valign="top"><p><strong>DESCRIPCI&Oacute;N</strong></p></td>
+
+                        <td width="127" align="center" valign="top"><p><strong>CANTIDAD</strong></p></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="481" valign="top">
+                            <table width="100%" border="0">
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Acci&oacute;n formativa: </td>
+
+                                    <td width="65%" class="texto"><?=$fila10["accionformativa"];?></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Grupo:</td>
+
+                                    <td class="texto"><?=$fila9["grupo"];?></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Denominaci&oacute;n :&nbsp;</td>
+
+                                    <td class="texto">@Model.cursos.CursoNome</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Modalidad de Impartci&oacute;n :</td>
+
+                                    <td class="texto">Teleformaci&oacute;n</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Horas totales :</td>
+
+                                    <td class="texto">30 HORAS</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Tipo de acci&oacute;n :</td>
+
+                                    <td class="texto">Gen&eacute;rica</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Nivel de formaci&oacute;n</td>
+
+                                    <td class="texto">B&aacute;sico</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">N&uacute;mero de participantes    :</td>
+
+                                    <td class="texto">
+                                       
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Fecha de inicio :</td>
+
+                                    <td class="texto">@Model.cursos.Inicio</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td bgcolor="#CCCCCC" class="texto">Fecha de fin :</td>
+
+                                    <td class="texto">@Model.cursos.Final</td>
+
+                                </tr>
+
+                            </table>
+
+                            <p>&nbsp;</p>
+
+                            <p>&nbsp;</p>
+
+                            <p>&nbsp;</p>
+
+                            <p>&nbsp;</p>
+
+                            <p>&nbsp;</p>
+
+                            <p>FORMACION CONTINUA    COFINANCIADA POR EL FONDO SOCIAL EUROPEO</p>
+                        </td>
+
+                        <td width="127" align="center" valign="top" class="texto"><p> &#8364</p></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="481" align="center" valign="top"><p> <span class="texto"><strong>TOTAL</strong></span></p></td>
+
+                        <td width="127" align="center" valign="top" class="texto"><p>  @Model.empresa.creditodisponible  &#8364</p></td>
+
+                    </tr>
+
+                </table>
+
+                <p class="texto2">* La formaci&oacute;n est&aacute; exenta de  I.V.A. (art&iacute;culo 20, apartado 1 n&uacute;mero 96 de la Ley 37/1992 del 28 de  diciembre)</p>
+
+                <p class="texto2">
+                    Forma de pago : <br />
+
+                    Cargo en cuenta
+                </p>
+            </td>
+
+        </tr>
+
+    </table>
+
+    
+
+</body>
+
+</html>
