@@ -16,6 +16,10 @@
         </ul>
         <a asp-action="AddTrabajador" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Añadir Trabajador</a>
         <a asp-action="Empresaano" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Insertar empresa al otro año</a>
+        <a asp-controller="Contratos" asp-action="Index" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Contrato Encomienda</a>
+        <a asp-controller="Contratos" asp-action="Adhesion" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Adhesion</a>
+        <a asp-controller="Contratos" asp-action="SolicitudCurso" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Solicitud Curso</a>
+        <a asp-controller="Contratos" asp-action="SolicitudAutonomo" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Solicitud Curso Autonomo</a>
     </div>
     }
 

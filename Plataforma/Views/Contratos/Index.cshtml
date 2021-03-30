@@ -1,0 +1,605 @@
+﻿@model Plataforma.ViewModels.ContratoEncomiendaViewModel
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+    <title>Contrato Encomienda</title>
+
+    <link href="css/estilo2.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<body>
+
+   
+
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="texto">
+
+        <tr>
+
+            <td align="center">
+                <p><strong>           </strong><strong>                       </strong><strong>         </strong></p>
+
+                <table width="800" border="0" cellspacing="0" cellpadding="0">
+
+                    <tr>
+
+                        <td align="left"><img src="img/tri2.png" width="250" height="75" /></td>
+
+                        <td align="left"><img src="img/EBR-.jpg" width="216" height="100" /></td>
+
+                        <td align="right"><img src="img/euro.jpg" width="126" height="100" /></td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="0" cellspacing="0" cellpadding="0">
+
+                    <tr>
+
+                        <td>
+                            <p>
+                                <strong>CONTRATO  DE ENCOMIENDA  DE ORGANIZACIÓN DE LA FORMACI&Oacute;N SUSCRITO  ENTRE  EMPRESAS AL AMPARO DE LOS ART&Iacute;CULOS 9.3 Y 12.1 DE LA LEY 30/2015, DE 9 DE SEPTIEMBRE, POR LA QUE SE REGULA EL SISTEMA DE FORMACI&Oacute;N PROFESIONAL PARA EL EMPLEO EN EL &Aacute;MBITO LABORAL Y DEL ART&Iacute;CULO 14.3 DEL REAL DECRETO 694/2017, DE 3 JULIO, QUE DESARROLLA LA CITADA LEY.</strong><br />
+
+                                <br />
+
+                                <strong>DON  JORDI MUNTANÉ PAVILLARD</strong>,  con n&uacute;mero de <strong><u>DNI 37636273-Q</u></strong> en nombre y representación de la mercantil  <strong><u>EUROBRAZIL INVESTMENTS S.L.U</u></strong> con n&uacute;mero de <strong>NIF B<u>66335472</u></strong> con domicilio en la <strong>GRAN VIA DE LES CORTS CATALANES 584 ( 08011</strong>)  de Barcelona <br />
+
+                                <br />
+
+                            </p>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr class="texto">
+
+                        <td bgcolor="#999999"><strong>DATOS DE LA EMPRESA AGRUPADA</strong></td>
+
+                        <td bgcolor="#CCCCCC"><strong>AD:</strong></td>
+
+                        <td>
+                            <strong>
+
+                                MPM
+
+                            </strong>
+                        </td>
+
+                        <td bgcolor="#CCCCCC"><strong>CODIGO:</strong></td>
+
+                        <td>__</td>
+
+                        <td bgcolor="#CCCCCC"><strong>Agente :</strong></td>
+
+                        <td>
+                            <strong>
+
+                                EBR
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr>
+
+                        <td width="127" bgcolor="#CCCCCC"><strong>RAZON SOCIAL</strong></td>
+
+                        <td width="371"> @Model.Empresas.Nombre_Empresa</td>
+
+                        <td width="61" bgcolor="#CCCCCC"><strong>C.I.F.</strong></td>
+
+                        <td width="141">
+                            <strong>
+
+                               @Model.Empresas.Nif
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr>
+
+                        <td width="100" bgcolor="#CCCCCC"><strong>NOMBRE COMERCIAL</strong></td>
+
+                        <td width="134">
+                            <strong>
+
+                                @Model.Empresas.Nombre_Comercial
+
+                            </strong>
+                        </td>
+
+                        <td width="80" bgcolor="#CCCCCC"><strong>Persona contacto</strong></td>
+
+                        <td width="134">
+                            <strong>
+
+                                @Model.Empresas.Nombrereprensentante
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr>
+
+                        <td width="106" bgcolor="#CCCCCC"><strong>DOMICILIO</strong></td>
+
+                        <td width="466">@Model.Empresas.Direccion</td>
+
+                        <td width="28" bgcolor="#CCCCCC"><strong>C.P.</strong></td>
+
+                        <td width="100">
+                            <strong>
+
+                                @Model.Empresas.Cp
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr>
+
+                        <td width="102" bgcolor="#CCCCCC"><strong>LOCALIDAD</strong></td>
+
+                        <td width="361">
+                            <strong>
+
+                                @Model.Empresas.Localidad
+
+                            </strong>
+                        </td>
+
+                        <td width="97" bgcolor="#CCCCCC"><strong>PROVINCIA</strong></td>
+
+                        <td width="140">
+                            <strong>
+
+                                @Model.Empresas.Provincia
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr>
+
+                        <td width="108" bgcolor="#CCCCCC"><strong>TELEFONO</strong></td>
+
+                        <td width="243">
+                            <strong>
+
+                               @Model.Empresas.Telefono
+
+                            </strong>
+                        </td>
+
+                        <td width="63" bgcolor="#CCCCCC"><strong>E-MAIL</strong></td>
+
+                        <td width="286">
+                            <strong>
+
+                                @Model.Empresas.email
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr>
+
+                        <td width="299" bgcolor="#CCCCCC"><strong>ACTIVIDAD PRINCIPAL</strong></td>
+
+                        <td width="401">
+                            <strong>
+
+                                @Model.Empresas.convenio
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC"><strong>CONVENIO COLECTIVO SECTORIAL</strong></td>
+
+                        <td><strong>@Model.Empresas.contatogestoria</strong></td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td width="377" bgcolor="#CCCCCC">
+                            <strong>
+                                HORAS DEL CONVENIO ANUAL<br />
+
+                            </strong>Para empresas de m&aacute;s de 8    trabajadores
+                        </td>
+
+                        <td width="44">&nbsp;</td>
+
+                        <td width="310" bgcolor="#CCCCCC"><strong>Nº INSCRIPCION SEGURIDAD SOCIAL</strong></td>
+
+                        <td width="233">
+                            <strong>
+
+                                
+
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+                    <tr>
+
+                        <td width="93" bgcolor="#CCCCCC"><strong>CNAE</strong></td>
+
+                        <td width="269">
+                            <strong>
+
+                                @Model.Empresas.CNAE
+
+                            </strong>
+                        </td>
+
+                        <td width="262" bgcolor="#CCCCCC"><strong>PLANTILLA MEDIA AÑO 2015</strong></td>
+
+                        <td width="76"></td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" align="center" cellpadding="0" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td><strong>¿EXISTE REPRESENTACIÓN LEGAL DE LOS    TRABAJADORES                                       </strong></td>
+
+                        <td>En caso    afirmativo cumplimentar documento adjunto &ldquo;Información a la RLT&rdquo;</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><strong>EMPRESA DE NUEVA CREACIÓN    @Model.Empresas.nuevacreacion</strong></td>
+
+                        <td><strong>FECHA DE CREACIÓN : @Model.Empresas.creacion</strong></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><strong>DIRECCIÓN DE ENTREGA DE MATERIAL</strong></td>
+
+                        <td><strong>LA MISMA</strong></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><strong>CREDITO PARA FORMACIÓN DISPONIBLE    ANUAL</strong></td>
+
+                        <td><strong> @Model.Empresas.creditodisponible €</strong></td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellpadding="0" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td colspan="2" valign="top"><p><strong>INFORMACIÓN    PARA EL COBRO DE LA FORMACIÓN</strong></p></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="361" valign="top"><p><strong>BANCO    / CAJA :@Model.Empresas.Cuenta</strong></p></td>
+
+                        <td width="627" valign="top"><p><strong>Nº    C/C :@Model.Empresas.CuentaCotizacion</strong></p></td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td colspan="4" align="center" bgcolor="#999999"><strong>DATOS DE GESTORIA</strong></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="246" bgcolor="#CCCCCC"><strong>PERSONA DE CONTACTO</strong></td>
+
+                        <td colspan="3">@Model.Empresas.nombregestoria&nbsp;</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC"><strong>EMAIL</strong></td>
+
+                        <td width="302">@Model.Empresas.emailgestoria</td>
+
+                        <td width="103" bgcolor="#CCCCCC"><strong>TELEFONO</strong></td>
+
+                        <td width="313">@Model.Empresas.telefonogestoria</td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="900" border="0" cellspacing="0" cellpadding="0">
+
+                    <tr>
+
+                        <td>
+                            <p>
+                                <strong><u>ACUERDAN</u></strong><br />
+
+                                <strong><u>PRIMERO.- OBJETO</u></strong><br />
+
+                                El presente contrato tiene por  objeto regular la relación que se establece entre las empresas que van a  proporcionar formación  a sus  trabajadores y entidad externa que tiene encomendada  su organización de acuerdo con los art&iacute;culos  10.3 y 13 del Real Decreto Ley 4/2015 de 22 de Marzo  para la reforma Urgente del Sistema de  Formación Profesional para el Empleo en el &aacute;mbito Laboral ( en adelante Decreto  Ley) y dem&aacute;s normativa de aplicación en especial la Orden TAS/2307/2007 de 27  de Julio , por la que se desarrolla parcialmente el Real Decreto 395/2007 de 23  de Marzo , por el que regula el subsistema de formación profesional  para el empleo en materia de formación de  demanda y su financiación
+                            </p>
+
+                            <p>
+                                <strong><u>SEGUNDO.-  ENTIDAD EXTERNA </u></strong><br />
+
+                                A los efectos de este contrato de  acuerdo con lo previsto en el art 10.3 del Decreto Ley, las empresas acuerdan  encomendar la organización de la formación a la entidad externa EUROBRAZIL  INVESTIMENTS S.L.U <br />
+
+                                <br />
+
+                                2.- Asegurar el desarrollo  satisfactorio de las acciones formativas <br />
+
+                                <br />
+
+                                3.- Asegurar las funciones de  seguimiento y control y evaluación de las acciones formativas.
+                            </p>
+
+                            <p>
+                                <strong><u>TERCERO.-  OBLIGACIONES DE LA ENTIDAD EXTERNA</u></strong><br />
+
+                                Ser&aacute;n obligaciones de la entidad <strong><u>EUROBRAZIL INVESTMENTS S.LU</u></strong>  las siguientes <br />
+
+                                <br />
+
+                                1.- Comunicar el Inicio y  Finalización de la acciones formativas programadas por las empresa ante la  administración a través de los procesos telem&aacute;ticos implantados por el Servicio  P&uacute;blico de Empleo
+
+                                <br />
+
+                                2.- Asegurar el desarrollo  satisfactorio de las acciones formativas
+
+                                <br />
+
+                                3.- Asegurar las funciones de  seguimiento , control y evaluación de las acciones formativas<br />
+
+                                4.-   Asegurar la adecuación de la formación  realizada a las necesidades formativas reales de la empresa
+
+                                <br />
+
+                                5.- Contratar a entidades de  formación acreditadas y o inscritas en el Registro Estatal de Entidades de  Formación para la impartición de las actuaciones formativas, salvo en el caso  de tratarse de la misma entidad <br />
+
+                                6.- Facilitar a cada una de las  empresas que suscribe el presente contrato la documentación relacionada con la  organización y gestión e  impartición de  las acciones formativas, as&iacute; como la información necesaria para la correcta  aplicación de las bonificaciones por parte de dichas empresas <br />
+
+                                7.- Someterse a las actuaciones  de comprobación, seguimiento y control que realicen las administraciones  p&uacute;blicas competentes y los dem&aacute;s órganos   de control y asegur&aacute;ndose de su satisfactorio desarrollo.<br />
+
+                                8.- Todas aquellas obligaciones  establecidas en la Orden TAS/ 2307/2007de 23 de Julio por la que se desarrolla  parcialmente el Real Decreto 395/2007 de 23 de Marzo por el que se regula el  subsistema de formación profesional para el empleo en materia de formación de  demanda y su financiación relacionadas con la formación programada por las  empresas para las que organiza la formación de sus trabajadores <br />
+
+                                9.- Otras obligaciones que en su  caso las partes acuerden relacionadas con la planificación de las acciones  formativas  a realizar, selección de  centros de impartición , permisos individuales   de formación de programación del calendario de impartición y cualquier  otra que contribuya a facilitar el desarrollo de la formación en el empleo<br />
+
+                                10. Custodiar  el presente contrato manteniéndolo a  disposición de los órganos de control competentes, indicados en la normativa  vigente as&iacute; como la restante documentación relacionada con la organización,  gestión  e impartición de la formación  puede ser requerida por las administraciones u órganos de control competentes y  por la fundación Tripartita para la formación de Empleo <br />
+
+                                <br />
+
+                                <strong><u>CUARTO.- OBLIGACIONES DE LAS EMPRESAS </u></strong><br />
+
+                                La empresa que suscribe este  contrato tendr&aacute;n las siguientes obligaciones <br />
+
+                                <br />
+
+                                1.- Identificar en cuenta  separada o ep&iacute;grafe espec&iacute;fico de su contabilidad  bajo la denominación de formación Profesional  para el empleo  todos los gastos de las  acciones formativas y permisos individuales<br />
+
+                                <br />
+
+                                2.- Someterse  a las actuaciones de comprobación,  seguimiento y control de las Administraciones Competentes <br />
+
+                                <br />
+
+                                3.- Custodiar la documentación  relacionada con la organización, gestión e impartición de las acciones  formativas <br />
+
+                                facilitadas por la entidad externa, de acuerdo con los modelos  puestos a disposición por la Fundación Tripartita para la formación del Empleo <br />
+
+                                <br />
+
+                                4.- Garantizar la gratuidad de  las acciones <br />
+
+                                <br />
+
+                                5.- Hallarse la empresa al  corriente de pago frente a la Agencia Tributaria y Seguridad Social <br />
+
+                                <br />
+
+                                <strong><u>QUINTO.- Costes de la Organización de la formación</u></strong><br />
+
+                                Estos costes no podr&aacute;n superar el  10% del coste de la actividad formativa , si bien podr&aacute;n alcanzar hasta un  m&aacute;ximo de un 15% en caso de acciones formativas , dirigidas a  trabajadores de empresas que cuenten entre 6  y 9 trabajadores en plantilla y un m&aacute;ximo de 20% en caso de las empresas con hasta  5 trabajadores en plantilla.
+                            </p>
+
+                            <p>
+                                <strong><u>SEXTO.- ADHESION DE OTRAS EMPRESAS </u></strong><br />
+
+                                Las partes podr&aacute;n acordar la  posibilidad de que otras empresas se adhieran al presente contrato. A tales  efectos, las entidades interesadas suscribir&aacute;n   el correspondiente documento de adhesión.- Para ello se delega en la  entidad externa la facultad de representar a la empresa en la suscripción de  la adhesión en cuesti&oacute;n. Se podr&aacute;n indicar aqu&iacute; si las partes consideran  conveniente las caracter&iacute;sticas sector territorio plantilla etc.- que deban  concurrir en las empresas que deseen adherirse al presente contrato.<br />
+
+                                <br />
+
+                                <strong><u>SEPTIMO.- DESESTIMIENTO UNILATERAL</u></strong> ,. Cualquier empresa que  haya suscrito el contrato podr&aacute; desistir del mismo con anterioridad de su  finalización, sin perjuicio de las obligaciones contra&iacute;das durante su vigencia.<br />
+
+                                Lo anterior deber&aacute; instrumentarse  Jur&iacute;dicamente mediante documento firmado por ambas partes <br />
+
+                                <br />
+
+                                <strong><u>OCTAVO.- PROTECCION DE DATOS   </u></strong> Los firmantes del presente contrato  garantizar&aacute;n el cumplimiento de lo establecido en la Ley Org&aacute;nica 15/1999 de 13  de Diciembre de protección de datos de car&aacute;cter personal asumiendo las  obligaciones y responsabilidades que se derivan de la misma y de la suscripción  del presente documento.<br />
+
+                                <br />
+
+                                Todos los datos de car&aacute;cter  personal que se comuniquen por razón de objeto de este contrato tendr&aacute;n  car&aacute;cter confidencial y ser&aacute;n utilizados exclusivamente para los propósitos del  contrato, sin que se puedan aplicar a un fin distinto ni tampoco  comunicarlos, ni siquiera para su mera  conservación, a  otras personas. Esta  obligación se mantendr&aacute; vigente incluso después de laterminación de la vigencia  del contrato, por cualquier razón que fuere .
+
+                                <br />
+
+                                Las partes adoptar&aacute;n las medidas  de &iacute;ndole técnica y organizativas necesarias que garanticen la seguridad de los  datos y evite su alteración , p&eacute;rdida, tratamiento o acceso no autorizado ,  habida cuenta del estado de la tecnolog&iacute;a , la naturaleza de los datos  almacenados y los riesgos que est&aacute;n expuestos, ya provengan  de la acción humana o  del medio f&iacute;sico o natural.<br />
+
+                                <br />
+
+                                <strong><u>NOVENO.</u>- Entrada en Vigor y vigencia del contrato</strong><br />
+
+                                <br />
+
+                                El presente contrato entrar&aacute; en  Vigor el d&iacute;a de su firma por las partes<br />
+
+                                <br />
+
+                                En      @Model.Empresas.Localidad     a  @DateTime.Now.Day.ToString() de @DateTime.Now.ToString("MM") de @Model.Empresas.ano
+                            </p>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <p>&nbsp;</p>
+
+                <table border="1" cellspacing="0" cellpadding="0" width="1000">
+
+                    <tr>
+
+                        <td width="329" valign="top">
+                            <p>&nbsp;</p>
+
+                            <img src="https://s3.us-east-2.amazonaws.com/eurobrazil-formacion/storage/signaturas/<?=$fila2[" empresa"];?>.png"/>
+
+                            <p>
+                                Nombre y apellidos @Model.Empresas.Nombrereprensentante<br />
+
+                                DNI  @Model.Empresas.nifrepresentante
+                            </p>
+                        </td>
+
+                        <td width="343" valign="top" align="center">
+
+                            <img src="img/firma.png" width="423" height="200" />
+
+                            <br />
+
+                            DNI    37636273 Q</p>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="329" valign="top"><p>FIRMA (Por representante legal de la empresa)</p></td>
+
+                        <td width="343" valign="top"><p>FIRMA (Por representante legal de la entidad    externa)</p></td>
+
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td align="center">&nbsp;</td>
+
+        </tr>
+
+    </table>
+
+   
+
+</body>
+
+</html>

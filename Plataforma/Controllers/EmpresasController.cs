@@ -290,6 +290,7 @@ namespace Plataforma.Controllers
             trabajadores.SeguridadSocial = obj.SeguridadSocial;
             trabajadores.TrabajadorAlta = obj.TrabajadorAlta;
             trabajadores.TrabajadorNif = obj.TrabajadorNif;
+            trabajadores.Trabajadortipo = obj.Trabajadortipo;
             _context.SaveChanges();
             
             return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
