@@ -1,0 +1,304 @@
+﻿@model Plataforma.ViewModels.SolicitudCursoViewModel 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="UTF-8">
+    
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+   @foreach (var item in Model.Trabajadores)
+   {
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" style="page-break-after: always">
+        <tr>
+            <td align="center">
+                <span class="texto"><strong>EXAMEN TIPO  TEST PARA EL CURSO: &ldquo;Alergias e Intolerancias Alimentarias&rdquo; @DateTime.Now.Year</strong></span><strong>  </strong><br />
+                <strong>                                              </strong>
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+                    <tr>
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>PARTICIPANTE </strong></td>
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <strong>
+                                <font color="#FFFFFF">
+                                    @item.TrabajadorNome
+                                </font>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>NIF      /   NIE</strong></td>
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <font color="#FFFFFF">
+                                @item.TrabajadorNif
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>EMPRESA</strong></td>
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <font color="#FFFFFF">
+                                @Model.Empresa.Nombre_Comercial
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="texto">
+                    <tr>
+                        <td>
+                            <strong>1</strong>. ¿Qué significa que una persona tiene una  alergia alimentaria? <br />
+                            a) Es una reacción no tóxica <br />
+                            b) Es sinónimo de sensibilidad  alimentaria <br />
+                            c) Es una respuesta  inmunológica del organismo cuando se ingieren determinados tipos de alimentos <br />
+                            d) Ninguna de las  anteriores  
+                            <br />
+                            <br />
+                            2. ¿Qué cereales  contienen gluten? <br />
+                            a) Trigo, arroz y espelta <br />
+                            b) Trigo, espelta y centeno <br />
+                            c) Arroz, ma&iacute;z y qu&iacute;noa <br />
+                            d) Trigo, qu&iacute;noa y centeno
+                            <br />
+                            <br />
+                            3. ¿Dónde se  puede encontrar soja? <br />
+                            a) Aceite de oliva <br />
+                            b) Salsa de soja <br />
+                            c) Tofu <br />
+                            d) b) y c) son correctas
+                            <br />
+                            <br />
+                            4. ¿Qué  substitutivos de la prote&iacute;na de la vaca puedo utilizar? <br />
+                            a) Mantequilla <br />
+                            b) Nata <br />
+                            c) Yogurt <br />
+                            d) Margarina vegetal
+                            <br />
+                            <br />
+                            5. ¿Qué  sustancias producen alergia o intolerancia alimentaria? <br />
+                            a) Apio <br />
+                            b) Mostaza <br />
+                            c) Sésamo <br />
+                            d) Todas son correctas
+                            <br />
+                            <br />
+                            6. ¿Qué  productos contiene sulfitos? <br />
+                            a) Gambas <br />
+                            b) Vino <br />
+                            c) Legumbres <br />
+                            d) Todas son correctas
+                            <br />
+                            <br />
+                            7. El  manipulador de alimentos antes de cocinar tiene que tener en cuenta: <br />
+                            a) Mirar con atención las etiquetas de los alimentos a utilizar por si  hay alg&uacute;n alérgeno oculto <br />
+                            b) No utilizar productos envasados que no tengan etiquetas <br />
+                            c) Vaciar el contenido del envase original a otros envases de cocina <br />
+                            d) A) i B) son correctas<br />
+                            <br />
+                        </td>
+                    </tr>
+                </table>
+                <p class="texto">EMPRESA ORGANIZADORA <img width="200" height="92" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" />      </p>
+                <p class="texto">&nbsp;</p>
+                <p class="texto">
+                    <br />
+                    <br />
+                    <br />
+                </p>
+                <p class="texto">&nbsp;</p>
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+                    <tr>
+                        <td>
+                            8. Unas buenas pr&aacute;cticas de manipulación son <br />
+                            a) Tener un lugar exclusivo para guardar los productos implicados en  alergias e <br />
+                            intolerancias alimentarias <br />
+                            b) Preparar los alimentos en espacios separados <br />
+                            c) Cocinar primero la comida para el alérgico <br />
+                            d) Todas son correctas <br />
+                            <br />
+                            9. ¿Qué guantes  debo utilizar en la cocina? <br />
+                            a) Cualquier guante sirve <br />
+                            b) Vinilo <br />
+                            c) L&aacute;tex <br />
+                            d) B) i C) son correctos<br />
+                            <br />
+                            10. ¿Qué  información es obligatoria en una etiqueta? <br />
+                            a) Lista de ingredientes <br />
+                            b) Sustancias que causan alergias <br />
+                            c) Información nutricional <br />
+                            d) Todas son correctas
+                            <br />
+                            <br />
+                            11. Información  obligatoria para alimentos NO Envasados <br />
+                            a) Lista de ingredientes <br />
+                            b) Cantidad neta <br />
+                            c) Facilitar las instrucciones de uso <br />
+                            d) Disponer del listado de alérgenos
+                            <br />
+                            <br />
+                            12. ¿Cu&aacute;ndo entra  en vigor la nueva reglamentación?<br />
+                            a) A partir de diciembre de 2014 <br />
+                            b) A partir de diciembre de 2014 excepto la información nutricional  que se aplicar&aacute; en diciembre 2016 <br />
+                            c) A partir de diciembre de 2014 excepto la información nutricional  que se aplicar&aacute; en diciembre 2015 <br />
+                            d) A partir de diciembre de 2015
+                        </td>
+                    </tr>
+                </table>
+
+
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>
+                    <br />
+                    <br />
+                </p>
+                <table border="1" cellpadding="0" cellspacing="0" class="texto">
+                    <tr>
+                        <td width="20" align="center">TEST</td>
+                        <td width="20" align="center">1</td>
+                        <td width="20" align="center">2</td>
+                        <td width="20" align="center">3</td>
+                        <td width="20" align="center">4</td>
+                        <td width="20" align="center">5</td>
+                        <td width="20" align="center">6</td>
+                        <td width="20" align="center">7</td>
+                        <td width="20" align="center">8</td>
+                        <td width="20" align="center">9</td>
+                        <td width="20" align="center">10</td>
+                        <td width="20" align="center">11</td>
+                        <td width="20" align="center">12</td>
+                    </tr>
+                    <tr>
+                        <td width="61" align="center">a</td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                    </tr>
+                    <tr>
+                        <td width="61" align="center">b</td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                    </tr>
+                    <tr>
+                        <td width="61" align="center">c</td>
+                        <td width="44" valign="top">&nbsp;</td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                    </tr>
+                    <tr>
+                        <td width="61" align="center">d</td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                        <td width="44" valign="top"></td>
+                    </tr>
+                </table>
+
+                <p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                    <br />
+                    <br />
+
+                </p>
+                <p>
+                    <br />
+                </p>
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+                    <tr>
+                        <td width="500" align="center">
+                            <table width="450" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="406"><hr /></td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Tutoria</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">FRANCESC VILARÓ SALADEFONT</td>
+                                    <td align="center"> Técnico en Higiene Alimentaria</td>
+                                </tr>
+
+                            </table>
+                        </td>
+                        <td width="500" align="center">
+                            <table width="450" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td><hr /></td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Firma del Alumno</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" bgcolor="#0000ff">
+                                        <strong>
+                                            <font color="#FFFFFF">
+                                                <?=$fila["nombre"];?>
+                                            </font>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle">
+                            <br />
+                            <img width="200" height="92" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" /> EMPRESA ORGANIZADORA
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+   }
+</body>
+</html>

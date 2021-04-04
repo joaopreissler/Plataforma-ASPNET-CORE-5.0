@@ -209,3 +209,10 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\SolicitudAutonomo.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\Factura.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\Boni.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\Caratulas.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\TestAlergenos.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\TestManipulador.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\TestPrevencion.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\TestPeluqueria.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\CertificadoCat.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\CertificadoCas.cshtml.g.cs

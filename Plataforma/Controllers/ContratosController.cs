@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Plataforma.ViewModels;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Plataforma.Controllers
 {
@@ -154,6 +154,153 @@ namespace Plataforma.Controllers
 
           
             return View(empresa);
+        }
+        public IActionResult Caratulas(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+        public IActionResult TestAlergenos(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+        public IActionResult TestManipulador(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+        public IActionResult TestPrevencion(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+        public IActionResult TestPeluqueria(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+        public IActionResult CertificadoCat(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+        public IActionResult CertificadoCas(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
         }
     }
 

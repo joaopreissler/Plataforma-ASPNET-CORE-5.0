@@ -1,0 +1,139 @@
+﻿@model Plataforma.ViewModels.SolicitudCursoViewModel 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <style type="text/css">
+        .nombre {
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    @foreach (var item in Model.Trabajadores)
+    {
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" style="page-break-after: always;">
+        <tr>
+            <td align="center">
+                <p>&nbsp;</p>
+                <table width="1000" border="1" cellpadding="0" cellspacing="0" class="nombre">
+                    <tr>
+                        <td colspan="2" valign="top">
+                            <p align="center">
+                                CURSO DE&nbsp; :<br />
+                                @Model.Curso.CursoNome
+                                <br />
+                                Modalidad :&nbsp; Teleformacion
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <br />
+                <br />
+                <table width="1000" border="1" cellpadding="0" cellspacing="0" class="nombre">
+                    <tr>
+                        <td width="262" align="center" valign="top" bgcolor="#CCCCCC"><strong>EMPRESA: </strong></td>
+                        <td width="732" align="center" valign="top" bgcolor="#0000ff">
+                            <strong>
+                                <font color="#FFFFFF">
+                                   @Model.Empresa.Nombre_Empresa
+                                </font>
+                            </strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="262" align="center" valign="top" bgcolor="#CCCCCC">
+                            <strong>
+                               @{ 
+                                   var tipo = "";
+                                   if(item.Trabajadortipo == "Autonomo")
+                                   {
+                                       tipo = "AUTONOMO";
+                                   }
+                                   else
+                                   {
+                                       tipo = "TRABAJADOR";
+                                   }
+                               }
+                                @tipo
+                            </strong>
+                        </td>
+                        <td width="732" align="center" valign="top" bgcolor="#0000ff">
+                            <strong>
+                                <font color="#FFFFFF">
+                                    @item.TrabajadorNome
+                                </font>
+                            </strong>
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    <br />
+                </p>
+                <p><span class="nombre">TUTORIA DEL CURSO</span></p>
+                <table width="1000" border="1" cellpadding="0" cellspacing="0" class="nombre">
+                    <tr>
+                        <td align="center" valign="top">
+                            <p>
+                                A CARGO DE:<br />
+                                <br />
+                                <strong>FRANCESC VILARÓ SALADELAFONT</strong>
+                            </p>
+                            <p>
+                                <em>"TECNICO EN PREVENCIÓN DE RIESGOS LABORALES"<br />
+</p>
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    <br />
+                </p>
+                <p class="nombre"> DIRECCI&Oacute;N  COMERCIAL</p>
+                <table width="1000" border="1" cellpadding="0" cellspacing="0" class="nombre">
+                    <tr>
+                        <td width="652" align="center" valign="top">
+                            Jordi  Muntan&eacute;     Pavillard<br />
+                            <img width="58" height="15" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/1.jpg" /><img width="58" height="15" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/2.jpg" /><img width="50" height="15" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/3.jpg" /><img width="60" height="15" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/4.jpg" /><img width="58" height="15" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/5.jpg" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="652" valign="top">
+                            <p align="center">
+                                Granvia de les Corts Catalanes 584 1º 2ª    08011 BARCELONA<br />
+                                Telefono   93 122 09 38              Movil   656 38 60 02<br />
+                                jordi.muntane.pavillard.cat@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <p class="nombre">
+                    <br />
+                    EMPRESA ORGANIZADORA
+                </p>
+                <table width="1000" border="1" cellpadding="0" cellspacing="0" class="nombre">
+                    <tr>
+                        <td width="206" align="center" valign="middle"><p><img width="170" height="78" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" /></p></td>
+                        <td width="788" valign="top">
+                            <p align="center">
+                                EUROBRAZIL INVESTMENTS    S.L.<br />
+                                CIF B66335472<br />
+                                Gran Via de les Corts Catalanes 584 1º 2ª -
+                                08011 BARCELONA   Teléfono   93 122 09 38
+                                <a href="mailto:eurobrazilinvestments@gmail.com">eurobrazilinvestments@gmail.com</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    }
+    
+    
+
+</body>
+</html>

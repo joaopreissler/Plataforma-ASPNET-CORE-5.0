@@ -2,127 +2,233 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
 
-    <title>Documento sin tí­tulo</title>
-    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+   
+	<style>
+	   
+.texto {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+}
+.texto2 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+}
+.textoboni {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+	color: #F00;
+}
+.cert {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 20px;
+}
+
+.cert2 {
+	width:2450px;
+	height:842px;
+}
+
+.certTITULO {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+}
+.certazul {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 20px;
+	color: #000;
+}
+.tablanombre {
+	background-color: #058523;
+	border: thin #0F0;
+	font-size:24px;
+	color: #FFF;
+	font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.tablanombre2 {
+	background-color: skyblue;
+	border: thin #00197A;
+	font-size:24px;
+	color: #FFF;
+	font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.table{
+	height: 842px;
+	width: 595px;;
+}
+.firma{
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+
+div.WordSection1
+	{page:WordSection1;}
+
+.texto11{
+	font-size: 21px;
+	font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	line-height: 5px;
+}
+
+.texto12{
+	font-size: 28px;
+	font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+		@@media print {
+
+			body {
+				margin: 0;
+				color: #000;
+				background-color: #fff;
+			}
+
+			@@page {
+				size: A4 landscape
+			}
+
+			.container {
+				max-width: fit-content !important;
+			}
+		}
+
+
+	</style>
 </head>
 
 <body>
    
 
-    <div>
-        <table width="1503" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-                <table width="1503" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td width="1503" align="center">
-                            <img width="250" height="100" src="img/tri2.png" />                                       <img width="216" height="100" src="img/EBR-.jpg" />                                             <img width="126" height="100" src="img/euro.jpg" /><br />
-                            <strong>
-                                <br />
-                                SOLICITUD  DE CURSO <br />
-                                <br />
-                                del @Model.Curso.Inicio.ToString("dd/MM/yyyy")
-                                al @Model.Curso.Final.ToString("dd/MM/yyyy") del @DateTime.Now.Year
-                                <br />
-                                <br />
-                            </strong>
-                            <table width="1500" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                    <td>
-                                        <table width="500" border="1" align="center" cellpadding="0" cellspacing="0" class="texto2">
-                                            <tr>
-                                                <td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>EMPRESA</strong></td>
-                                                <td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>CIF</strong></td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" nowrap="nowrap">@Model.Empresa.Nombre_Empresa</td>
-                                                <td align="center" nowrap="nowrap">@Model.Empresa.Nif</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td width="10">&nbsp;</td>
-                                    <td>
-                                        <table width="990" border="1" cellpadding="0" cellspacing="0" class="texto2">
-                                            <tr>
-                                                <td align="center" bgcolor="#CCCCCC"><strong>REF. </strong></td>
-                                                <td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>CURSO</strong></td>
-                                                <td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>MOD.</strong></td>
-                                                <td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>PRECIO/H</strong></td>
-                                                <td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>HORAS CURSO</strong></td>
-                                                <td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>TOTAL CURSO</strong></td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" valign="top"></td>
-                                                <td align="center" nowrap="nowrap">
-                                                    @Model.Curso.CursoNome
-                                                    <br />
-                                                </td>
-                                                <td align="center" nowrap="nowrap">&nbsp;&ldquo;T.F.&rdquo;</td>
-                                                <td align="center" nowrap="nowrap">7.5€</td>
-                                                <td align="center" nowrap="nowrap">
-                                                    30
-                                                    H
-                                                </td>
-                                                <td align="center" nowrap="nowrap">420€</td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br />
-                            <table width="1500" border="1" align="center" cellpadding="0" cellspacing="0" class="texto2">
-                                <tr>
-                                    <td width="117" align="center" bgcolor="#CCCCCC"><p align="center"><strong>NIF</strong></td>
-                                    <td width="501" align="center" bgcolor="#CCCCCC"><strong>Nombre</strong><strong></strong> <strong>Completo</strong></td>
-                                    <td width="286" align="center" bgcolor="#CCCCCC"><strong>Nº    Seguridad Social</strong></td>
-                                    <td width="141" align="center" bgcolor="#CCCCCC"><strong>Fecha    de Nacimiento</strong></td>
-                                    <td width="75" align="center" bgcolor="#CCCCCC"><strong>Sexo</strong></td>
-                                    <td width="50" align="center" bgcolor="#CCCCCC"><strong>Discap.</strong></td>
-                                    <td width="44" align="center" bgcolor="#CCCCCC"><strong>Área</strong></td>
-                                    <td width="92" align="center" bgcolor="#CCCCCC"><strong>Categor&iacute;a</strong></td>
-                                    <td width="105" align="center" bgcolor="#CCCCCC"><strong>G.    Cotización</strong></td>
-                                    <td width="67" align="center" bgcolor="#CCCCCC"><strong>Estudios</strong></td>
-                                </tr>
-                                @foreach (var item in Model.Trabajadores) {
-                                <tr>
-                                    <td width="117" align="center" height="30">@item.TrabajadorNif</td>
-                                    <td align="center">@item.TrabajadorNome</td>
-                                    <td width="286" align="center">@item.SeguridadSocial</td>
-                                    <td width="141" align="center">@item.FechaTrabajador</td>
-                                    <td width="75" align="center">M</td>
-                                    <td width="50" align="center">NO</td>
-                                    <td width="44" align="center"></td>
-                                    <td width="92" align="center"></td>
-                                    <td width="105" align="center">8</td>
-                                    <td width="67" align="center">BASICOS</td>
-                                </tr>
+	<div>
+		<table width="1503" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<table width="1503" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="1503" align="center">
+							<img width="250" height="100" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/tri2.PNG" />                                       <img width="216" height="100" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" />                                             <img width="126" height="100" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/euro.jpg" /><br />
+							<strong>
+								<br />
+								SOLICITUD  DE CURSO <br />
+								<br />
+								del @Model.Curso.Inicio.ToString("dd/MM/yyyy")
+								al @Model.Curso.Final.ToString("dd/MM/yyyy") del @DateTime.Now.Year
+								<br />
+								<br />
+							</strong>
+							<table width="1500" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td>
+										<table width="500" border="1" align="center" cellpadding="0" cellspacing="0" class="texto2">
+											<tr>
+												<td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>EMPRESA</strong></td>
+												<td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>CIF</strong></td>
+											</tr>
+											<tr>
+												<td align="center" nowrap="nowrap">@Model.Empresa.Nombre_Empresa</td>
+												<td align="center" nowrap="nowrap">@Model.Empresa.Nif</td>
+											</tr>
+										</table>
+									</td>
+									<td width="10">&nbsp;</td>
+									<td>
+										<table width="990" border="1" cellpadding="0" cellspacing="0" class="texto2">
+											<tr>
+												<td align="center" bgcolor="#CCCCCC"><strong>REF. </strong></td>
+												<td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>CURSO</strong></td>
+												<td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>MOD.</strong></td>
+												<td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>PRECIO/H</strong></td>
+												<td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>HORAS CURSO</strong></td>
+												<td align="center" nowrap="nowrap" bgcolor="#CCCCCC"><strong>TOTAL CURSO</strong></td>
+											</tr>
+											<tr>
+												<td align="center" valign="top"></td>
+												<td align="center" nowrap="nowrap">
+													@Model.Curso.CursoNome
+													<br />
+												</td>
+												<td align="center" nowrap="nowrap">&nbsp;&ldquo;T.F.&rdquo;</td>
+												<td align="center" nowrap="nowrap">7.5€</td>
+												<td align="center" nowrap="nowrap">
+													30
+													H
+												</td>
+												<td align="center" nowrap="nowrap">420€</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<br />
+							<table width="1500" border="1" align="center" cellpadding="0" cellspacing="0" class="texto2">
+								<tr>
+									<td width="117" align="center" bgcolor="#CCCCCC"><p align="center"><strong>NIF</strong></td>
+									<td width="501" align="center" bgcolor="#CCCCCC"><strong>Nombre</strong><strong></strong> <strong>Completo</strong></td>
+									<td width="286" align="center" bgcolor="#CCCCCC"><strong>Nº    Seguridad Social</strong></td>
+									<td width="141" align="center" bgcolor="#CCCCCC"><strong>Fecha    de Nacimiento</strong></td>
+									<td width="75" align="center" bgcolor="#CCCCCC"><strong>Sexo</strong></td>
+									<td width="50" align="center" bgcolor="#CCCCCC"><strong>Discap.</strong></td>
+									<td width="44" align="center" bgcolor="#CCCCCC"><strong>Área</strong></td>
+									<td width="92" align="center" bgcolor="#CCCCCC"><strong>Categor&iacute;a</strong></td>
+									<td width="105" align="center" bgcolor="#CCCCCC"><strong>G.    Cotización</strong></td>
+									<td width="67" align="center" bgcolor="#CCCCCC"><strong>Estudios</strong></td>
+								</tr>
+								@foreach (var item in Model.Trabajadores) {
+								<tr>
+									<td width="117" align="center" height="30">@item.TrabajadorNif</td>
+									<td align="center">@item.TrabajadorNome</td>
+									<td width="286" align="center">@item.SeguridadSocial</td>
+									<td width="141" align="center">@item.FechaTrabajador</td>
+									<td width="75" align="center">M</td>
+									<td width="50" align="center">NO</td>
+									<td width="44" align="center"></td>
+									<td width="92" align="center"></td>
+									<td width="105" align="center">8</td>
+									<td width="67" align="center">BASICOS</td>
+								</tr>
 
-                               }
-                            </table>
-                            <br />
-                            <table width="600" border="0" align="right" cellpadding="2" cellspacing="2" class="texto2">
-                                <tr>
-                                    <div style="text-align:right;">
-                                        <img src="https://s3.us-east-2.amazonaws.com/eurobrazil-formacion/storage/signaturas/<?=$fila2[" empresa"];?>.png"/>
-                                        <td align="center">FIRMA Y SELLO DEL  REPRESENTANTE LEGAL DE LA EMPRESA</td>
-                                    </div>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-                                        Fdo.  ­
-                                        <?=$fila2["nombre_representante"];?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center">En <?=$fila2["localidad"];?> a <?=$dia3;?> de <?=$mes3;?> del 2021    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-    </div>
+							   }
+							</table>
+							<br />
+							<table width="600" border="0" align="right" cellpadding="2" cellspacing="2" class="texto2">
+								<tr>
+									<div style="text-align:right;">
+										<img src="https://s3.us-east-2.amazonaws.com/eurobrazil-formacion/storage/signaturas/<?=$fila2[" empresa"];?>.png"/>
+										<td align="center">FIRMA Y SELLO DEL  REPRESENTANTE LEGAL DE LA EMPRESA</td>
+									</div>
+								</tr>
+								<tr>
+									<td align="center">
+										Fdo.  ­
+										@Model.Empresa.Nombrereprensentante
+									</td>
+								</tr>
+								<tr>
+									<td align="center">En @Model.Empresa.Localidad a @DateTime.Now.Day de @DateTime.Now.Month del @DateTime.Now.Year    </td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+	</div>
   
 </body>
 </html>

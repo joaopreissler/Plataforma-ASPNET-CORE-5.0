@@ -1,0 +1,500 @@
+﻿@model Plataforma.ViewModels.SolicitudCursoViewModel 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+
+    <title>Documento sin tÃ­tulo</title>
+
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<body>
+
+   @foreach (var item in Model.Trabajadores)
+   {
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0"
+           style="page-break-after: always">
+
+        <tr>
+
+            <td align="center">
+                <span class="texto"><strong>EXAMEN TIPO  TEST PARA EL CURSO: &quot;Prevencion de riesgos laborales&quot; @DateTime.Now.Year</strong></span><strong> </strong><br />
+
+
+
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>PARTICIPANTE </strong></td>
+
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <strong>
+                                <font color="#FFFFFF">
+
+                                    @item.TrabajadorNome
+
+                                </font>
+                            </strong>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>NIF    / NIE</strong></td>
+
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <font color="#FFFFFF">
+
+                                @item.TrabajadorNif
+
+                            </font>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>EMPRESA</strong></td>
+
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <font color="#FFFFFF">
+
+                               @Model.Empresa.Nombre_Empresa
+
+                            </font>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+
+                <p>&nbsp;</p>
+
+                <p>&nbsp;</p>
+
+                <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="texto">
+
+                    <tr>
+
+                        <td>
+                            <strong></strong>1.	Un fuego se puede extinguir por . . . <br>a)	Sofocaci&oacute;n e inhibici&oacute;n. <br />
+
+                            b)	Eliminaci&oacute;n, sofocaci&oacute;n, enfriamiento e inhibici&oacute;n. <br />
+
+                            c)	Eliminaci&oacute;n, enfriamiento e inhibici&oacute;n. <br />
+
+                            <br />
+
+                            2.	&iquest; A qu&eacute; se llama riesgo laboral? <br>a)	A la posibilidad de que ocurra un accidente. <br />
+
+                            b)	A la producci&oacute;n de un da&ntilde;o al medio-ambiente. <br />
+
+                            c)	A la posibilidad de que un trabajador sufra un da&ntilde;o. <br />
+
+                            d)	Al da&ntilde;o que ha sufrido un trabajador. <br />
+
+                            <br />
+
+                            3.	Una enfermedad profesional . . . <br>a)	Es un proceso r&aacute;pido de deterioro de la persona, debido a una exposici&oacute;n de alguna fuente contagiosa. <br />
+
+                            b)	Es un proceso de recuperaci&oacute;n de la persona debido a una enfermedad como consecuencia del trabajo. <br />
+
+                            c)	Es un proceso lento y progresivo de deterioro de la persona debido a una exposici&oacute;n de alguna fuente contagiosa. <br />
+
+                            d)	Todas las respuestas son ciertas. <br />
+
+                            <br />
+
+                            4.	Algunos principios de la acci&oacute;n preventiva pueden ser . . . <br>a)	Evitar los riesgos. <br />
+
+                            b)	Adaptar el trabajo a la persona. <br />
+
+                            c)	Tener en cuenta la evoluci&oacute;n de la t&eacute;cnica. <br />
+
+                            d)	Todas son ciertas. <br />
+
+                            <br />
+
+                            5.	&iquest; Qu&eacute; derechos tiene el empresario frente a los trabajadores en materia preventiva? <br>a)	Exigir a los trabajadores el cumplimiento de las medidas de prevenci&oacute;n establecidas. b)	Exigir al trabajador la formaci&oacute;n en materia de prevenci&oacute;n fuera de las horas de trabajo laboral. c)	Exigir a los trabajadores la reparaci&oacute;n de las m&aacute;quinas y elementos de trabajo. <br />
+
+                            <br />
+
+                            6.	Las lesiones de la piel producidas por objetos cortantes o punzantes , se denominan . . . <br>a)  Contusiones.     <br />
+
+                            b)  Golpes.     <br />
+
+                            c)  Heridas.     <br />
+
+                            d)  Fracturas. <br />
+
+                            <br />
+
+                            7.	A la actividad social organizada que permite conseguir unos objetivos y satisfacer unas necesidades, se le denomina . . .<br>a)  Producci&oacute;n.     <br />
+
+                            b)  Trabajo.     <br />
+
+                            c)  Mercado laboral.     <br />
+
+                            d)  Actividad laboral. <br />
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <p class="texto">EMPRESA ORGANIZADORA <img width="200" height="92" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" />      </p>
+
+                <p class="texto">&nbsp;</p>
+
+                <p class="texto" style="page-break-after: always;">
+                    <br />
+
+                    <br />
+
+                    <br />
+
+                </p>
+
+                <p class="texto">
+                    <br />
+
+                    <br />
+
+                </p>
+
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+
+                    <tr>
+
+                        <td>
+                            8.	Los EPI . . . <br>a)	Son los equipos de protecci&oacute;n para invidentes. <br />
+
+                            b)	Son las enfermedades personales internas. <br />
+
+                            c)	Son los equipos de protecci&oacute;n interna. <br />
+
+                            d)	Son los equipos de protecci&oacute;n individual. <br />
+
+                            <br />
+
+                            9.	Ante una hemorragia en una extremidad, lo primero que debemos hacer ser&aacute; . . . <br>a)	Un torniquete. <br />
+
+                            b)	Presi&oacute;n directa sobre el foco sangrante. <br />
+
+                            c)	Presionar en los puntos de compresi&oacute;n. <br />
+
+                            d)	Un vendaje compresivo por debajo de la hemorragia. <br />
+
+                            <br />
+
+                            10.	El accidente in itinere . . . <br>a)	Es el producido mientras vamos circulando en autob&uacute;s. <br />
+
+                            b)	Es el producido con nuestro veh&iacute;culo en fin de semana. <br />
+
+                            c)	Es el producido trabajando en la empresa. <br />
+
+                            d)	Es el producido al ir o volver del trabajo. <br />
+
+                            <br />
+
+                            11.	&iquest; Qu&eacute; tipos de estr&eacute;s t&eacute;rmicos existen? <br>a)	Por esfuerzos f&iacute;sicos y esfuerzos mentales. <br />
+
+                            b)	Por cargas de trabajo. <br />
+
+                            c)	Por fr&iacute;o y por calor. <br />
+
+                            d)	Todas son ciertas. <br />
+
+                            <br />
+
+                            12.	&iquest; Qu&eacute; medidas de prevenci&oacute;n pueden aplicarse en trabajos de limpieza de la cocina? <br>a)	Usar el equipo de protecci&oacute;n individual. <br />
+
+                            b)	Vigilar el tiempo m&aacute;ximo de exposici&oacute;n a productos. <br />
+
+                            c)	Prohibir fumar, beber o comer en zonas de riesgo biol&oacute;gico. <br />
+
+                            d)	Todas son ciertas.
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+
+
+
+                <p>&nbsp;</p>
+
+                <p>&nbsp;</p>
+
+                <p>
+                    <br />
+
+                    <br />
+
+                </p>
+
+                <table border="1" cellpadding="0" cellspacing="0" class="texto" style="margin-bottom: 80px">
+
+                    <tr>
+
+                        <td width="20" align="center">TEST</td>
+
+                        <td width="20" align="center">1</td>
+
+                        <td width="20" align="center">2</td>
+
+                        <td width="20" align="center">3</td>
+
+                        <td width="20" align="center">4</td>
+
+                        <td width="20" align="center">5</td>
+
+                        <td width="20" align="center">6</td>
+
+                        <td width="20" align="center">7</td>
+
+                        <td width="20" align="center">8</td>
+
+                        <td width="20" align="center">9</td>
+
+                        <td width="20" align="center">10</td>
+
+                        <td width="20" align="center">11</td>
+
+                        <td width="20" align="center">12</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="61" align="center">a</td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="61" align="center">b</td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="61" align="center">c</td>
+
+                        <td width="44" valign="top">&nbsp;</td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td width="61" align="center">d</td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                        <td width="44" valign="top"></td>
+
+                    </tr>
+
+                </table>
+
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+
+                    <tr>
+
+                        <td width="500" align="center">
+                            <table width="480" border="0" cellspacing="0" cellpadding="0">
+
+                                <tr>
+
+                                    <td width="406"><hr /></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center">Tutoria</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center">FRANCESC VILARO SALADELAFONT</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center">Tecnico superior en prevencion de riesgos laborales</td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                        <td width="500" align="center">
+                            <table width="450" border="0" cellspacing="0" cellpadding="0">
+
+                                <tr>
+
+                                    <td><hr /></td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center" style="padding-bottom: 20px">Firma del Alumno</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center" bgcolor="#0000ff">
+                                        <strong>
+                                            <font color="#FFFFFF">
+
+                                                <?=$fila["nombre"];?>
+
+                                            </font>
+                                        </strong>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td align="center">&nbsp;</td>
+
+                                </tr>
+
+                            </table>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td align="center" valign="middle">
+                            <br />
+
+                            <img width="200" height="92" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" /> EMPRESA ORGANIZADORA
+                        </td>
+
+                        <td>&nbsp;</td>
+
+                    </tr>
+
+                </table>
+            </td>
+
+        </tr>
+
+    </table>
+   }
+
+</body>
+
+</html>

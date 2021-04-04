@@ -1,0 +1,1028 @@
+﻿@model Plataforma.ViewModels.SolicitudCursoViewModel
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+
+
+    <title>Documento sin título</title>
+
+
+
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+
+
+   @foreach (var item in Model.Trabajadores)
+   {
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+
+
+
+        <tr>
+
+
+
+            <td align="center">
+                <span class="texto"><strong>EXAMEN TIPO  TEST PARA EL CURSO: &quot;Prevenci&oacute;n de riesgos laborales en la perruquer&iacute;a 2020"</span><br />
+
+
+
+                <br>
+
+
+
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+
+
+
+                    <tr>
+
+
+
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>PARTICIPANTE </strong></td>
+
+
+
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <strong>
+                                <font color="#FFFFFF">
+
+
+
+                                    @item.TrabajadorNome
+
+
+
+                                </font>
+                            </strong>
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>NIF/NIE</strong></td>
+
+
+
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <font color="#FFFFFF">
+
+
+
+                                @item.TrabajadorNif
+
+
+
+                            </font>
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>EMPRESA</strong></td>
+
+
+
+                        <td width="461" align="center" valign="top" bgcolor="#0000ff">
+                            <font color="#FFFFFF">
+
+
+
+                                @Model.Empresa.Nombre_Empresa
+
+
+
+                            </font>
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                </table>
+
+
+
+
+
+
+
+                <p>&nbsp;</p>
+
+
+
+                <p>&nbsp;</p>
+
+
+
+                <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="texto">
+
+
+
+                    <tr>
+
+
+
+                        <td>
+                            <strong></strong>1.	Una enfermedad profesional ...
+
+
+
+                            <br>a)	Es un proceso r&aacute;pido de deterioro de la persona, debido a una exposici&oacute;n de una fuente contagiosa. <br />
+
+
+
+                            b)    Es un proceso de recuperaci&oacute;n de la persona debido a una enfermedad como consecu&eacute;ncia del trabajo.<br />
+
+
+
+                            c)    Es un proceso lento y progresivo de deterioro de la persona debido a una exposici&oacute;n de alguna fuente contagiosa.<br />
+
+
+
+                            d) Todas las respuestas son ciertas. <br />
+
+
+
+                            <br />
+
+
+
+                            2.	El sill&oacute;n del cliente en una peluquer&iacute;a ...
+
+
+
+                            <br>a)	Debe ser r&iacute;jido y colocado a una altura de 50 cm. del suelo.<br />
+
+
+
+                            b)	Debe ser adaptable a la altura del cliente. <br />
+
+
+
+                            c)	Debe ser adaptable a la altura del trabajador para que trabaje con la espalda erguida. <br />
+
+
+
+                            d)	Ninguna respuesta es cierta. <br />
+
+
+
+                            <br />
+
+
+
+                            3.	Una enfermedad profesional . . .
+
+
+
+                            <br>a)	Utilizando guantes de l&aacute;tex. <br />
+
+
+
+                            b)	Utilizando guantes adecuados. <br />
+
+
+
+                            c)	No se deben utilizar guantes.<br />
+
+
+
+                            d)	Se har&aacute; siempre en posici&oacute;n sentado. <br />
+
+
+
+                            <br />
+
+
+
+                            4.	Entre los principios de la acci&oacute;n preventiva se encuentra ...
+
+
+
+                            <br>a) Evitar los riesgos.<br />
+
+
+
+                            b)	Adaptar el trabajo a la persona. <br />
+
+
+
+                            c)	Tener en cuenta la evoluci&oacute;n de la t&eacute;cnica. <br />
+
+
+
+                            d)	Todas son ciertas. <br />
+
+
+
+                            <br />
+
+
+
+                            5.	Las lesiones de la piel producidas por objetos cortantes o punzantes, se denominan ...
+
+
+
+                            <br>a)	 Contusiones. <br />
+
+
+
+                            b)	Golpes.     <br />
+
+
+
+                            c)    Heridas.	<br />
+
+
+
+                            d)  Fracturas <br />
+
+
+
+                            <br />
+
+
+
+                            6.	Si debemos utilizar el extintor de incendios, lo haremos ...<br />
+
+
+
+                            b)  No debemos utilizar nunca el extintor.     <br />
+
+
+
+                            c)  Orientando la manguera por encima de las llamas.     <br />
+
+
+
+                            d)  Siempre contra el viento.. <br />
+
+
+
+                            <br />
+
+
+
+                            7.	Si debemos colocar un elemento pesado en las estanterias de la peluquer&iacute;a,  d&oacute;nde lo colocaremos?
+
+
+
+                            <br>a)  Siempre en la parte m&aacute;s alta.     <br />
+
+
+
+                            b)   Siempre en la parte m&aacute;s baja.     <br />
+
+
+
+                            c)  No importa la altura, donde nos venga mejor.    <br />
+
+
+
+                            d)  En la parte media a la altura de los brazos. <br />
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                </table>
+
+
+
+                <p class="texto">EMPRESA ORGANIZADORA <img width="200" height="92" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" />      </p>
+
+
+
+                <p class="texto">&nbsp;</p>
+
+
+
+                <p class="texto">
+                    <br />
+
+
+
+                    <br />
+
+
+
+                    <br />
+
+
+
+                </p>
+
+
+
+                <p class="texto">
+                    <br />
+
+
+
+                    <br />
+
+
+
+                </p>
+
+
+
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+
+
+
+                    <tr>
+
+
+
+                        <td>
+                            8.    Los zapatos que debemos utilizar al trabajar de pie en un sal&oacute;n de belleza o peluquer&iacute;a, ser&aacute;n ...
+
+
+
+                            <br>a)	Lo m&aacute;s planos posible. <br />
+
+
+
+                            b)	Muy finos de suela y con tacón. <br />
+
+
+
+                            c)	Con un tac&oacute;n no muy alto y antideslizantes. <br />
+
+
+
+                            d)	Con un tac&oacute;n de 6 cm. y antideslizantes. <br />
+
+
+
+                            <br />
+
+
+
+                            9.    Qu&eacute; medidas de prevenci&oacute;n pueden aplicarse en los trabajos de limpieza de una peluquer&iacute;a?
+
+
+
+                            <br>a)	 Usar el equipo de protecci&oacute;n individual. <br />
+
+
+
+                            b)	Vigilar el tiempo máximo de exposici&oacute;n a productos. <br />
+
+
+
+                            c)	Prohibido fumar, beber o comer en zonas de riesgo biol&oacute;gico. <br />
+
+
+
+                            d)	Todas las respuestas son ciertas. <br />
+
+
+
+                            <br />
+
+
+
+                            10.	Qu&eacute; tipos de estr&eacute;s t&eacute;rmicos existen?
+
+
+
+                            <br>a)	Por esfuerzos f&iacute;sicos y esfuerzos mentales. <br />
+
+
+
+                            b)	Por cargas de trabajo. <br />
+
+
+
+                            c)	Por fr&iacute;o y por calor. <br />
+
+
+
+                            d)	Todas las respuestas son ciertas. <br />
+
+
+
+                            <br />
+
+
+
+                            11. Qu&eacute; problemas principales puede causar una herida de unas tijeras de corte de pelo?
+
+
+
+                            <br>a)	 Infecci&oacute;n y hemorrágia. <br />
+
+
+
+                            b)	Hematomas. <br />
+
+
+
+                            c)	Flictemas. <br />
+
+
+
+                            d)	Hemorr&aacute;gias y quemaduras. <br />
+
+
+
+                            <br />
+
+
+
+                            12.   A qu&eacute; se llama riesgo laboral?
+
+
+
+                            <br>a)	 A la posibilidad de que ocurra un accidente. <br />
+
+
+
+                            b)	A la producci&oacute;n de un da&ntilde;o al medio-ambiente. <br />
+
+
+
+                            c)    A la posibilidad de que un trabajador sufra un da&ntilde;o. <br />
+
+
+
+                            d)	Al da&ntilde;o que ha sufrido un trabajador.
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                </table>
+
+
+
+
+
+
+
+
+
+
+
+                <p>&nbsp;</p>
+
+
+
+                <p>&nbsp;</p>
+
+
+
+                <p>
+                    <br />
+
+
+
+                    <br />
+
+
+
+                </p>
+
+
+
+                <table border="1" cellpadding="0" cellspacing="0" class="texto" style="margin-bottom: 80px">
+
+
+
+                    <tr>
+
+
+
+                        <td width="20" align="center">TEST</td>
+
+
+
+                        <td width="20" align="center">1</td>
+
+
+
+                        <td width="20" align="center">2</td>
+
+
+
+                        <td width="20" align="center">3</td>
+
+
+
+                        <td width="20" align="center">4</td>
+
+
+
+                        <td width="20" align="center">5</td>
+
+
+
+                        <td width="20" align="center">6</td>
+
+
+
+                        <td width="20" align="center">7</td>
+
+
+
+                        <td width="20" align="center">8</td>
+
+
+
+                        <td width="20" align="center">9</td>
+
+
+
+                        <td width="20" align="center">10</td>
+
+
+
+                        <td width="20" align="center">11</td>
+
+
+
+                        <td width="20" align="center">12</td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td width="61" align="center">a</td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td width="61" align="center">b</td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td width="61" align="center">c</td>
+
+
+
+                        <td width="44" valign="top">&nbsp;</td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td width="61" align="center">d</td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                        <td width="44" valign="top"></td>
+
+
+
+                    </tr>
+
+
+
+                </table>
+
+
+
+
+
+
+
+
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto" style="page-break-after: always;">
+
+
+
+                    <tr>
+
+
+
+                        <td width="500" align="center">
+                            <table width="480" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                                <tr>
+
+
+
+                                    <td width="406"><hr /></td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                    <td align="center">Tutoria</td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                    <td align="center">FRANCESC VILARO SALADELAFONT</td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                    <td align="center">Tecnico superior en prevencion de riesgos laborales</td>
+
+
+
+                                </tr>
+
+
+
+                            </table>
+                        </td>
+
+
+
+                        <td width="500" align="center" style="padding-bottom: 40px">
+                            <table width="450" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                                <tr>
+
+
+
+                                    <td><hr /></td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                    <td align="center">Firma del Alumno</td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                    <td align="center" bgcolor="#0000ff">
+                                        <strong>
+                                            <font color="#FFFFFF">
+
+
+
+                                                <?=$fila["nombre"];?>
+
+
+
+                                            </font>
+                                        </strong>
+                                    </td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                    <td align="center">&nbsp;</td>
+
+
+
+                                </tr>
+
+
+
+                            </table>
+                        </td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td align="center" valign="middle">
+                            <br />
+
+
+
+                            <img width="200" height="92" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" /> EMPRESA ORGANIZADORA
+                        </td>
+
+
+
+                        <td>&nbsp;</td>
+
+
+
+                    </tr>
+
+
+
+                </table>
+            </td>
+
+
+
+        </tr>
+
+
+
+    </table>
+   }
+
+
+</body>
+
+
+
+</html>

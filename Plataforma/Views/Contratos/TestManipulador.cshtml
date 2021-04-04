@@ -1,0 +1,304 @@
+﻿@model Plataforma.ViewModels.SolicitudCursoViewModel 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>TEST MANIPULADOR</title>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  @foreach(var item in Model.Trabajadores) { 
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" style="page-break-after: always;">
+        <tr>
+            <td align="center">
+                <p class="texto">
+                    <strong>EXAMEN TIPO  TEST PARA EL CURSO: &ldquo;Manipulacion Higiene y Seguridad Alimentaria&rdquo; @DateTime.Now.Year</strong>
+                    <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+                        <tr>
+                            <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>PARTICIPANTE </strong></td>
+                            <td width="461" align="center" valign="top" bgcolor="#0000ff"><strong><font color="#FFFFFF">@item.TrabajadorNome</font></strong></td>
+                        </tr>
+                        <tr>
+                            <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>NIF      /   NIE</strong></td>
+                            <td width="461" align="center" valign="top" bgcolor="#0000ff"><font color="#FFFFFF">@item.TrabajadorNif</font></td>
+                        </tr>
+                        <tr>
+                            <td width="115" align="center" valign="top" bgcolor="#CCCCCC"><strong>EMPRESA</strong></td>
+                            <td width="461" align="center" valign="top" bgcolor="#0000ff"><font color="#FFFFFF">@Model.Empresa.Nombre_Comercial</font></td>
+                        </tr>
+                    </table>
+                </p>
+                <p align="center">
+                    &nbsp;
+                    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="texto">
+                        <tr style="page-break-after: always">
+                            <td>
+                                1.- <strong>La mayor&iacute;a de microorganismos que provocan </strong><strong>enfermedades alimentarias</strong><strong>:</strong><br />
+                                a) crecen a temperaturas cercanas a 37ºC<br />
+                                b) pueden crecer entre 5ºC  y 45ºC<br />
+                                c) por debajo de 4ºC<br />
+                                d) a y b son correctas
+                                <br />
+                                <br />
+                                2.- <strong>Los manipuladores tienen la  obligación de:</strong><br />
+                                a) llevar ropa de calle<br />
+                                b) recibir formación de higiene alimentaria<br />
+                                c) ir muy maquillado al trabajo<br />
+                                d) todas son correctas
+                                <br />
+                                <br />
+                                3.- <strong>Se considera un alimento no seguro cuando:</strong><br />
+                                a) sea comercializado<br />
+                                b) sea nocivo para la salud<br />
+                                c) sea apto para el consumo<br />
+                                d) b y c son correctas
+                                <strong>
+                                    <br />
+                                    <br />
+                                    4.- Los alimentos se pueden alterar de manera:
+                                </strong><br />
+                                a) qu&iacute;mica<br />
+                                b) f&iacute;sica<br />
+                                c) biológica<br />
+                                d) todas son correctas
+                                <br />
+                                <br />
+                                <strong>5.-</strong> <strong>Qué tipos  de alimentos pueden favorecer el crecimiento de</strong><strong> bacteriano:</strong><br />
+                                a) alimento alto en prote&iacute;nas<br />
+                                b) alimento con acidez neutra<br />
+                                c) alimento con un alto contenido de humedad<br />
+                                d) todas son correctas
+                                <br />
+                                <br />
+                                <strong>6.- Los s&iacute;ntomas m&aacute;s  comunes de una enfermedad causada por contaminación alimentaria son:</strong><br />
+                                a) n&aacute;useas<br />
+                                b) vómitos<br />
+                                c) diarreas<br />
+                                d) todas son correctas
+                                <strong>
+                                    <br />
+                                    <br />
+                                    7.- Unos h&aacute;bitos correctos  de higiene en el trabajo son:
+                                </strong><br />
+                                a) llevar pendientes<br />
+                                b) masticar chicle<br />
+                                c) fumar mientras se trabaja<br />
+                                d) evitar llevar maquillaje
+                                <strong>
+                                    <br />
+                                    <br />
+                                    8.- Que paso NO es  correcto en la limpieza de manos:
+                                </strong><br />
+                                a) utilizar jabón bactericida<br />
+                                b) utilizar agua fr&iacute;a<br />
+                                c) lavarse las manos hasta los codos<br />
+                                d) secarse las manos con toallas de un solo uso o aire.
+                                <strong>
+                                    <br />
+                                    <br />
+                                    9.- Para una buena conservación de los alimentos  es
+                                </strong><strong>necesario:</strong><br />
+                                a) evitar la contaminación de recipientes y utensilios<br />
+                                b) crear condiciones desfavorables para el crecimiento bacteriano<br />
+                                c) evitar que lleguen al alimento el menor n&uacute;mero de bacterias<br />
+                                d) todas son correctas
+                                <strong>
+                                    <br />
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                    <br />
+                    <br />
+                </p>
+                <table width="1000" border="1" cellspacing="0" cellpadding="0" style="page-break-before: always;">
+                    <tr>
+                        <td align="center" bgcolor="#0000ff" class="texto"><strong><font color="#FFFFFF"><?=$dados["nombre"];?></font></strong></td>
+                    </tr>
+                </table>
+                <br />
+                <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="texto">
+                    <tr>
+                        <td>
+                            <p>
+                                <strong>10.-Algunos métodos para conservar alimentos son:</strong> <br />
+                                a) salmuera<br />
+                                b) enlatado<br />
+                                c) envasado al vac&iacute;o<br />
+                                d) todas son correctas <strong>
+                                    <br />
+                                    <br />
+                                    11.-
+                                </strong> <strong>Tener un  plan de limpieza y desinfección es importante </strong><strong>para:</strong><br />
+                                a) evitar la contaminación cruzada<br />
+                                b) eliminar los residuos<br />
+                                c) para dejar los alimentos en el suelo<br />
+                                d) a y b son correctas<br />
+                                <br />
+                                <strong>12.-</strong> <strong>Las  ventajas de tener un plan de APPCC son:</strong><br />
+                                a) método preventivo<br />
+                                b) se aplica a toda la cadena alimentaria<br />
+                                c) es flexible porque se adapta a todo tipo de empresa alimentaria<br />
+                                d) todas son correctas
+                                <strong>
+                                    <br />
+                                    <br />
+                                </strong><strong>
+                                    <br />
+                                </strong>
+                            </p>
+                            <p>&nbsp;</p>
+                        </td>
+                    </tr>
+                </table>
+                &nbsp;
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>
+                    <strong>&nbsp;</strong><br />
+                </p>
+                <table border="1" align="center" cellpadding="0" cellspacing="0" class="texto">
+                    <tr>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">1</td>
+                        <td width="32" valign="top">2</td>
+                        <td width="32" valign="top">3</td>
+                        <td width="32" valign="top">4</td>
+                        <td width="32" valign="top">5</td>
+                        <td width="32" valign="top">6</td>
+                        <td width="32" valign="top">7</td>
+                        <td width="32" valign="top">8</td>
+                        <td width="32" valign="top">9</td>
+                        <td width="38" valign="top">10</td>
+                        <td width="38" valign="top">11</td>
+                        <td width="38" valign="top">12</td>
+                    </tr>
+                    <tr>
+                        <td width="32" valign="top">a</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="32" valign="top">b</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="32" valign="top">c</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="32" valign="top">d</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="32" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                        <td width="38" valign="top">&nbsp;</td>
+                    </tr>
+                </table>
+                <p>
+                    <br />
+                    &nbsp;<span class="texto">
+                        OBSERVACIONES
+                    </span> &nbsp;
+                </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>
+                    &nbsp;
+                    &nbsp;
+                </p>
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+                    <tr>
+                        <td width="500" align="center">
+                            <table width="450" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="406"><hr /></td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Tutoria</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">FRANCESC VILARÓ SALADEFONT</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" Técnico=Técnico en=en Manipulación=Manipulación de=de Alimentos=Alimentos></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="500" align="center">
+                            <table width="450" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td><hr /></td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Firma del Alumno</td>
+                                </tr>
+                                <tr>
+                                    <td align="center" bgcolor="#0000ff"><strong><font color="#FFFFFF"><?=$fila["nombre"];?></font></strong></td>
+                                </tr>
+                                <tr>
+                                    <td align="center">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle">
+                            <br />
+                            <img width="200" height="92" src="https://eurobrazil-formacion.s3.us-east-2.amazonaws.com/storage/Imagens/EBR-.jpg" /> EMPRESA ORGANIZADORA
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+   }
+</body>
+</html>
