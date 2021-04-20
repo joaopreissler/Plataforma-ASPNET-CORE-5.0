@@ -23,35 +23,40 @@ namespace Plataforma.Controllers
         }
 
         // GET: Empresas
+        [AllowAnonymous]
         public IActionResult Index(int anos)
         {
+            
             if (anos == 0)
             {
                 DateTime mydate = DateTime.Now;
                 anos = mydate.Year;
+                
             }
-            var queryanos = (from c in _context.Empresa select new anos { ano = c.ano}).Distinct();
+            var queryanos = (from c in _context.Empresa select new Anos { ano = c.ano}).Distinct().ToList();
               
             var queryEnero = (from c in _context.Empresa
                          let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
                          where c.Idcurso.Equals(1) where c.ano.Equals(anos)
                               select new teste{
-                            Nombre_Empresa = c.Nombre_Empresa.Replace(" ",""),
+                            Nombre_Empresa = c.Nombre_Empresa,
                             Nombre_Comercial = c.Nombre_Comercial,
                             Nif = c.Nif,
                             Final = variable,
-                            Id = c.Id
+                            Id = c.Id,
+                            venta = c.venta
                         }).ToList();
             var queryFebrero = (from c in _context.Empresa
                               let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
                               where c.Idcurso.Equals(2) where c.ano.Equals(anos)
                               select new teste
                               {
-                                  Nombre_Empresa = c.Nombre_Empresa.Replace(" ", ""),
+                                  Nombre_Empresa = c.Nombre_Empresa,
                                   Nombre_Comercial = c.Nombre_Comercial,
                                   Nif = c.Nif,
                                   Final = variable,
-                                  Id = c.Id
+                                  Id = c.Id,
+                                  venta = c.venta
                               }).ToList();
 
             /*
@@ -66,10 +71,10 @@ namespace Plataforma.Controllers
 
             EmpresasIndexViewModel empresas = new EmpresasIndexViewModel()
             {
-                anos = (IEnumerable<anos>)queryanos,
+                anos = queryanos,
                 Enero = queryEnero,
-                Febrero = queryFebrero
-                
+                Febrero = queryFebrero,
+                anoatual = anos                
             };
             return View(empresas);
         }
@@ -307,83 +312,143 @@ namespace Plataforma.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult InsertarEmpresaAno(EmpresaanoViewModel obj)
         {
-            var empresas = (from a in _context.Empresa
+
+            if (ModelState.IsValid)
+            {
+                var empresas = (from a in _context.Empresa
                                 where a.Id.Equals(obj.EmpresaId)
                                 select a).FirstOrDefault();
-            var trabajadores = (from a in _context.Trabajadores
-                            where a.IdEmpresa.Equals(obj.EmpresaId)
-                            where a.AnoTrabajador.Equals(empresas.ano)
-                            where a.Mestrabajador.Equals(empresas.Idcurso)
-                            select a).ToList();
+                var trabajadores = (from a in _context.Trabajadores
+                                    where a.IdEmpresa.Equals(obj.EmpresaId)
+                                    where a.AnoTrabajador.Equals(empresas.ano)
+                                    where a.Mestrabajador.Equals(empresas.Idcurso)
+                                    select a).ToList();
 
-            Empresa empresa = new Empresa()
-            {
-               Nombre_Empresa = empresas.Nombre_Empresa,
-               Nombre_Comercial = empresas.Nombre_Comercial,
-               Nif = empresas.Nif,
-               Direccion = empresas.Direccion,
-               Cp = empresas.Cp,
-               Provincia = empresas.Provincia,
-               Localidad = empresas.Localidad,
-               DireccionComercial = empresas.DireccionComercial,
-               CPComercial = empresas.CPComercial,
-               ProvinciaComercial = empresas.ProvinciaComercial,
-               LocalidadComercial = empresas.LocalidadComercial,
-               Telefono = empresas.Telefono,
-               email = empresas.email,
-               CuentaCotizacion = empresas.CuentaCotizacion,
-               sector = empresas.sector,
-               convenio = empresas.convenio,
-               actividadprincial = empresas.actividadprincial,
-               CNAE = empresas.CNAE,
-               Representacionlegal = empresas.Representacionlegal,
-               nuevacreacion = empresas.nuevacreacion,
-               creditodisponible = empresas.creditodisponible,
-               Banco = empresas.Banco,
-               Cuenta = empresas.Cuenta,
-               creacion = empresas.creacion,
-               venta = empresas.venta,
-               Nombrereprensentante = empresas.Nombrereprensentante,
-               Generorepresentante = empresas.Generorepresentante,
-               nifrepresentante = empresas.nifrepresentante,
-               Fechafirma = empresas.Fechafirma,
-               nombregestoria = empresas.nombregestoria,
-               contatogestoria = empresas.contatogestoria,
-               emailgestoria = empresas.emailgestoria,
-               telefonogestoria = empresas.telefonogestoria,
-               ano = obj.Ano,
-               Idcurso = obj.mes
-
-            };
-            _context.Empresa.Add(empresa);
-            _context.SaveChanges();
-
-            var nuevaempresa = (from a in _context.Empresa
-                            where a.ano.Equals(obj.Ano)
-                            where a.Idcurso.Equals(obj.mes)
-                            orderby a.Id
-                            select a).LastOrDefault();
-            foreach (var item in trabajadores) 
-            {
-                Trabajadores trabajador = new Trabajadores
+                Empresa empresa = new Empresa()
                 {
-                    TrabajadorNome = item.TrabajadorNome,
-                    TrabajadorNif = item.TrabajadorNif,
-                    IdEmpresa = nuevaempresa.Id,
-                    Fundae = item.Fundae,
-                    SeguridadSocial = item.SeguridadSocial,
-                    FechaTrabajador = item.FechaTrabajador,
-                    Trabajadortipo = item.Trabajadortipo,
-                    TrabajadorAlta = item.TrabajadorAlta,
-                    AnoTrabajador = obj.Ano,
-                    Mestrabajador = obj.mes
-                };
-                _context.Trabajadores.Add(trabajador);
-                _context.SaveChanges();
-            }
-            return View();
-        }
+                    Nombre_Empresa = empresas.Nombre_Empresa,
+                    Nombre_Comercial = empresas.Nombre_Comercial,
+                    Nif = empresas.Nif,
+                    Direccion = empresas.Direccion,
+                    Cp = empresas.Cp,
+                    Provincia = empresas.Provincia,
+                    Localidad = empresas.Localidad,
+                    DireccionComercial = empresas.DireccionComercial,
+                    CPComercial = empresas.CPComercial,
+                    ProvinciaComercial = empresas.ProvinciaComercial,
+                    LocalidadComercial = empresas.LocalidadComercial,
+                    Telefono = empresas.Telefono,
+                    email = empresas.email,
+                    CuentaCotizacion = empresas.CuentaCotizacion,
+                    sector = empresas.sector,
+                    convenio = empresas.convenio,
+                    actividadprincial = empresas.actividadprincial,
+                    CNAE = empresas.CNAE,
+                    Representacionlegal = empresas.Representacionlegal,
+                    nuevacreacion = empresas.nuevacreacion,
+                    creditodisponible = empresas.creditodisponible,
+                    Banco = empresas.Banco,
+                    Cuenta = empresas.Cuenta,
+                    creacion = empresas.creacion,
+                    venta = empresas.venta,
+                    Nombrereprensentante = empresas.Nombrereprensentante,
+                    Generorepresentante = empresas.Generorepresentante,
+                    nifrepresentante = empresas.nifrepresentante,
+                    Fechafirma = empresas.Fechafirma,
+                    nombregestoria = empresas.nombregestoria,
+                    contatogestoria = empresas.contatogestoria,
+                    emailgestoria = empresas.emailgestoria,
+                    telefonogestoria = empresas.telefonogestoria,
+                    ano = obj.Ano,
+                    Idcurso = obj.mes
 
+                };
+                _context.Empresa.Add(empresa);
+                _context.SaveChanges();
+
+                var nuevaempresa = (from a in _context.Empresa
+                                    where a.ano.Equals(obj.Ano)
+                                    where a.Idcurso.Equals(obj.mes)
+                                    orderby a.Id
+                                    select a).LastOrDefault();
+                foreach (var item in trabajadores)
+                {
+                    Trabajadores trabajador = new Trabajadores
+                    {
+                        TrabajadorNome = item.TrabajadorNome,
+                        TrabajadorNif = item.TrabajadorNif,
+                        IdEmpresa = nuevaempresa.Id,
+                        Fundae = item.Fundae,
+                        SeguridadSocial = item.SeguridadSocial,
+                        FechaTrabajador = item.FechaTrabajador,
+                        Trabajadortipo = item.Trabajadortipo,
+                        TrabajadorAlta = item.TrabajadorAlta,
+                        AnoTrabajador = obj.Ano,
+                        Mestrabajador = obj.mes
+                    };
+                    _context.Trabajadores.Add(trabajador);
+                    _context.SaveChanges();
+                }
+                return RedirectToAction("Index");
+            }
+            return View("Empresaano", obj);
+        }
+        public IActionResult Editar(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                              where a.Id.Equals(id)
+                              select a).FirstOrDefault();
+            return View(empresa);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Editar(int id, Empresa obj)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+
+
+            empresa.Nombre_Empresa = obj.Nombre_Empresa;
+                empresa.Nombre_Comercial = obj.Nombre_Comercial;
+                empresa.Nif = obj.Nif;
+                empresa.Direccion = obj.Direccion;
+                empresa.Cp = obj.Cp;
+                empresa.Provincia = obj.Provincia;
+                empresa.Localidad = obj.Localidad;
+                empresa.DireccionComercial = obj.DireccionComercial;
+                empresa.CPComercial = obj.CPComercial;
+                empresa.ProvinciaComercial = obj.ProvinciaComercial;
+                empresa.LocalidadComercial = obj.LocalidadComercial;
+                empresa.Telefono = obj.Telefono;
+                empresa.email = obj.email;
+                empresa.CuentaCotizacion = obj.CuentaCotizacion;
+                empresa.sector = obj.sector;
+                empresa.convenio = obj.convenio;
+                empresa.actividadprincial = obj.actividadprincial;
+                empresa.CNAE = obj.CNAE;
+                empresa.Representacionlegal = obj.Representacionlegal;
+                empresa.nuevacreacion = obj.nuevacreacion;
+                empresa.creditodisponible = obj.creditodisponible;
+                empresa.Banco = obj.Banco;
+                empresa.Cuenta = obj.Cuenta;
+                empresa.creacion = obj.creacion;
+                empresa.venta = obj.venta;
+                empresa.Nombrereprensentante = obj.Nombrereprensentante;
+                empresa.Generorepresentante = obj.Generorepresentante;
+                empresa.nifrepresentante = obj.nifrepresentante;
+                empresa.Fechafirma = obj.Fechafirma;
+                empresa.nombregestoria = obj.nombregestoria;
+                empresa.contatogestoria = obj.contatogestoria;
+                empresa.emailgestoria = obj.emailgestoria;
+                empresa.telefonogestoria = obj.telefonogestoria;
+               
+
+            
+            
+            _context.SaveChanges();
+            return View(empresa);
+        }
     }
     
 }

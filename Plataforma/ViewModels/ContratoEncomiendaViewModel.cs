@@ -20,5 +20,7 @@ namespace Plataforma.ViewModels
         public Empresa Empresas;
         public autonomo Autonomo;
 
+        public IEnumerable<Trabajadores> trabajadores;
+
     }
 }

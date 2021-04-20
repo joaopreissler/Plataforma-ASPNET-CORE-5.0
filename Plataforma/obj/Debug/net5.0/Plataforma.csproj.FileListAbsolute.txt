@@ -146,7 +146,6 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\Create.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\Delete.cshtml.g.cs
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\Details.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\Index.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\Edit.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Plataforma.StaticWebAssets.xml
@@ -216,3 +215,6 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\TestPeluqueria.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\CertificadoCat.cshtml.g.cs
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\CertificadoCas.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Empresas\Editar.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\lopd.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\Renovacion.cshtml.g.cs

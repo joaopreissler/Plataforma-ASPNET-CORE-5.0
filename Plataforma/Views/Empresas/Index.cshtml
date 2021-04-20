@@ -5,16 +5,24 @@
 }
 
 <div style="display:flex;justify-content:space-between">
-    <h1>Empresas participantes</h1>
-    <form method="post" asp-action="Index" class="form-select">
-        <div >
-            <select asp-for="anos" name="anos" style="height: 23px;">
+    <h1>Empresas participantes - @Model.anoatual</h1>
+    
+    <form method="post" asp-action="Index" >
+        
+            <!select asp-for="anos" name="anos" id="mytable" selected="@Model.anoatual">
                 @foreach (var item in Model.anos)
                 {
+                    if (Model.anoatual == @item.ano)
+                    {
+                    <option value="@item.ano" selected>@item.ano</option>
+                    }
+                    else
+                    {
                     <option value="@item.ano">@item.ano</option>
+                    }
                 }
-            </select>
-        </div>
+            </!select>
+        
         <input type="submit" class="btn btn-info " value="Cambiar Año" style="height: 40px"/>
     </form>
 </div>
@@ -42,12 +50,14 @@
         </thead>
     <tbody>
         <h2>Enero</h2>
+        @{ var numero = 0;}
         @foreach (var item in Model.Enero)
         {
+            numero++;
+            <tr class="@item.Nif">
 
-            <tr class="@item.Nombre_Empresa">
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                    E-@numero @Html.DisplayFor(modelItem => item.Nombre_Empresa)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nombre_Comercial)
@@ -59,15 +69,15 @@
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    
+
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)))
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
             {
                 <style>
-                .@item.Nombre_Empresa {
+                .@item.Nif {
                     background-color: coral;
                 }
                 </style>
@@ -76,11 +86,20 @@
             else
             {
                 <style>
-                    .@item.Nombre_Empresa {
+                    .@item.Nif {
                         background-color: darkseagreen;
                     }
                 </style>
-                
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
             }
         }
     </tbody>
@@ -105,11 +124,13 @@
     </thead>
     <tbody>
         <h2>Febrero</h2>
+        @{var numero2 = 0; }
         @foreach (var item in Model.Febrero)
         {
-
-            <tr class="@item.Nombre_Empresa">
+            numero2++;
+            <tr class="@item.Nif">
                 <td>
+                    F-@numero2
                     @Html.DisplayFor(modelItem => item.Nombre_Empresa)
                 </td>
                 <td>
@@ -122,16 +143,16 @@
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    
+
 
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)))
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
             {
                 <style>
-                .@item.Nombre_Empresa {
+                .@item.Nif {
                     background-color: coral;
                 }
                 </style>
@@ -140,13 +161,26 @@
             else
             {
                 <style>
-                    .@item.Nombre_Empresa {
+                    .@item.Nif {
                         background-color: darkseagreen;
                     }
                 </style>
-                
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
             }
         }
     </tbody>
     
 </table>
+
+<script>
+
+</script>

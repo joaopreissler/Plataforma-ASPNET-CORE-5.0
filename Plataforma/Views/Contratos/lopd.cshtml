@@ -1,0 +1,518 @@
+﻿@model Plataforma.ViewModels.ContratoEncomiendaViewModel 
+<style>
+   
+.contenedor{
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.texto-encima{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.responsable{
+	position: fixed;
+	text-align:left;
+	top: 56%;
+	left: 24%;
+	transform: translate(-50%, -50%);
+	font-family: Calibri;
+	font-size: 21pt;
+}
+.derechos{
+	position: fixed;
+	text-align:left;
+	top: 72%;
+	left: 24%;
+	transform: translate(-50%, -50%);
+	font-family:Calibri;
+	font-size:21pt;
+}
+.infor{
+	position: absolute;
+	text-align:left;
+	top: 88%;
+	left: 10%;
+	transform: translate(-50%, -50%);
+	font-family:Calibri;
+	font-size:21pt;
+}
+/* CSS Document */
+
+</style>    
+<div class="row justify-content-md-center white shadow">
+		<div class="col">
+			<form method="POST" action="save_lopd.php">
+
+				
+				<br><h3>@Model.Empresas.Nombre_Comercial</h3>     <br><br>
+				<div class="pregunta">
+					<h3><strong><u> Datos de la empresa </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> CIF Empresa: </h6>
+					<input class="form-control" type="text" name="2" value="@Model.Empresas.Nif">
+
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> Dirección Empresa: </h6>
+					<input class="form-control" type="text" name="3" value="@Model.Empresas.Direccion">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> CP Empresa: </h6>
+					<input class="form-control" type="text" name="4" value="@Model.Empresas.Cp">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Locales o sedes sociales (dirección): </h6>
+					<input class="form-control" type="text" name="5" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> Teléfono de contacto: </h6>
+					<input class="form-control" type="text" name="6" value="@Model.Empresas.Telefono">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> Correo Electrónico: </h6>
+					<input class="form-control" type="text" name="7" value=" @Model.Empresas.email">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Datos del representante </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> Nombre y apellidos del administrador o apoderado de la empresa: </h6>
+					<input class="form-control" type="text" name="9" value="@Model.Empresas.Representacionlegal">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> DNI del apoderado: </h6>
+					<input class="form-control" type="text" name="10" value="@Model.Empresas.nifrepresentante">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Correo Electrónico: </h6>
+					<input class="form-control" type="text" name="11" value="@Model.Empresas.emailgestoria">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Datos de la Persona Responsable RGPD </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> Nombre y apellidos: </h6>
+					<input class="form-control" type="text" name="13" value="@Model.Autonomo.TrabajadorNome">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> DNI del apoderado: </h6>
+					<input class="form-control" type="text" name="14" value="@Model.Autonomo.TrabajadorNif">
+
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Correo Electrónico: </h6>
+					<input class="form-control" type="text" name="15" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Presencia Online </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> URL de la WEB: </h6>
+					<input class="form-control" type="text" name="17" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> RRSS (Qué redes sociales tienes? Ex. Instagram, Facebook, Linkedin, Twitter...): </h6>
+					<input class="form-control" type="text" name="18" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Número de WhatsApp (Sólo si es uso profesional): </h6>
+					<input class="form-control" type="text" name="19" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Tiene e-commerce? (Tienda online). Escriba la URL: </h6>
+					<input class="form-control" type="text" name="20" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Tiene APP? (Nombre de la app): </h6>
+					<input class="form-control" type="text" name="21" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Empleados </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Numero de empleados: </h6>
+					<input class="form-control" type="text" name="23" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h6> DNI - Nombre completo - Correo Electrónico - Departamento o Función -  </h6>
+					<h6>Data de alta en la empresa</h6><h6>17/01/2021</h6>
+					@foreach (var item in Model.trabajadores){
+					<input class="form-control" type="text" name="24" value="@item.TrabajadorNif  @item.TrabajadorNome    @item.SeguridadSocial">
+					}
+				   
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Equipos y Dispositivos </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Numero de ordenadores: </h6>
+					<input class="form-control" type="text" name="26" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Tienen contraseña los ordenadores? </h6>
+					<input class="form-control" type="text" name="27" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Numero de teléfonos móviles: </h6>
+					<input class="form-control" type="text" name="28" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Tienen contraseña los móviles? </h6>
+					<input class="form-control" type="text" name="29" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Numero de tablets: </h6>
+					<input class="form-control" type="text" name="30" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Tienen contraseña las tablets? </h6>
+					<input class="form-control" type="text" name="31" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Numero de impresoras: </h6>
+					<input class="form-control" type="text" name="32" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Medios de Pago </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Dispone de datáfono / TPV físico o virtual? </h6>
+					<input class="form-control" type="text" name="34" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Numero de datáfonos / TPVS: </h6>
+					<input class="form-control" type="text" name="35" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Encargados de Tratamiento </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Trabaja con una Gestoría Laboral y/o Contable Fiscal? </h6>
+					<input class="form-control" type="text" name="37" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Encargado (Gestoría): </h6>
+					<input class="form-control" type="text" name="38" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Nombre y apellidos (Representante Gestoría): </h6>
+					<input class="form-control" type="text" name="39" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> NIF(Representante Gestoría): </h6>
+					<input class="form-control" type="text" name="40" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Donde trabaja. En su local, en mi local o por acceso remoto? </h6>
+					<input class="form-control" type="text" name="41" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Dirección de la gestoría: </h6>
+					<input class="form-control" type="text" name="42" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Trabaja con empresa de Mantenimiento Informático? </h6>
+					<input class="form-control" type="text" name="43" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Encargado (Informático): </h6>
+					<input class="form-control" type="text" name="44" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Nombre y apellido(Representante Informático): </h6>
+					<input class="form-control" type="text" name="45" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Nif(Representante Informático): </h6>
+					<input class="form-control" type="text" name="46" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Donde trabaja. En su local, en mi local o por acceso remoto? </h6>
+					<input class="form-control" type="text" name="47" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Dirección de la empresa informática: </h6>
+					<input class="form-control" type="text" name="48" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Ficheros de datos personales </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Trata datos de  CLIENTES, como nombre, teléfono, dirección, D.N.I, o similares? </h6>
+					<input class="form-control" type="text" name="50" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Determine el porcentaje aproximado de clientes particulares ( </h6>
+					<input class="form-control" type="text" name="51" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Cuales de estos documentos utiliza con sus clientes? (Tickets, Facturas, Recibos, Presupuestos, Contratos y Fichas): </h6>
+					<input class="form-control" type="text" name="52" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Utiliza la base de datos de clientes para remitirles información comercial? </h6>
+					<input class="form-control" type="text" name="53" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6>  ¿Tiene EMPLEADOS en cualquier régimen? </h6>
+					<input class="form-control" type="text" name="54" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Dispone de  sistema de VIDEOVIGILANCIA con grabación de imágenes? </h6>
+					<input class="form-control" type="text" name="55" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Qué sistema de VIDEOVIGILANCIA dispone?(Grabación de imagenes con alarma, cámaras disuasorias...) </h6>
+					<input class="form-control" type="text" name="56" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Dispone de los CURRÍCULUMS de sus empleados? </h6>
+					<input class="form-control" type="text" name="57" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Recaba datos de candidatos a empleado de modo habitual a través de CURRÍCULUMS? </h6>
+					<input class="form-control" type="text" name="58" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Dispone de algún servidor? </h6>
+					<input class="form-control" type="text" name="60" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Qué tipo de servidor utiliza? </h6>
+					<input class="form-control" type="text" name="61" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Internet </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Tiene internet en su local? </h6>
+					<input class="form-control" type="text" name="63" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Detalle el tipo de Router (ADSL, Fibra Óptica…): </h6>
+					<input class="form-control" type="text" name="64" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Tiene la wifi activa protegida con contraseña? </h6>
+					<input class="form-control" type="text" name="65" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Da acceso a los clientes a su red WIFI? </h6>
+					<input class="form-control" type="text" name="66" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+					<h3><strong><u> Medidas Físicas de Seguridad </u></strong></h3><h3>
+					</h3>
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> ¿Dónde archiva la documentación administrativa? (Armarios con/sin llave, cajoneras con/sin llave, sala aparte con/sin llave, domicilio particular, gestoria...) </h6>
+					<input class="form-control" type="text" name="68" value="">
+				</div>
+
+				<br><br>
+				<div class="pregunta">
+
+					<h6> Señale qué medidas dispone en su local ( Extintores, destructora de papel, alarma y persiana metálica): </h6>
+					<input class="form-control" type="text" name="69" value="">
+				</div>
+
+				<input type="hidden" name="anscounter" value="69">
+				<input type="hidden" name="cif" value="B61708178">
+				<br>
+
+			</form>
+		</div>
+	</div>

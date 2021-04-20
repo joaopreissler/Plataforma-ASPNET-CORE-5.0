@@ -302,7 +302,60 @@ namespace Plataforma.Controllers
 
             return View(datos);
         }
+        public IActionResult lopd(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var autonomo = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Autonomo" && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).SingleOrDefault();
+
+            ContratoEncomiendaViewModel datos = new ContratoEncomiendaViewModel()
+            {
+                Empresas = empresa,
+                Autonomo = new ContratoEncomiendaViewModel.autonomo()
+                {
+                    TrabajadorNome = autonomo.TrabajadorNome,
+                    TrabajadorNif = autonomo.TrabajadorNif
+                },
+
+                trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+        public IActionResult Renovacion(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var autonomo = (from a in _context.Trabajadores
+                            where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Autonomo" && a.AnoTrabajador.Equals(empresa.ano)
+                            select a).SingleOrDefault();
+
+            ContratoEncomiendaViewModel datos = new ContratoEncomiendaViewModel()
+            {
+                Empresas = empresa,
+                Autonomo = new ContratoEncomiendaViewModel.autonomo()
+                {
+                    TrabajadorNome = autonomo.TrabajadorNome,
+                    TrabajadorNif = autonomo.TrabajadorNif
+                },
+
+                trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
     }
+
 
 
 }

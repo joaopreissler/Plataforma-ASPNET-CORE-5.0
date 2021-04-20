@@ -9,7 +9,7 @@
     <div class="col-md-4">
         <form asp-action="InsertarEmpresaAno">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input asp-for="EmpresaId"  hidden value="@Model.EmpresaId"/>
+            <input asp-for="EmpresaId" hidden value="@Model.EmpresaId" />
             <div class="form-group">
                 <label asp-for="Ano" class="control-label"></label>
                 <input asp-for="Ano" class="form-control" />
@@ -17,11 +17,27 @@
             </div>
             <div class="form-group">
                 <label asp-for="mes" class="control-label"></label>
-                <input asp-for="mes" class="form-control" />
+                <select asp-for="mes" name="mes" id="mytable">
+
+                    <option value=1>Enero</option>
+                    <option value=2>Febrero</option>
+                    <option value=3>Marzo</option>
+                    <option value=4>Abril</option>
+                    <option value=5>Mayo</option>
+                    <option value=6>Junio</option>
+                    <option value=7>Julio</option>
+                    <option value=8>Agosto</option>
+                    <option value=9>Septiembre</option>
+                    <option value=10>Octubre</option>
+                    <option value=11>Noviembre</option>
+                    <option value=12>Deciembre</option>
+
+                </select>
                 <span asp-validation-for="mes" class="text-danger"></span>
             </div>
-
             
+
+
 
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

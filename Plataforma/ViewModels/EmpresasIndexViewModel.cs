@@ -12,9 +12,10 @@ namespace Plataforma.ViewModels
         public string Nif;
         public DateTime Final;
         public int Id;
+        public Boolean venta;
 
 }
-    public class anos
+    public class Anos
     {
         public int ano;
     }
@@ -32,6 +33,7 @@ namespace Plataforma.ViewModels
         public IEnumerable<teste> Outubro;
         public IEnumerable<teste> Novembro;
         public IEnumerable<teste> Dezembro;
-        public IEnumerable<anos> anos;
+        public IEnumerable<Anos> anos;
+        public int anoatual;
     }
 }
