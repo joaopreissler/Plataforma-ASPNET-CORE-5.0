@@ -88,6 +88,8 @@
                     </ul>
                 </div>
                 <a asp-controller="Contratos" asp-action="Renovacion" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Renovación</a>
+                <a asp-controller="Contratos" asp-action="TodosContratos" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Todos los Contractos</a>
+                <a asp-controller="Contratos" asp-action="prl" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Imprimir Curso</a>
             </div>
         </div>
     }
@@ -135,8 +137,8 @@
 
                 <tr>
                     <th>@item.CursoNome</th>
-                    <td>@item.Inicio</td>
-                    <td>@item.Final</td>
+                    <td>@item.Inicio.ToString("dd/MM/yyyy")</td>
+                    <td >@item.Final.ToString("dd/MM/yyyy")</td>
 
                 </tr>
             }

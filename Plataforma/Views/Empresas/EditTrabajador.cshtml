@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="FechaTrabajador" class="control-label"></label>
-                <input asp-for="FechaTrabajador" class="form-control" value="@Model.FechaTrabajador" />
+                <input asp-for="FechaTrabajador" class="form-control" value="@Model.FechaTrabajador.Date" type="date"/>
                 <span asp-validation-for="FechaTrabajador" class="text-danger"></span>
             </div>
             <div class="form-group">

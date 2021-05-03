@@ -140,6 +140,9 @@ namespace Plataforma.Migrations
                     b.Property<string>("sector")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("seguridad_social")
+                        .HasColumnType("int");
+
                     b.Property<string>("telefonogestoria")
                         .HasColumnType("nvarchar(max)");
 

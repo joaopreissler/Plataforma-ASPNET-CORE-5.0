@@ -35,12 +35,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="FechaTrabajador" class="control-label"></label>
-                <input asp-for="FechaTrabajador" class="form-control" />
+                <input asp-for="FechaTrabajador.Date" class="form-control" type="date"/>
                 <span asp-validation-for="FechaTrabajador" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Trabajadortipo" class="control-label"></label>
-                <input asp-for="Trabajadortipo" class="form-control" />
+                <select asp-for="Trabajadortipo">
+                    <option value="Autonomo">Autonomo</option>
+                    <option value="Trabajador">Trabajador</option>
+                    
+                </select>
                 <span asp-validation-for="Trabajadortipo" class="text-danger"></span>
             </div>
             <div class="form-group form-check">

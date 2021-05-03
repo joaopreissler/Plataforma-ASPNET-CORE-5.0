@@ -10,7 +10,7 @@ using Plataforma.Data;
 namespace Plataforma.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210310231152_addEmpresasToDatabase")]
+    [Migration("20210422172418_addEmpresasToDatabase")]
     partial class addEmpresasToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace Plataforma.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.3")
+                .HasAnnotation("ProductVersion", "5.0.4")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Plataforma.Models.Cursos", b =>
@@ -142,6 +142,9 @@ namespace Plataforma.Migrations
                     b.Property<string>("sector")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("seguridad_social")
+                        .HasColumnType("int");
+
                     b.Property<string>("telefonogestoria")
                         .HasColumnType("nvarchar(max)");
 
@@ -175,6 +178,48 @@ namespace Plataforma.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EmpresaCurso");
+                });
+
+            modelBuilder.Entity("Plataforma.Models.Trabajadores", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AnoTrabajador")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FechaTrabajador")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Fundae")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("IdEmpresa")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Mestrabajador")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SeguridadSocial")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TrabajadorAlta")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TrabajadorNif")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrabajadorNome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Trabajadortipo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Trabajadores");
                 });
 
             modelBuilder.Entity("Plataforma.ViewModels.EmpresasEditViewModel", b =>

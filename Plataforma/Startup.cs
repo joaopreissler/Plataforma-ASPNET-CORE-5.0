@@ -10,6 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Plataforma.Interface;
+using Plataforma.ViewModels;
+using Plataforma.Services;
 
 namespace Plataforma
 {
@@ -29,6 +32,7 @@ namespace Plataforma
             options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")
                 ));
+            services.AddScoped<Itest, Test>();
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddMvc()

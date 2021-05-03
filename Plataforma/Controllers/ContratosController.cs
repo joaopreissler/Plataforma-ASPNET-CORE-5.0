@@ -7,80 +7,86 @@ using System.Linq;
 using System.Threading.Tasks;
 using Plataforma.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using Plataforma.Interface;
 
 namespace Plataforma.Controllers
 {
     public class ContratosController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public ContratosController(ApplicationDbContext context)
+        private readonly Itest _test;
+        public ContratosController(ApplicationDbContext context, Itest test)
         {
             _context = context;
+            _test = test;
         }
         
         public IActionResult Index(int id)
         {
-            var empresas = (from a in _context.Empresa
-                         where a.Id.Equals(id)
-                         select a).FirstOrDefault();
-
-
-           
-          /*  var autonomo = (from a in _context.Trabajadores
-                            where a.Trabajadortipo.Equals("Autonomo") where a.IdEmpresa.Equals(empresas.Id)
-                            select a).FirstOrDefault();*/
-            Empresa empresa = new Empresa()
-            {
-                Nombre_Empresa = empresas.Nombre_Empresa,
-                Nombre_Comercial = empresas.Nombre_Comercial,
-                Nif = empresas.Nif,
-                Direccion = empresas.Direccion,
-                Cp = empresas.Cp,
-                Provincia = empresas.Provincia,
-                Localidad = empresas.Localidad,
-                DireccionComercial = empresas.DireccionComercial,
-                CPComercial = empresas.CPComercial,
-                ProvinciaComercial = empresas.ProvinciaComercial,
-                LocalidadComercial = empresas.LocalidadComercial,
-                Telefono = empresas.Telefono,
-                email = empresas.email,
-                CuentaCotizacion = empresas.CuentaCotizacion,
-                sector = empresas.sector,
-                convenio = empresas.convenio,
-                actividadprincial = empresas.actividadprincial,
-                CNAE = empresas.CNAE,
-                Representacionlegal = empresas.Representacionlegal,
-                nuevacreacion = empresas.nuevacreacion,
-                creditodisponible = empresas.creditodisponible,
-                Banco = empresas.Banco,
-                Cuenta = empresas.Cuenta,
-                creacion = empresas.creacion,
-                venta = empresas.venta,
-                Nombrereprensentante = empresas.Nombrereprensentante,
-                Generorepresentante = empresas.Generorepresentante,
-                nifrepresentante = empresas.nifrepresentante,
-                Fechafirma = empresas.Fechafirma,
-                nombregestoria = empresas.nombregestoria,
-                contatogestoria = empresas.contatogestoria,
-                emailgestoria = empresas.emailgestoria,
-                telefonogestoria = empresas.telefonogestoria,
-                ano = empresas.ano,
-                Idcurso = empresas.Idcurso
-
-            };
             
-            ContratoEncomiendaViewModel contratoencomienda = new ContratoEncomiendaViewModel()
-            {
-                Empresas = empresa/*,
+                var empresas = (from a in _context.Empresa
+                                where a.Id.Equals(id)
+                                select a).FirstOrDefault();
+
+
+
+                /*  var autonomo = (from a in _context.Trabajadores
+                                  where a.Trabajadortipo.Equals("Autonomo") where a.IdEmpresa.Equals(empresas.Id)
+                                  select a).FirstOrDefault();*/
+                Empresa empresa = new Empresa()
+                {
+                    Nombre_Empresa = empresas.Nombre_Empresa,
+                    Nombre_Comercial = empresas.Nombre_Comercial,
+                    Nif = empresas.Nif,
+                    Direccion = empresas.Direccion,
+                    Cp = empresas.Cp,
+                    Provincia = empresas.Provincia,
+                    Localidad = empresas.Localidad,
+                    DireccionComercial = empresas.DireccionComercial,
+                    CPComercial = empresas.CPComercial,
+                    ProvinciaComercial = empresas.ProvinciaComercial,
+                    LocalidadComercial = empresas.LocalidadComercial,
+                    Telefono = empresas.Telefono,
+                    email = empresas.email,
+                    CuentaCotizacion = empresas.CuentaCotizacion,
+                    sector = empresas.sector,
+                    convenio = empresas.convenio,
+                    actividadprincial = empresas.actividadprincial,
+                    CNAE = empresas.CNAE,
+                    Representacionlegal = empresas.Representacionlegal,
+                    nuevacreacion = empresas.nuevacreacion,
+                    creditodisponible = empresas.creditodisponible,
+                    Banco = empresas.Banco,
+                    Cuenta = empresas.Cuenta,
+                    creacion = empresas.creacion,
+                    venta = empresas.venta,
+                    Nombrereprensentante = empresas.Nombrereprensentante,
+                    Generorepresentante = empresas.Generorepresentante,
+                    nifrepresentante = empresas.nifrepresentante,
+                    Fechafirma = empresas.Fechafirma,
+                    nombregestoria = empresas.nombregestoria,
+                    contatogestoria = empresas.contatogestoria,
+                    emailgestoria = empresas.emailgestoria,
+                    telefonogestoria = empresas.telefonogestoria,
+                    ano = empresas.ano,
+                    Idcurso = empresas.Idcurso
+
+                };
+
+                ContratoEncomiendaViewModel contratoencomienda = new ContratoEncomiendaViewModel()
+                {
+                    Empresas = empresa/*,
                 Autonomo = new ContratoEncomiendaViewModel.autonomo()
                 {
                     TrabajadorNome = autonomo.TrabajadorNome,
                     TrabajadorNif = autonomo.TrabajadorNif
                 }*/
 
-            };
-            return View(contratoencomienda);
+                };
+                return View(contratoencomienda);
+
+
+                
         }
         public IActionResult Adhesion(int id)
         {
@@ -353,6 +359,52 @@ namespace Plataforma.Controllers
             };
 
             return View(datos);
+        }
+        public IActionResult TodosContratos(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa = empresa,
+                Curso = curso,
+
+                Trabajadores = trabajadores
+            };
+
+            return View(datos);
+        }
+         public async Task<ActionResult<SolicitudCursoViewModel>> prl(int id)
+        {
+            var empresa = await (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefaultAsync();
+            
+            var trabajadores = await (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToListAsync();
+            var curso = await (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefaultAsync();
+
+            SolicitudCursoViewModel datos = new SolicitudCursoViewModel()
+            {
+                Empresa =  empresa,
+                Curso =  curso,
+                Trabajadores =  trabajadores
+            };
+
+            return  View(datos);
         }
     }
 
