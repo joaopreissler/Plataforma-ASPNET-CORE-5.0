@@ -78,9 +78,9 @@ namespace Plataforma.Models
         public string emailgestoria { get; set; }
         
         public string telefonogestoria { get; set; }
-       
+       [Required]
         public int ano { get; set; }
-        
+       [Required]
         public int Idcurso { get; set; }
         
     }

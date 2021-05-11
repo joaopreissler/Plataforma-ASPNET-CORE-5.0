@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\EFSQLScripts\Plataforma.Data.ApplicationDbContext.sql" />
+  <dbfullsql path="C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\EFSQLScripts\Plataforma.Data.PlataformaContext.sql" />
+</sitemanifest>
