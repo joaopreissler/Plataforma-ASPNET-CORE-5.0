@@ -6,8 +6,9 @@
 <div style=" justify-content: space-between">
 
     @foreach (var item in Model.Empresas)
-    {
-        <a asp-action="AddTrabajador" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Añadir Trabajador</a>
+    { 
+    <div>    
+    <a asp-action="AddTrabajador" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Añadir Trabajador</a>
         <a asp-action="Empresaano" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Insertar empresa al otro año</a>
         <div style="display:flex;">
 
@@ -37,6 +38,8 @@
                     <tr><td>Email Gestoria</td><td>@item.emailgestoria</td></tr>
                 </tbody>
             </table>
+            @if (Model.Trabajadores.Count() > 0 || Model.Curso.Count() > 0)
+            {
             <div>
                 <div class="card" style="width: 18rem;">
                     <div class="card-header" style="        background-color: #17a2b8 !important;
@@ -91,9 +94,13 @@
                 <a asp-controller="Contratos" asp-action="TodosContratos" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Todos los Contractos</a>
                 <a asp-controller="Contratos" asp-action="prl" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Imprimir Curso</a>
             </div>
+            }
         </div>
-    }
+        </div>}
 
+        
+    
+    
 
     <form method="post" asp-action="Edit" style="max-width: 22rem; float: right;  margin-bottom: 10px; ">
 

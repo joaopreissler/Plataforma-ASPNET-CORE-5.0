@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOoMtKXGml0Gp3bSg4/N2cQAAAAACAAAAAAAQZgAAAAEAACAAAAAcm89DiYMnOaCarIVr0mEgb6pprJJNzoePS3h7fBp4/gAAAAAOgAAAAAIAACAAAABN2SKc8yRE5DGrG9+usJwc6hPSTXtmnDCScxA0tPDyEYAAAAChG9qsWpT6DaK4jVK6zoXlQSy2KMPjPJSzE6BOzlQqMseWTRwbr+g52LlnRpZXNUg7Kph+LF0F1jy0ueLfulB6XkkkqbQRsPTaokJYcfptO+1x7eGHRPSL54IDPAaIbeGUXRgOZ7MT5OvfwQKUwsPBnE8nKCSzoH9lFmmpkjZGqkAAAACQcXJk56iV+dWKv2HEaYs7R/Ylde/JLHS3mQIG49o6hTk0y9pEDU/RadCidQKbX6/hcGsCrk4jxD32UxYIxKOV</EncryptedPassword>
+    <History>True|2021-05-11T09:26:22.9459059Z;True|2021-05-10T13:25:57.6331859-03:00;True|2021-05-07T07:58:27.4245740-03:00;True|2021-05-07T07:56:09.8609090-03:00;True|2021-05-07T05:09:32.6268177-03:00;True|2021-05-06T05:45:45.5904926-03:00;True|2021-05-06T05:37:28.1764272-03:00;True|2021-05-06T05:30:55.0751257-03:00;False|2021-05-06T05:04:47.6007454-03:00;False|2021-05-06T04:53:28.5337276-03:00;False|2021-05-06T04:50:00.4894691-03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:plataformadbserver.database.windows.net,1433%3bInitial Catalog=Plataforma_db%3bUser Id=Eurobrazil%40plataformadbserver%3bPassword=petcat%242021</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Plataforma.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:plataformadbserver.database.windows.net,1433%3bInitial Catalog=Plataforma_db%3bUser Id=Eurobrazil%40plataformadbserver%3bPassword=petcat%242021</Value>
+    </EFMigrations>
+    <EFMigrations Include="Plataforma.Data.PlataformaContext">
+      <Value>Data Source=tcp:plataformadbserver.database.windows.net,1433%3bInitial Catalog=PlataformaIdentity_db%3bUser Id=Eurobrazil%40plataformadbserver%3bPassword=petcat%242021</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

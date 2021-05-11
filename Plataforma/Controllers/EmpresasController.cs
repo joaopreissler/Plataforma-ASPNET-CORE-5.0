@@ -66,7 +66,136 @@ namespace Plataforma.Controllers
                                          Id = c.Id,
                                          venta = c.venta
                                      }).ToListAsync();
-
+            var queryMarzo = await (from c in _context.Empresa
+                                      let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                      where c.Idcurso.Equals(3)
+                                      where c.ano.Equals(anos)
+                                      select new teste
+                                      {
+                                          Nombre_Empresa = c.Nombre_Empresa,
+                                          Nombre_Comercial = c.Nombre_Comercial,
+                                          Nif = c.Nif,
+                                          Final = variable,
+                                          Id = c.Id,
+                                          venta = c.venta
+                                      }).ToListAsync();
+            var queryAbril = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(4)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var queryMayo = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(5)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var queryJunio = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(6)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var queryJulio = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(7)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var queryAgosto = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(8)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var querySeptembro = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(9)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var queryOctubre = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(10)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var queryNoviembre = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(11)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
+            var queryDeciembre = await (from c in _context.Empresa
+                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
+                                    where c.Idcurso.Equals(12)
+                                    where c.ano.Equals(anos)
+                                    select new teste
+                                    {
+                                        Nombre_Empresa = c.Nombre_Empresa,
+                                        Nombre_Comercial = c.Nombre_Comercial,
+                                        Nif = c.Nif,
+                                        Final = variable,
+                                        Id = c.Id,
+                                        venta = c.venta
+                                    }).ToListAsync();
             /*
              * select Nombre_Empresa,Nombre_Comercial,Nif,Final from Plataforma.dbo.Empresa as B
              outer apply 
@@ -82,6 +211,16 @@ namespace Plataforma.Controllers
                 anos = queryanos,
                 Enero = queryEnero,
                 Febrero = queryFebrero,
+                Marzo = queryMarzo,
+                Abril = queryAbril,
+                Mayo = queryMayo,
+                Junio = queryJunio,
+                Julio = queryJulio,
+                Agosto = queryAgosto,
+                Setembro = querySeptembro,
+                Outubro = queryOctubre,
+                Novembro = queryNoviembre,
+                Dezembro = queryDeciembre,
                 anoatual = anos
             };
 
@@ -119,7 +258,7 @@ namespace Plataforma.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre_Empresa,Nombre_Comercial,Nif,Direccion,Cp,Provincia,Localidad,DireccionComercial,CPComercial,ProvinciaComercial,LocalidadComercial,Telefono,email,CuentaCotizacion,sector,convenio,actividadprincial,CNAE,Representacionlegal,nuevacreacion,creditodisponible,Banco,Cuenta,creacion,venta,Nombrereprensentante,Generorepresentante,nifrepresentante,Fechafirma,nombregestoria,contatogestoria,emailgestoria,telefonogestoria,ano")] Empresa empresa)
+        public async Task<IActionResult> Create(Empresa empresa)
         {
             if (ModelState.IsValid)
             {

@@ -142,9 +142,9 @@
 
 
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
 
 
                 </td>
@@ -181,6 +181,743 @@
     
 </table>
 
-<script>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
 
-</script>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Marzo</h2>
+        @{var numero3 = 0; }
+        @foreach (var item in Model.Marzo)
+        {
+            numero3++;
+            <tr class="@item.Nif">
+                <td>
+                    M-@numero3
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Abril</h2>
+        @{var numero4 = 0; }
+        @foreach (var item in Model.Abril)
+        {
+            numero4++;
+            <tr class="@item.Nif">
+                <td>
+                    AB-@numero4
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Mayo</h2>
+        @{var numero5 = 0; }
+        @foreach (var item in Model.Mayo)
+        {
+            numero5++;
+            <tr class="@item.Nif">
+                <td>
+                    MG-@numero5
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Junio</h2>
+        @{var numero6 = 0; }
+        @foreach (var item in Model.Junio)
+        {
+            numero6++;
+            <tr class="@item.Nif">
+                <td>
+                    JN-@numero6
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Julio</h2>
+        @{var numero7 = 0; }
+        @foreach (var item in Model.Julio)
+        {
+            numero7++;
+            <tr class="@item.Nif">
+                <td>
+                    JL-@numero7
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Agosto</h2>
+        @{var numero8 = 0; }
+        @foreach (var item in Model.Agosto)
+        {
+            numero8++;
+            <tr class="@item.Nif">
+                <td>
+                    AG-@numero8
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Septiembre</h2>
+        @{var numero9 = 0; }
+        @foreach (var item in Model.Setembro)
+        {
+            numero9++;
+            <tr class="@item.Nif">
+                <td>
+                    S-@numero9
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Octubre</h2>
+        @{var numero10 = 0; }
+        @foreach (var item in Model.Outubro)
+        {
+            numero10++;
+            <tr class="@item.Nif">
+                <td>
+                    O-@numero10
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Noviembre</h2>
+        @{var numero11 = 0; }
+        @foreach (var item in Model.Novembro)
+        {
+            numero11++;
+            <tr class="@item.Nif">
+                <td>
+                    N-@numero11
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre Empresa
+            </th>
+            <th>
+                Nombre Comercial
+            </th>
+            <th>
+                NIF
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <h2>Deciembre</h2>
+        @{var numero12 = 0; }
+        @foreach (var item in Model.Dezembro)
+        {
+            numero12++;
+            <tr class="@item.Nif">
+                <td>
+                    D-@numero12
+                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nif)
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+
+                </td>
+            </tr>
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            {
+                <style>
+                .@item.Nif {
+                    background-color: coral;
+                }
+                </style>
+
+            }
+            else
+            {
+                <style>
+                    .@item.Nif {
+                        background-color: darkseagreen;
+                    }
+                </style>
+
+            }
+            @if (item.venta == false)
+            {
+                <style>
+                    .@item.Nif {
+                        color: red;
+                        font-weight: 600;
+                    }
+                </style>
+            }
+        }
+    </tbody>
+
+</table>
