@@ -158,7 +158,7 @@ GO
 IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210506082656_FirstMigration')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20210506082656_FirstMigration', N'5.0.4');
+    VALUES (N'20210506082656_FirstMigration', N'5.0.6');
 END;
 GO
 

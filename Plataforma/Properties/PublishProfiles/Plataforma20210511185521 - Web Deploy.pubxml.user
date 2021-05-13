@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOoMtKXGml0Gp3bSg4/N2cQAAAAACAAAAAAAQZgAAAAEAACAAAADIhMouj2VXQVh/rLN/1PJP1KVtDlsECJdrMnCzFiRxiAAAAAAOgAAAAAIAACAAAAAmfAA1rYuyZB2Ks7CFPXKLscC2y/pfBFyAgF5hlku/7IAAAABp9hnC9REfiw63xNIrJ+S8G6OE2L6+pl5hwdL/Gxsv2lquspVVi5qp2dVuMSH2f8y8qsbzPvtAH5zgwJ5/nVNGsBraNAgEiuscKPgmotFQVuz095n/R3MclZxLBDdXXHyQknnsomgIcTODoS/NJP3gc2dBE8eaKF6qzR/I99yE/0AAAAC3m6OE5vzDp384s1NjzA6vC6QU2UEWEvMSOBETQjtcfkRzHkAT8Hx5AqnpcwochE3R8vTFx/YkkO+Jsz5sU5GH</EncryptedPassword>
+    <History>True|2021-05-12T19:11:42.2513107Z;False|2021-05-11T19:52:59.9879970-03:00;False|2021-05-11T19:22:25.3956619-03:00;False|2021-05-11T19:15:56.4131600-03:00;False|2021-05-11T19:13:35.9428424-03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:plataformadbserver.database.windows.net,1433%3bInitial Catalog=PlataformaIdentity_db%3bUser Id=Eurobrazil%40plataformadbserver%3bPassword=petcat%242021</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="Plataforma.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:plataformadbserver.database.windows.net,1433%3bInitial Catalog=PlataformaIdentity_db%3bUser Id=Eurobrazil%40plataformadbserver%3bPassword=petcat%242021</Value>
+    </EFMigrations>
+    <EFMigrations Include="Plataforma.Data.PlataformaContext">
+      <Value>Data Source=tcp:plataformadbserver.database.windows.net,1433%3bInitial Catalog=Plataforma_db%3bUser Id=Eurobrazil%40plataformadbserver%3bPassword=petcat%242021</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="Plataformaeurobrazil" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="Plataforma20210511185521" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\João\ Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\obj\\Release\\net5\.0\\win-x86\\PubTmp\\Out\\$" />
   </parameter>
-  <parameter name="Plataforma.Data.ApplicationDbContext" description="" value="Data Source=tcp:plataformadbserver.database.windows.net,1433;Initial Catalog=Plataforma_db;User Id=Eurobrazil@plataformadbserver;Password=petcat$2021" tags="dbfullsql">
+  <parameter name="Plataforma.Data.ApplicationDbContext" description="" value="Data Source=tcp:plataformadbserver.database.windows.net,1433;Initial Catalog=PlataformaIdentity_db;User Id=Eurobrazil@plataformadbserver;Password=petcat$2021" tags="dbfullsql">
     <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\João\ Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\obj\\Release\\net5\.0\\win-x86\\PubTmp\\EFSQLScripts\\Plataforma\.Data\.ApplicationDbContext\.sql$" />
   </parameter>
-  <parameter name="Plataforma.Data.PlataformaContext" description="" value="Data Source=tcp:plataformadbserver.database.windows.net,1433;Initial Catalog=PlataformaIdentity_db;User Id=Eurobrazil@plataformadbserver;Password=petcat$2021" tags="dbfullsql">
+  <parameter name="Plataforma.Data.PlataformaContext" description="" value="Data Source=tcp:plataformadbserver.database.windows.net,1433;Initial Catalog=Plataforma_db;User Id=Eurobrazil@plataformadbserver;Password=petcat$2021" tags="dbfullsql">
     <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\João\ Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\obj\\Release\\net5\.0\\win-x86\\PubTmp\\EFSQLScripts\\Plataforma\.Data\.PlataformaContext\.sql$" />
   </parameter>
 </parameters>

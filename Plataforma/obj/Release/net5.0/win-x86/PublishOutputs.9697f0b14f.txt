@@ -335,7 +335,7 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\hostfxr.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\hostpolicy.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\mscordaccore.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\mscordaccore_x86_x86_5.0.521.16609.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\mscordaccore_x86_x86_5.0.621.22011.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\mscordbi.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\mscorrc.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\ucrtbase.dll
@@ -471,7 +471,11 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\System.Security.Permissions.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\System.Windows.Extensions.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\aspnetcorev2_inprocess.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\EntityFramework.SqlServer.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\EntityFramework.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\Humanizer.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\Microsoft.AspNet.Identity.Core.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Identity.UI.Views.V4.dll

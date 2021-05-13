@@ -11,7 +11,14 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Plataforma.pdb
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Plataforma.Views.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Plataforma.Views.pdb
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\EntityFramework.SqlServer.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\EntityFramework.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Humanizer.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNet.Identity.Core.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Identity.UI.dll
@@ -28,6 +35,8 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Identity.Core.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Identity.Client.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.IdentityModel.Logging.dll
@@ -322,7 +331,6 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\hostfxr.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\hostpolicy.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\mscordaccore.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\mscordaccore_x86_x86_5.0.521.16609.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\mscordbi.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\mscorrc.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\ucrtbase.dll
@@ -342,8 +350,6 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.CookiePolicy.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Cors.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.DataProtection.Abstractions.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.DataProtection.Extensions.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.DataProtection.dll
@@ -428,8 +434,6 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Hosting.Abstractions.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Hosting.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Http.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Identity.Core.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Localization.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.Extensions.Logging.Abstractions.dll
@@ -554,4 +558,4 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\ref\Plataforma.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\Plataforma.pdb
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Release\net5.0\win-x86\Plataforma.genruntimeconfig.cache
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Release\net5.0\win-x86\mscordaccore_x86_x86_5.0.621.22011.dll
