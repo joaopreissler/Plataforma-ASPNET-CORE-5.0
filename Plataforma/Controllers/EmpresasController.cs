@@ -285,6 +285,7 @@ namespace Plataforma.Controllers
                           where s.IdEmpresa.Equals(id)
                           select s).ToList();
             /*ViewBag.EmpresaQuery = query2;*/
+            var empresacurso = _context.EmpresaCurso.Where(x => x.IdEmpresa == id).FirstOrDefault();
             
             var query4 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Mestrabajador.Equals(anoempresa.Idcurso) where s.TrabajadorAlta.Equals(true) select s).ToList();
             var query5 = (from s in _context.Trabajadores where s.IdEmpresa.Equals(id) where s.AnoTrabajador.Equals(anoempresa.ano) where s.Mestrabajador.Equals(anoempresa.Idcurso) where s.TrabajadorAlta.Equals(false) select s).ToList();
@@ -294,7 +295,8 @@ namespace Plataforma.Controllers
                 Curso = query,
                 CursosNome = query3,
                 Trabajadores = query4,
-                TrabajadoresBaja = query5
+                TrabajadoresBaja = query5,
+                NewCurso = empresacurso
             };
             return View(empresascurso);
         }

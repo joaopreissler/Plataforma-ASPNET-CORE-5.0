@@ -38,7 +38,7 @@
                     <tr><td>Email Gestoria</td><td>@item.emailgestoria</td></tr>
                 </tbody>
             </table>
-            @if (Model.Trabajadores.Count() > 0 || Model.Curso.Count() > 0)
+            @if (Model.Trabajadores.Count() > 0 && Model.NewCurso != null)
             {
             <div>
                 <div class="card" style="width: 18rem;">
