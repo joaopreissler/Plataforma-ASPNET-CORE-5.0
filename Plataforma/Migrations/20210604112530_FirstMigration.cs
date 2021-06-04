@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Plataforma.Migrations.ApplicationDb
+namespace Plataforma.Migrations
 {
     public partial class FirstMigration : Migration
     {
@@ -31,7 +31,7 @@ namespace Plataforma.Migrations.ApplicationDb
                     seguridad_social = table.Column<int>(type: "int", nullable: false),
                     Nif = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Direccion = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Cp = table.Column<int>(type: "int", nullable: false),
+                    Cp = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Provincia = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Localidad = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DireccionComercial = table.Column<string>(type: "nvarchar(max)", nullable: true),

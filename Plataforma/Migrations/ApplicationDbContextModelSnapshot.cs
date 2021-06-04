@@ -3,22 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Plataforma.Data;
 
-namespace Plataforma.Migrations.ApplicationDb
+namespace Plataforma.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210506082754_FirstMigration")]
-    partial class FirstMigration
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Plataforma.Models.Cursos", b =>
@@ -52,8 +50,8 @@ namespace Plataforma.Migrations.ApplicationDb
                     b.Property<int>("CPComercial")
                         .HasColumnType("int");
 
-                    b.Property<int>("Cp")
-                        .HasColumnType("int");
+                    b.Property<string>("Cp")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Cuenta")
                         .HasColumnType("nvarchar(max)");

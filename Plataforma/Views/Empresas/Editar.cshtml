@@ -19,9 +19,14 @@
                 <span asp-validation-for="Nombre_Empresa" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label  class="control-label"> Nombre Comercial</label>
+                <label class="control-label"> Nombre Comercial</label>
                 <input asp-for="Nombre_Comercial" class="form-control" />
                 <span asp-validation-for="Nombre_Comercial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="seguridad_social" class="control-label"></label>
+                <input asp-for="seguridad_social" class="form-control" />
+                <span asp-validation-for="seguridad_social" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">NIF</label>
@@ -34,7 +39,7 @@
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label  class="control-label">Código Postal</label>
+                <label class="control-label">Código Postal</label>
                 <input asp-for="Cp" class="form-control" />
                 <span asp-validation-for="Cp" class="text-danger"></span>
             </div>
@@ -59,7 +64,7 @@
                 <span asp-validation-for="CPComercial" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label  class="control-label">Provincia Comercial</label>
+                <label class="control-label">Provincia Comercial</label>
                 <input asp-for="ProvinciaComercial" class="form-control" />
                 <span asp-validation-for="ProvinciaComercial" class="text-danger"></span>
             </div>
@@ -69,17 +74,17 @@
                 <span asp-validation-for="LocalidadComercial" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label  class="control-label">Teléfono</label>
+                <label class="control-label">Teléfono</label>
                 <input asp-for="Telefono" class="form-control" />
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label  class="control-label">Email</label>
+                <label class="control-label">Email</label>
                 <input asp-for="email" class="form-control" />
                 <span asp-validation-for="email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label  class="control-label">Cuenta Cotización</label>
+                <label class="control-label">Cuenta Cotización</label>
                 <input asp-for="CuentaCotizacion" class="form-control" />
                 <span asp-validation-for="CuentaCotizacion" class="text-danger"></span>
             </div>
@@ -139,7 +144,7 @@
                 </label>
             </div>
             <div class="form-group">
-                <label   asp-for="Nombrereprensentante" class="control-label">Nombre Representante</label>
+                <label asp-for="Nombrereprensentante" class="control-label">Nombre Representante</label>
                 <input asp-for="Nombrereprensentante" class="form-control" />
                 <span asp-validation-for="Nombrereprensentante" class="text-danger"></span>
             </div>
@@ -159,7 +164,7 @@
                 <span asp-validation-for="Fechafirma" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label  class="control-label">Nombre Gestoria</label>
+                <label class="control-label">Nombre Gestoria</label>
                 <input asp-for="nombregestoria" class="form-control" />
                 <span asp-validation-for="nombregestoria" class="text-danger"></span>
             </div>
@@ -178,12 +183,12 @@
                 <input asp-for="telefonogestoria" class="form-control" />
                 <span asp-validation-for="telefonogestoria" class="text-danger"></span>
             </div>
-            
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
-                    <a asp-action="Index">Volver</a>
-                </div>
-</form>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index">Volver</a>
+            </div>
+        </form>
     </div>
 </div>
 

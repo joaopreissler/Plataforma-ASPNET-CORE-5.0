@@ -16,7 +16,7 @@
 
 
 
-<body>
+<body style="font-size: large">
 
     <table width="1000" border="0" align="center">
 
@@ -37,7 +37,7 @@
 
                                 08011 Barcelona <br />
 
-                                Tel&eacute;fono / Fax 93 122 09 38 <br />
+                                Teléfono 934 54 60 78/ 61 141 25 35 <br />
 
                                 <a href="mailto:eurobrazilinvestments@gmail.com">eurobrazilinvestments@gmail.com</a><br />
 
@@ -56,7 +56,7 @@
 
                                     <td bgcolor="#CCCCCC" class="texto">FECHA :</td>
 
-                                    <td class="texto">@Model.empresa.Fechafirma</td>
+                                    <td class="texto">@Model.empresa.Fechafirma.ToString("dd/MM/yyyy")</td>
 
                                 </tr>
 
@@ -66,13 +66,13 @@
 
                                     <td class="texto">
 
-                                        <?=$fila123["mes"];?>-
+                                        @DateTime.Now.Month -
 
-                                        <?=$fila123["codigo"];?>-
+                                        @Model.empresa.Id -
 
-                                        <?=$fila["tipo"];?>-
+                                        SS-
 
-                                        <?=$fila["comercial"];?> -<?=$fila123["anyo"];?>
+                                        EBR - @DateTime.Now.Year
                                     </td>
 
                                 </tr>
@@ -266,7 +266,7 @@
                             <p>FORMACION CONTINUA    COFINANCIADA POR EL FONDO SOCIAL EUROPEO</p>
                         </td>
 
-                        <td width="127" align="center" valign="top" class="texto"><p> &#8364</p></td>
+                        <td width="127" align="center" valign="top" class="texto"><p> @Model.empresa.creditodisponible</p></td>
 
                     </tr>
 

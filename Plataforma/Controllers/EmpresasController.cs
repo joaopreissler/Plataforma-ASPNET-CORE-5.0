@@ -566,6 +566,7 @@ namespace Plataforma.Controllers
                 empresa.Nif = obj.Nif;
                 empresa.Direccion = obj.Direccion;
                 empresa.Cp = obj.Cp;
+            empresa.seguridad_social = obj.seguridad_social;
                 empresa.Provincia = obj.Provincia;
                 empresa.Localidad = obj.Localidad;
                 empresa.DireccionComercial = obj.DireccionComercial;
