@@ -31,7 +31,7 @@
                     <tr><td>Telefono</td><td>@item.Telefono</td></tr>
                     <tr><td>Email</td><td>@item.email</td></tr>
                     <tr><td>Sector</td><td>@item.sector</td></tr>
-                    <tr><td>Representante</td><td>@item.Nombrereprensentante</td></tr>
+                    <tr><td>Representante</td><td>@item.Nombrereprensentante <a asp-controller="Contratos" asp-action="certificadoform" asp-route-id="@item.Id" class="btn btn-info" style="height: fit-content;">Certificado Formador</a></td></tr>
                     <tr><td>NIF Representante</td><td>@item.nifrepresentante</td></tr>
                     <tr><td>Fecha Firma</td><td>@item.Fechafirma</td></tr>
                     <tr><td>Nombre Gestoria</td><td>@item.nombregestoria</td></tr>

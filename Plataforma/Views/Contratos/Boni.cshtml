@@ -32,9 +32,8 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Importe a bonificar:<strong>&nbsp;<span class="textoboni">(</span></strong><span class="textoboni"><strong>@Model.creditodisponible€</strong>&nbsp;<strong>)</strong></span><br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mes a bonificar:&nbsp;<strong>a partir de</strong>&nbsp;<span class="textoboni"><strong>
                     
-                    @{TimeSpan ts = new TimeSpan(35, 00, 00, 00, 00);
-                        DateTime newdate = @Model.Fechafirma.Add(ts);
-                        var mes = newdate.ToString("MM");
+                    @{
+                        var mes = @Model.Fechafirma.Month.ToString();
                         switch (mes)
                         {
                             case "01":

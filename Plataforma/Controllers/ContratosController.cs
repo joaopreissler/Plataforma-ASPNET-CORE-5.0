@@ -406,8 +406,19 @@ namespace Plataforma.Controllers
 
             return  View(datos);
         }
+        public async Task<ActionResult<SolicitudCursoViewModel>> certificadoform(int id)
+        {
+            var empresa = await _context.Empresa.Where(x => x.Id == id).FirstOrDefaultAsync();
+            var curso = await _context.EmpresaCurso.Where(x => x.IdEmpresa == id).OrderBy(s => s.Id).LastOrDefaultAsync();
+
+            FacturaViewModel resultado = new FacturaViewModel()
+            {
+                empresa = empresa,
+                cursos = curso
+            };
+            return View(resultado);
+        }
     }
+   
 
-
-
-}
+    }

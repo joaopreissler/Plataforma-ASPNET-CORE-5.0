@@ -1,0 +1,129 @@
+﻿@model Plataforma.ViewModels.FacturaViewModel
+<head>
+
+    <style type="text/css">
+
+        .nombre {
+            font-size: 28px;
+        }
+
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+
+</head>
+
+
+
+
+<body>
+
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" background="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/cert21.jpg">
+
+        <tr>
+
+
+
+            <td valign="top">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                    <tr>
+
+                        <td><img src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/LOGO-EUROBRAZIL2.png" width="384" height="147" /></td>
+
+                        <td class="certTITULO"><strong>CERTIFICADO </strong><span class="certTITULO"><strong>DE ACREDITACI&Oacute;N DE LA FORMACI&Oacute;N</strong></span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td colspan="2" align="center">
+                            <br />
+
+                            <p><span class="cert">EUROBRAZIL  INVESTMENTS&nbsp; S.L. con  C.I.F. B-66335472 certifica que </span></p>
+
+                            <table width="100%" border="1" cellpadding="0" cellspacing="0" class="tablanombre">
+
+                                <tr>
+
+                                    <th align="center" style="text-align:center;">
+                                        <strong>
+
+                                            @Model.empresa.Nombrereprensentante con   NIF @Model.empresa.nifrepresentante
+
+                                        </strong>
+                                    </th>
+
+                                </tr>
+
+                            </table>
+
+
+
+                            <p align="center" class="cert">
+                                de la empresa <strong>
+
+                                    @Model.empresa.Nombre_Comercial
+
+                                </strong><br />
+
+                                         <strong>
+
+                                             @Model.empresa.Nombre_Empresa
+
+                                         </strong><br />
+
+                                <br />
+
+                                Ha  recibido formaci&oacute;n con buen aprovechamiento y <br />
+
+                                calificaci&oacute;n de <strong>APTA</strong> del curso<strong>
+
+                                    <br />
+                                    Formador de
+                                    @Model.cursos.CursoNome
+
+                                </strong><br />
+
+                                Con una duraci&oacute;n de <strong>60 Horas</strong><br />
+
+                                Y para  que conste a los efectos oportunos se expide el presente certificado
+                            </p>
+
+                            <p align="center" class="cert">
+                                En Barcelona,  a
+
+                                @DateTime.Now.Day
+
+                                de
+                                
+                                @DateTime.Now.ToString("MMMM")
+                                del @DateTime.Now.Year
+                            </p>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+
+
+
+    </table>
+
+
+
+    <img src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/certtercero2.jpg" width="100%" style="page-break-before:always;"/>
+
+
+
+
+
+</body>
+
+</html>

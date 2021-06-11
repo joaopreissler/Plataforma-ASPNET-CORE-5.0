@@ -1,6 +1,7 @@
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\appsettings.json
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\appsettings.Production.json
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\aws-beanstalk-tools-defaults.json
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Plataforma.StaticWebAssets.xml
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Plataforma.exe
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Plataforma.deps.json
@@ -11,11 +12,8 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Plataforma.pdb
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Plataforma.Views.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Plataforma.Views.pdb
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\EntityFramework.SqlServer.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\EntityFramework.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\AWSSDK.Core.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Humanizer.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
-C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -226,3 +224,4 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Plataforma.pdb
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Plataforma.genruntimeconfig.cache
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Plataforma.csprojAssemblyReference.cache
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\certificadoform.cshtml.g.cs
