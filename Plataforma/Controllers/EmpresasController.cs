@@ -14,7 +14,7 @@ using Plataforma.Interface;
 namespace Plataforma.Controllers
 {
     [Authorize]
-    
+    [Authorize(Roles = "Admin")]
     public class EmpresasController : Controller
     {
         private readonly ApplicationDbContext _context;

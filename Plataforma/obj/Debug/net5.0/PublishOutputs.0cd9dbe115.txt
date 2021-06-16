@@ -121,7 +121,11 @@ C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.d
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.runtimeconfig.json
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.pdb
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\AWSSDK.Core.dll
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\EntityFramework.SqlServer.dll
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\EntityFramework.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Humanizer.dll
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNet.Identity.Core.dll
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

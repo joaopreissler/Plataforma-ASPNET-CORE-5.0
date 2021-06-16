@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Plataforma.Models
 {
     public class Empresa
-    {
+    {   
+        [Key]
         public int Id { get; set; }
    
         public string Nombre_Empresa { get; set; }
@@ -82,6 +83,7 @@ namespace Plataforma.Models
         public int ano { get; set; }
        [Required]
         public int Idcurso { get; set; }
+        public string IdMember { get; set; }
         
     }
 }

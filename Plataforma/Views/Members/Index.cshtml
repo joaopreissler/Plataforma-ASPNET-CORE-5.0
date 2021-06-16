@@ -1,0 +1,23 @@
+﻿@model Plataforma.ViewModels.EmpresasEditViewModel 
+<h1>Mis Ventas</h1>
+<a asp-action="Create">Añadir Empresa</a>
+<table  class="table table-striped table-dark">
+    <tr>
+        <td scope="col">Nombre Comercial</td><td scope="col">Nombre Empresa</td><td scope="col">Nif Empresa</td> <td scope="col"></td>
+    </tr>
+    <tr>
+        @foreach (var items in Model.Empresas)
+        {
+            <td scope="col" >@items.Nombre_Comercial</td>
+            <td scope="col">@items.Nombre_Empresa</td>
+            <td scope="col">@items.Nif</td>
+            
+            <td scope="col">
+                <a asp-action="Edit" asp-route-id="@items.Id">Datos</a> |
+                <a asp-action="Editar" asp-route-id="@items.Id">Modificar</a> |
+                
+
+            </td>
+        }
+    </tr>
+</table>

@@ -74,7 +74,7 @@
 
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            @if (item.Final <= ((DateTime.Now).AddDays(3)) || item.Final > DateTime.Now)
             {
                 <style>
                 .@item.Nif {
@@ -417,6 +417,7 @@
 
             </th>
             <th></th>
+           <th>Fin de Curso</th>
         </tr>
     </thead>
     <tbody>
@@ -441,12 +442,25 @@
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
                     <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar </a>
 
-
+                    
                 </td>
+                <td>
+                    @if (item.Final.Date.ToString("MM dd yyy") == "01 01 001") {
+
+
+<b>
+                        Sin Curso
+                    </b>
+                    }
+                    else
+                    {
+                <b> @item.Final.Date.ToString("MM dd yyy")</b>
+                    }
+                    </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            @if (item.Final <= ((DateTime.Now).AddDays(3)))
             {
                 <style>
                 .@item.Nif {

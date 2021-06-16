@@ -225,3 +225,14 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Plataforma.genruntimeconfig.cache
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Plataforma.csprojAssemblyReference.cache
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\certificadoform.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\EntityFramework.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\Index.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\Create.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\Editar.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\Edit.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\AddTrabajador.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\EditTrabajador.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\Delete.cshtml.g.cs

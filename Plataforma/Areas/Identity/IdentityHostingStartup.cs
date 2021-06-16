@@ -21,7 +21,9 @@ namespace Plataforma.Areas.Identity
                         context.Configuration.GetConnectionString("DefaultConnection")));
 
                 services.AddDefaultIdentity<PlataformaUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<PlataformaContext>();
+                
             });
         }
     }

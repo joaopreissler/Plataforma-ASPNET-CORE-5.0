@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Plataforma.Areas.Identity.Data;
+using Plataforma.Data;
 
 namespace Plataforma.Areas.Identity.Pages.Account
 {
@@ -21,14 +22,16 @@ namespace Plataforma.Areas.Identity.Pages.Account
         private readonly UserManager<PlataformaUser> _userManager;
         private readonly SignInManager<PlataformaUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly PlataformaContext _context;
 
         public LoginModel(SignInManager<PlataformaUser> signInManager, 
-            ILogger<LoginModel> logger,
+            ILogger<LoginModel> logger, PlataformaContext context,
             UserManager<PlataformaUser> userManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _context = context;
         }
 
         [BindProperty]
@@ -86,7 +89,10 @@ namespace Plataforma.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("index", "empresas");
+                    var user = _userManager.FindByEmailAsync(Input.Email);
+                    if (await _userManager.IsInRoleAsync(await user, "Admin")) { return RedirectToAction("index", "empresas"); }
+                    else return RedirectToAction("index", "Members");
+
                 }
                 if (result.RequiresTwoFactor)
                 {

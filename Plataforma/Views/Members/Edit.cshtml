@@ -1,0 +1,240 @@
+﻿@model Plataforma.ViewModels.EmpresasEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div style=" justify-content: space-between">
+
+    @foreach (var item in Model.Empresas)
+    { 
+    <div>    
+    <a asp-action="AddTrabajador" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Añadir Trabajador</a>
+        
+        <div style="display:flex;">
+
+
+            <table class="table table-striped">
+                <thead><tr><th>Datos Empresa</th></tr></thead>
+                <tbody>
+                    <tr><td>Razón Social</td><td>@item.Nombre_Empresa</td></tr>
+                    <tr><td>Nombre Comercial</td><td>@item.Nombre_Comercial</td></tr>
+                    <tr><td>Nif</td><td>@item.Nif</td></tr>
+                    <tr><td>Direccion</td><td>@item.Direccion</td></tr>
+                    <tr><td>CP</td><td>@item.Cp</td></tr>
+                    <tr><td>Provincia</td><td>@item.Provincia</td></tr>
+                    <tr><td>Localidad</td><td>@item.Localidad</td></tr>
+                    <tr><td>Direccion Comercial</td><td>@item.DireccionComercial</td></tr>
+                    <tr><td>Seguridad Social</td><td>@item.seguridad_social</td></tr>
+                    <tr><td>CP Comercial</td><td>@item.CPComercial</td></tr>
+                    <tr><td>Provincia Comercial</td><td>@item.ProvinciaComercial</td></tr>
+                    <tr><td>Localidad Comercial</td><td>@item.LocalidadComercial</td></tr>
+                    <tr><td>Telefono</td><td>@item.Telefono</td></tr>
+                    <tr><td>Email</td><td>@item.email</td></tr>
+                    <tr><td>Sector</td><td>@item.sector</td></tr>
+                    <tr><td>Representante</td><td>@item.Nombrereprensentante <a asp-controller="Contratos" asp-action="certificadoform" asp-route-id="@item.Id" class="btn btn-info" style="height: fit-content;">Certificado Formador</a></td></tr>
+                    <tr><td>NIF Representante</td><td>@item.nifrepresentante</td></tr>
+                    <tr><td>Fecha Firma</td><td>@item.Fechafirma</td></tr>
+                    <tr><td>Nombre Gestoria</td><td>@item.nombregestoria</td></tr>
+                    <tr><td>Telefono Gestoria</td><td>@item.telefonogestoria</td></tr>
+                    <tr><td>Email Gestoria</td><td>@item.emailgestoria</td></tr>
+                </tbody>
+            </table>
+            @if (Model.Trabajadores.Count() > 0 && Model.NewCurso != null)
+            {
+            <div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header" style="        background-color: #17a2b8 !important;
+        color: white;
+        font-weight: 600;">
+                        Contratos Inicio
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Index" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Contrato Encomienda</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Adhesion" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Adhesion</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="SolicitudCurso" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Solicitud Curso</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="SolicitudAutonomo" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Solicitud Curso Autonomo</a></li>
+                    </ul>
+                </div>
+                <div>
+
+
+
+
+                </div>
+
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header" style="        background-color: #17a2b8 !important;
+        color: white;
+        font-weight: 600;">
+                        Certificados y Testes
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"> <a asp-controller="Contratos" asp-action="Caratulas" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Caratulas</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestAlergenos" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Alergenos</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestManipulador" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Manipulador</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestPrevencion" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Prevencion</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestPeluqueria" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Peluqueria</a></li>
+                        <li class="list-group-item">  <a asp-controller="Contratos" asp-action="CertificadoCat" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">CertificadoCat</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="CertificadoCas" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">CertificadoCas</a></li>
+                    </ul>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header" style="        background-color: #17a2b8 !important;
+        color: white;
+        font-weight: 600;">
+                        Fase Final
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Factura" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Factura</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Boni" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Boni</a></li>
+                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="lopd" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">LOPD</a></li>
+                    </ul>
+                </div>
+                <a asp-controller="Contratos" asp-action="Renovacion" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Renovación</a>
+                <a asp-controller="Contratos" asp-action="TodosContratos" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Todos los Contractos</a>
+                <a asp-controller="Contratos" asp-action="prl" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Imprimir Curso</a>
+            </div>
+            }
+        </div>
+        </div>}
+
+        
+    
+    
+
+    <form method="post" asp-action="Edit" style="max-width: 22rem; float: right;  margin-bottom: 10px; ">
+
+        <div>
+            <label asp-for="CursoNome"></label>
+        </div>
+        <select asp-for="CursoNome" name="CursoNome">
+            @foreach (var item in Model.Curso)
+            {
+                <option value="@item.Name">@item.Name</option>
+
+            }
+        </select>
+        <div>
+            <label asp-for="Inicio"></label>
+        </div>
+        <div>
+            <input type="date" asp-for="Inicio" />
+        </div>
+        <div>
+            <label asp-for="Final"></label>
+        </div>
+        <div>
+            <input type="date" asp-for="Final" />
+        </div>
+        <input type="submit" class="btn btn-info w-100" value="Save" />
+    </form>
+</div>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Curso</th>
+                <th scope="col">Inicio</th>
+                <th scope="col">Final</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CursosNome)
+            {
+
+                <tr>
+                    <th>@item.CursoNome</th>
+                    <td>@item.Inicio.ToString("dd/MM/yyyy")</td>
+                    <td >@item.Final.ToString("dd/MM/yyyy")</td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Nif</th>
+                <th scope="col">Seguridad Social</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Trabajadores)
+            {
+                @if (@item.Fundae == true)
+                {
+
+
+                    <tr class="btn-warning">
+                        <th scope="row">@item.Id</th>
+                        <td>@item.TrabajadorNome</td>
+                        <td>@item.TrabajadorNif</td>
+                        <td>@item.SeguridadSocial</td>
+                        <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
+                        <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                    </tr>
+                }
+                else
+                {
+                    <tr >
+                        <th scope="row">@item.Id</th>
+                        <td>@item.TrabajadorNome</td>
+                        <td>@item.TrabajadorNif</td>
+                        <td>@item.SeguridadSocial</td>
+                        <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
+                        <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                    </tr>
+
+                }
+
+            }
+
+
+        </tbody>
+    </table>
+    <table class="table">
+        <thead class="table-danger">
+        <th>Trabajadores Baja</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Nif</th>
+                <th scope="col">Seguridad Social</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.TrabajadoresBaja)
+            {
+
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.TrabajadorNome</td>
+                    <td>@item.TrabajadorNif</td>
+                    <td>@item.SeguridadSocial</td>
+                    <td><a asp-action="AltaTrabajador" asp-route-id="@item.Id">Dar Alta</a></td>
+                    <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                </tr>
+
+
+            }
+
+
+        </tbody>
+    </table>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

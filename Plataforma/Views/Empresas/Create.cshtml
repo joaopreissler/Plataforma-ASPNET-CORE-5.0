@@ -221,7 +221,7 @@
         </form>
     </div>
 </div>
-<input type="button" id="trabajadores" onclick="showDiv()" value="Añadir Trabajador" />
+
 
 
 <div>
@@ -233,13 +233,7 @@
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
         <script>
-            function showDiv() {
-                var para = document.createElement("DIV");
-                var form = document.getElementById("formtrabajador").innerHTML;
-                para.innerHTML = form;
-                para.style.display = "block";
-                document.getElementById("myDIV").appendChild(para);
-            }
+           
 
         </script>
     }
