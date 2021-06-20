@@ -33,7 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Plataforma/1.0.0": {
         "dependencies": {
-          "AWSSDK.Core": "3.7.0.33",
+          "AWSSDK.Core": "3.7.0.34",
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.3",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "5.0.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.7",
@@ -326,11 +326,11 @@
           "Plataforma.dll": {}
         }
       },
-      "AWSSDK.Core/3.7.0.33": {
+      "AWSSDK.Core/3.7.0.34": {
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.7.0.33"
+            "fileVersion": "3.7.0.34"
           }
         },
         "compile": {
@@ -3643,12 +3643,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AWSSDK.Core/3.7.0.33": {
+    "AWSSDK.Core/3.7.0.34": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ABnGRXmGkSd9d8nPKsqLvJLtd9U/+1+60mYbR8mgWX5svmvui6TqBRefM799qOupSXkxt/RV0IMjjkX0f39S4g==",
-      "path": "awssdk.core/3.7.0.33",
-      "hashPath": "awssdk.core.3.7.0.33.nupkg.sha512"
+      "sha512": "sha512-5EGFEfIIiIF2iQfxcwSjbuL1gvs2ESVLwECAxgpD2BDzfXdjxsHwNRXQPT+7R7iS78hjBETF/ka1iTMuNqU4ww==",
+      "path": "awssdk.core/3.7.0.34",
+      "hashPath": "awssdk.core.3.7.0.34.nupkg.sha512"
     },
     "EntityFramework/6.1.0": {
       "type": "package",

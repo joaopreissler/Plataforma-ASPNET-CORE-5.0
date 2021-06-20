@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NuayLd0vMqMg2SxkdFoIfpCj4DaDsQZuocHBlsWBuV5vt6aLBevI3KZkjUOcumn+B/3+njk//xD+VRBDr70RVQ==",
+  "dgSpecHash": "pr/lUXpEpj1KXpLbcezPcvFuWkqiilVYVYYV69vwl8vQSAs27qhTk/xMxhjnp2y8TsCHMSkmOolDuXUKbpy4BA==",
   "success": true,
   "projectFilePath": "C:\\Users\\João Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\Plataforma.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\João Victor\\.nuget\\packages\\awssdk.core\\3.7.0.33\\awssdk.core.3.7.0.33.nupkg.sha512",
+    "C:\\Users\\João Victor\\.nuget\\packages\\awssdk.core\\3.7.0.34\\awssdk.core.3.7.0.34.nupkg.sha512",
     "C:\\Users\\João Victor\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\João Victor\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\João Victor\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
