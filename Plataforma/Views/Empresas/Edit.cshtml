@@ -178,7 +178,15 @@
                 <td>@item.TrabajadorNome</td>
                 <td>@item.TrabajadorNif</td>
                 <td>@item.SeguridadSocial</td>
-                <td>@item.FechaTrabajador</td>
+                <td>
+                    @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
+                    {<p>Sin Fecha</p> }
+                    else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
+                    { <p>Sin Fecha</p> }
+                    else
+                    {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
+                    
+                </td>
                 <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
                 <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
             </tr>
@@ -190,11 +198,15 @@
             <td>@item.TrabajadorNome</td>
             <td>@item.TrabajadorNif</td>
             <td>@item.SeguridadSocial</td>
-            <td>@if (item.FechaTrabajador.Year - DateTime.Now.Year > 100)
-            {<p>Sin Fecha</p> }
-            else if (item.FechaTrabajador.Year - DateTime.Now.Year < 18)
-            { <p>Sin Fecha</p> }
-            else {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p> }</td>
+            <td>
+                @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
+                {<p>Sin Fecha</p> }
+                else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
+                { <p>Sin Fecha</p> }
+                else
+                {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
+                
+            </td>
             <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
             <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
         </tr>
@@ -221,7 +233,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Nif</th>
                 <th scope="col">Seguridad Social</th>
-                <th></th>
+                <th scope="col">Fecha de nacimiento</th>
                 <th></th>
             </tr>
             @foreach (var item in Model.TrabajadoresBaja)
@@ -232,7 +244,15 @@
             <td>@item.TrabajadorNome</td>
             <td>@item.TrabajadorNif</td>
             <td>@item.SeguridadSocial</td>
-            <td>@item.FechaTrabajador</td>
+            <td>
+                @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
+                {<p>Sin Fecha</p> }
+                else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
+                { <p>Sin Fecha</p> }
+                else
+                {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
+                
+            </td>
             <td><a asp-action="AltaTrabajador" asp-route-id="@item.Id">Dar Alta</a></td>
             <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
         </tr>

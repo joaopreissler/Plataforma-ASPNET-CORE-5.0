@@ -441,7 +441,7 @@ namespace Plataforma.Controllers
             
 
             trabajadores.IdEmpresa = (int)TempData["Empresa"];
-            trabajadores.AnoTrabajador = obj.AnoTrabajador;
+            trabajadores.FechaTrabajador = obj.FechaTrabajador;
             trabajadores.TrabajadorNome = obj.TrabajadorNome;
             trabajadores.Fundae = obj.Fundae;
             trabajadores.SeguridadSocial = obj.SeguridadSocial;

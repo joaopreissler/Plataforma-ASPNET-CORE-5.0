@@ -43,7 +43,11 @@
           "dependencies": {
             "AWSSDK.Core": {
               "target": "Package",
-              "version": "[3.7.0.34, )"
+              "version": "[3.7.0.35, )"
+            },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             },
             "Microsoft.AspNet.Identity.EntityFramework": {
               "target": "Package",

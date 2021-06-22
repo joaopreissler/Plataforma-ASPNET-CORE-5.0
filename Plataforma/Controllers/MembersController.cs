@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,6 +9,7 @@ using Plataforma.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -38,10 +40,11 @@ namespace Plataforma.Controllers
             };
             return View(result);
         }
+       
 
         public IActionResult Create()
         {
-         
+            
             return View();
         }
         [HttpPost]
@@ -244,7 +247,7 @@ namespace Plataforma.Controllers
 
 
             trabajadores.IdEmpresa = (int)TempData["Empresa"];
-            trabajadores.AnoTrabajador = obj.AnoTrabajador;
+            trabajadores.FechaTrabajador = obj.FechaTrabajador;
             trabajadores.TrabajadorNome = obj.TrabajadorNome;
             trabajadores.Fundae = obj.Fundae;
             trabajadores.SeguridadSocial = obj.SeguridadSocial;

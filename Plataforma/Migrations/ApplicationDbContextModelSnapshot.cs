@@ -143,8 +143,8 @@ namespace Plataforma.Migrations
                     b.Property<string>("sector")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("seguridad_social")
-                        .HasColumnType("int");
+                    b.Property<string>("seguridad_social")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("telefonogestoria")
                         .HasColumnType("nvarchar(max)");
@@ -233,6 +233,18 @@ namespace Plataforma.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EmpresasCurso");
+                });
+
+            modelBuilder.Entity("Plataforma.ViewModels.MembersCreateViewModel", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasKey("id");
+
+                    b.ToTable("MembersCreateViewModel");
                 });
 #pragma warning restore 612, 618
         }

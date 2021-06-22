@@ -14,7 +14,7 @@ namespace Plataforma.Models
         public string Nombre_Empresa { get; set; }
       
         public string Nombre_Comercial { get; set; }
-        public int seguridad_social { get; set; }
+        public string seguridad_social { get; set; }
       
         public string Nif { get; set; }
       
@@ -84,6 +84,8 @@ namespace Plataforma.Models
        [Required]
         public int Idcurso { get; set; }
         public string IdMember { get; set; }
+
+       
         
     }
 }
