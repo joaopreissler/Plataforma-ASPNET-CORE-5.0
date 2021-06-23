@@ -1,0 +1,13 @@
+{
+
+    "container_commands": {
+
+        "01": {
+
+            "command": "icacls \"C:/inetpub/wwwroot/AppName_deploy/App_Data/AppFolder\" /grant DefaultAppPool:(OI)(CI)F"
+
+        }
+
+    }
+
+}

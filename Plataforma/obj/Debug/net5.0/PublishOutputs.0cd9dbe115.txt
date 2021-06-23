@@ -113,6 +113,9 @@ C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\PRL\
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\PRL\tri2.PNG
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\PRL\usuario.png
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\PRL\visto.png
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\Uploads\ITA SIRA SALA.PDF
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\Uploads\ITA.pdf
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\web.config
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.Development.json
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.json
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.Production.json
@@ -120,10 +123,12 @@ C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\aws-beanstal
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.runtimeconfig.json
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.pdb
-C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\AWSSDK.Core.dll
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\AWSSDK.dll
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\BouncyCastle.Crypto.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\EntityFramework.SqlServer.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\EntityFramework.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Humanizer.dll
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\itextsharp.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNet.Identity.Core.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\Microsoft.AspNetCore.Cryptography.Internal.dll

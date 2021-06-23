@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include=".ebextensions\init.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\PRL\1.jpg" />
     <None Include="wwwroot\PRL\1273014462.png" />
     <None Include="wwwroot\PRL\2.jpg" />
@@ -81,8 +85,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.Core" Version="3.7.0.35" />
+    <PackageReference Include="AWSSDK" Version="2.3.55.2" />
     <PackageReference Include="EntityFramework" Version="6.4.0" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.2" />
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
@@ -98,6 +103,7 @@
 
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="wwwroot\Uploads\" />
   </ItemGroup>
 
 </Project>

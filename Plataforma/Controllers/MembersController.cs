@@ -1,6 +1,11 @@
 ﻿
+using Amazon.S3;
+using Amazon.S3.Model;
+using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.parser;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Plataforma.Data;
@@ -12,7 +17,10 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Security.Claims;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using UploadToS3Demo;
 
 namespace Plataforma.Controllers
 {
@@ -21,12 +29,13 @@ namespace Plataforma.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IHttpContextAccessor _httpContext;
+        private readonly IHostingEnvironment Environment;
 
-        public MembersController(ApplicationDbContext context, IHttpContextAccessor httpContext)
+        public MembersController(ApplicationDbContext context, IHttpContextAccessor httpContext, IHostingEnvironment _environment)
         {
             _context = context;
             _httpContext = httpContext;
-            
+            Environment = _environment;
         }
 
         public IActionResult Index()
@@ -258,7 +267,135 @@ namespace Plataforma.Controllers
 
             return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
         }
-        
 
+        public IActionResult UploadFile(IFormFile File)
+        {
+            string wwwPath = this.Environment.WebRootPath;
+            string contentPath = this.Environment.ContentRootPath;
+            
+            string path = System.IO.Path.Combine(this.Environment.WebRootPath, "Uploads");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+
+
+            string fileName = System.IO.Path.GetFileName(File.FileName);
+            using (FileStream stream = new FileStream(System.IO.Path.Combine(path, fileName), FileMode.Create))
+                {
+                    File.CopyTo(stream);
+                
+
+            }
+            
+            string fileToBackup = File.FileName; // test file
+            string myBucketName = "eurobrazil-formacion-files"; //your s3 bucket name goes here
+            string s3DirectoryName = "files";
+            string s3FileName = File.FileName;
+
+
+            
+
+            AmazonUploader myUploader = new AmazonUploader();
+            myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, s3FileName);
+            
+
+
+
+            PdfReader reader = new PdfReader(System.IO.Path.Combine(path, fileName));
+            int PageNum = reader.NumberOfPages;
+            string[] words;
+            string line;
+
+            for (int i = 1; i <= PageNum; i++)
+            {
+                var text = PdfTextExtractor.GetTextFromPage(reader, i, new LocationTextExtractionStrategy());
+
+                words = text.Split('\n');
+                for (int j = 0, len = words.Length; j < len; j++)
+                {
+                    line = Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(words[j]));
+                    ViewBag.line = line;
+                }
+                ViewBag.words = words;
+                
+            }
+            
+            string[] names = ViewBag.words;
+
+            var Razonsocial = "RAZÓN SOCIAL: ";
+            var result = Array.Find(names, element => element.Contains(Razonsocial));
+            var returnData = result.Split(':');
+
+            var Domicilio = "DOMICILIO:";
+            var domi = Array.Find(names, element => element.Contains(Domicilio));
+            var returnData2 = domi.Split(':');
+
+            var Cp = "C.P.:";
+            var cp = Array.Find(names, element => element.Contains(Cp));
+            var returnData3 = cp.Split(':');
+
+            
+            var Datos = "CÓDIGO EMPRESARIO:";
+            var datos = Array.Find(names, element => element.Contains(Datos));
+            var returnData4 = datos.Split(' ');
+
+            var cnae = "CNAE:";
+            var CNAE = Array.Find(names, element => element.Contains(cnae));
+            var returnData5 = CNAE.Split(' ');
+
+            
+            Empresa NewEmpresa = new Empresa
+            {
+                Nombre_Empresa = returnData[1],
+                Nombre_Comercial = returnData[1],
+                Direccion = returnData2[1],
+                Cp = Regex.Replace(returnData3[6], "[A-Za-z ]", ""),
+                Provincia = returnData3[8],
+                Localidad = Regex.Replace(returnData3[7], "PROVINCIA", ""),
+                Nif = returnData4[3].TrimStart('0'),
+                seguridad_social = returnData4[8] + returnData4[9],
+                CNAE = returnData5[1] + returnData5[2] + returnData5[3] + returnData5[4],
+                ano = DateTime.UtcNow.Year,
+                Idcurso = DateTime.UtcNow.Month,
+                IdMember = User.Identity.GetUserId(),
+                Fechafirma = DateTime.UtcNow
+            };
+            _context.Empresa.Add(NewEmpresa);
+
+            _context.SaveChanges();
+            var trabajadoresInicio = Array.FindIndex(names, element => element.Contains("APELLIDOS Y NOMBRE"));
+            var trabajadoresFin = Array.FindIndex(names, element => element.Contains("FIN DE INFORME"));
+            
+            for (int i = trabajadoresInicio + 1; i <= trabajadoresFin-1; i++)
+            {
+                var empresa = _context.Empresa.Where(x => x.Nombre_Empresa == returnData[1]).OrderBy(y => y.Id).LastOrDefault();
+                var nombre = names[i].Split('0' , 2);
+               // var nombrefix = Regex.Replace(nombre.ToString(), "[0 - 9]{ 2,}", "");
+                var nif = names[i].Split('0', 3);
+                var seguridadsocial = names[i].Split('0', 2);
+                var control = names[i].Length;
+                if (names[i].Length > 46) { 
+                Trabajadores newTrabajadores = new Trabajadores
+                {
+                    TrabajadorNome = nombre[0].TrimEnd(new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }),
+                    TrabajadorNif = nombre[1].Substring(15 ,10),
+                    IdEmpresa = empresa.Id,
+                    SeguridadSocial =Regex.Replace(names[i].Substring(nombre[0].TrimEnd(new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }).Length, 13), " ", ""),
+                    Trabajadortipo = "Trabajador",
+                    AnoTrabajador = empresa.ano,
+                    Mestrabajador = empresa.Idcurso,
+                    TrabajadorAlta = true
+                };
+                _context.Trabajadores.Add(newTrabajadores);
+                }
+            }
+            _context.SaveChanges();
+
+            System.IO.File.Delete(System.IO.Path.Combine(path, fileName));
+            
+            return View();
+        }
     }
 }
