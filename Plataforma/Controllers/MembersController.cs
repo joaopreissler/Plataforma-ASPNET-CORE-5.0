@@ -267,10 +267,11 @@ namespace Plataforma.Controllers
 
             return RedirectToAction("Edit", new { id = trabajadores.IdEmpresa });
         }
-
+        
         public IActionResult UploadFile(IFormFile File)
         {
-            string wwwPath = this.Environment.WebRootPath;
+
+            /*string wwwPath = this.Environment.WebRootPath;
             string contentPath = this.Environment.ContentRootPath;
             
             string path = System.IO.Path.Combine(this.Environment.WebRootPath, "Uploads");
@@ -295,15 +296,15 @@ namespace Plataforma.Controllers
             string s3FileName = File.FileName;
 
 
+          
             
-
             AmazonUploader myUploader = new AmazonUploader();
-            myUploader.sendMyFileToS3(fileToBackup, myBucketName, s3DirectoryName, s3FileName);
-            
+            myUploader.sendMyFileToS3(Stream, myBucketName, s3DirectoryName, s3FileName);
+          */
+            if (File is null) return View();
+            if (File.ContentType != "application/pdf") return View(); 
 
-
-
-            PdfReader reader = new PdfReader(System.IO.Path.Combine(path, fileName));
+            PdfReader reader = new PdfReader(File.OpenReadStream());
             int PageNum = reader.NumberOfPages;
             string[] words;
             string line;
@@ -376,11 +377,17 @@ namespace Plataforma.Controllers
                 var nif = names[i].Split('0', 3);
                 var seguridadsocial = names[i].Split('0', 2);
                 var control = names[i].Length;
-                if (names[i].Length > 46) { 
+                var nombrenif = nombre[1].Substring(15, 10);
+                if (nombre[1].Substring(15, 10).StartsWith("0")){
+                  nombrenif = nombre[1].Substring(16, 10);
+                }
+                
+                if (names[i].Length > 50 && nombre[0].Any(char.IsLetter) == true) { 
+
                 Trabajadores newTrabajadores = new Trabajadores
                 {
                     TrabajadorNome = nombre[0].TrimEnd(new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }),
-                    TrabajadorNif = nombre[1].Substring(15 ,10),
+                    TrabajadorNif = nombrenif,
                     IdEmpresa = empresa.Id,
                     SeguridadSocial =Regex.Replace(names[i].Substring(nombre[0].TrimEnd(new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }).Length, 13), " ", ""),
                     Trabajadortipo = "Trabajador",
@@ -393,9 +400,9 @@ namespace Plataforma.Controllers
             }
             _context.SaveChanges();
 
-            System.IO.File.Delete(System.IO.Path.Combine(path, fileName));
+            //System.IO.File.Delete(System.IO.Path.Combine(path, fileName));
             
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

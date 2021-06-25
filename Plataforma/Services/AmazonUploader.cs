@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -10,7 +11,7 @@ namespace UploadToS3Demo
 {
     public class AmazonUploader
     {
-        public bool sendMyFileToS3(string localFilePath, string bucketName, string subDirectoryInBucket, string fileNameInS3)
+        public bool sendMyFileToS3(FileStream localFilePath, string bucketName, string subDirectoryInBucket, string fileNameInS3)
         {
             // input explained :
             // localFilePath = the full local file path e.g. "c:\mydir\mysubdir\myfilename.zip"
@@ -40,9 +41,9 @@ namespace UploadToS3Demo
                 request.BucketName = bucketName + @"/" + subDirectoryInBucket;
             }
             request.Key = fileNameInS3; //file name up in S3
-            request.FilePath = @"C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\wwwroot\Uploads\" + localFilePath; //local file name
+            //request.FilePath = @"C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\wwwroot\Uploads\" + localFilePath; //local file name
             request.CannedACL = S3CannedACL.PublicRead;
-
+            request.InputStream = localFilePath;
             //commensing the transfer
             try
             {

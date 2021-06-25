@@ -2,10 +2,12 @@
 <h1>Mis Ventas</h1>
 <a asp-action="Create">Añadir Empresa</a>
 
-<form asp-controller="Members" asp-action="UploadFile" method="post"
-      enctype="multipart/form-data" style="float:right;">
+<form asp-controller="Members" asp-action="UploadFile" method="post" onsubmit="myFunction()"
+      enctype="multipart/form-data" style="float:right; id="videoUploadFile">
     <span>Enviar ITA</span>
-    <input type="file" name="file" accept="application/pdf"/>
+    <input type="file" name="file" accept="application/pdf" />
+    <span style="color: red; display:none;" id="errono">Ningún archivo ha sido insertado!</span>
+    <span style="color: red; display:none;" id="erropdf">Solo se acepta archivos PDF!</span>
     <button type="submit">Enviar ITA</button>
 </form>
 
@@ -34,3 +36,4 @@
             }
         
     </table>
+

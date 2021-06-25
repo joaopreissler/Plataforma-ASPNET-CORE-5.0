@@ -115,6 +115,7 @@ C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\PRL\
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\PRL\visto.png
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\Uploads\ITA SIRA SALA.PDF
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\Uploads\ITA.pdf
+C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\wwwroot\Uploads\Perales ITA.pdf
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\web.config
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.Development.json
 C:\Users\João Victor\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.json
