@@ -74,7 +74,7 @@
 
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) || item.Final > DateTime.Now)
+            @if (item.Final.Date <= ((DateTime.Now).AddDays(3)) || item.Final > DateTime.Now)
             {
                 <style>
                 .@item.Nif {
@@ -447,7 +447,7 @@
                     
                 </td>
                 <td>
-                    @if (item.Final.Date.ToString("MM dd yyy") == "01 01 001") {
+                    @if (@item.Final.Date.ToString("MM dd yyy") == "01 01 001") {
 
 
 <b>
@@ -460,7 +460,7 @@
                     }
                     </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)))
+            @if (@item.Final <= (DateTime.Now.AddDays(3)))
             {
                 <style>
                 .@item.Nif {
@@ -469,7 +469,7 @@
                 </style>
 
             }
-            else
+            else if (item.Final >= (DateTime.Now.AddDays(3)))
             {
                 <style>
                     .@item.Nif {

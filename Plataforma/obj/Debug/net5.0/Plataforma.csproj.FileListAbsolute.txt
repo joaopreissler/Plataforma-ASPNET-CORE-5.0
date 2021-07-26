@@ -247,3 +247,4 @@ C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\bin\Debug\net5.0\itextsharp.dll
 C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Members\UploadFile.cshtml.g.cs
+C:\Users\João Victor\Desktop\Plataforma\Plataforma\Plataforma\obj\Debug\net5.0\Razor\Views\Contratos\contratoAutonomo.cshtml.g.cs

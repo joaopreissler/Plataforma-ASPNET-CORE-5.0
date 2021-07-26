@@ -19,6 +19,7 @@ namespace Plataforma.ViewModels
     {
         public int ano;
     }
+
     public class EmpresasIndexViewModel
     {
         public IEnumerable<teste> Enero;
@@ -35,5 +36,7 @@ namespace Plataforma.ViewModels
         public IEnumerable<teste> Dezembro;
         public IEnumerable<Anos> anos;
         public int anoatual;
+        
+        
     }
 }

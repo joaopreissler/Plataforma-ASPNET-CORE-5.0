@@ -418,6 +418,22 @@ namespace Plataforma.Controllers
             };
             return View(resultado);
         }
+        public async Task<ActionResult<ContratoAutonomoViewModel>> contratoAutonomo(int id)
+        {
+            var autonomo = await _context.Trabajadores.Where(x => x.Id == id).FirstOrDefaultAsync();
+            var empresa = await _context.Empresa.Where(x => x.Id == autonomo.IdEmpresa).FirstOrDefaultAsync();
+            var curso = await _context.EmpresaCurso.Where(x => x.IdEmpresa == empresa.Id).OrderBy(s => s.Id).LastOrDefaultAsync();
+
+            
+            ContratoAutonomoViewModel resultado = new ContratoAutonomoViewModel()
+            {
+                Autonomo = autonomo,
+                Empresas = empresa,
+                CursoNome = curso
+
+            };
+            return View(resultado);
+        }
     }
    
 

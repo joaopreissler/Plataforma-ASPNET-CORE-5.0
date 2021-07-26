@@ -1,0 +1,328 @@
+﻿@model Plataforma.ViewModels.ContratoAutonomoViewModel
+
+<head>
+    <style>
+        .texto {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 18px;
+        }
+
+        .texto2 {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 16px;
+        }
+
+        .textoboni {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 18px;
+            color: #F00;
+        }
+
+        .cert {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 20px;
+        }
+
+        .cert2 {
+            width: 2450px;
+            height: 842px;
+        }
+
+        .certTITULO {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .certazul {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .tablanombre {
+            background-color: #058523;
+            border: thin #0F0;
+            font-size: 24px;
+            color: #FFF;
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        }
+
+        .table {
+            height: 842px;
+            width: 595px;
+            ;
+        }
+
+        .texto11 {
+            font-size: 24px;
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        }
+
+        .texto11 {
+            font-size: 24px;
+        }
+
+        .a4 {
+            size: A4;
+        }
+
+        .texto11 strong {
+            font-size: 16px;
+        }
+
+        .texto11 {
+            font-size: 9px;
+        }
+
+        .texto11 {
+            font-size: 12px;
+        }
+
+        .texto11 {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+            <td align="center">
+                <p align="center">
+                    CONTRATO PARA SOLICITAR  FORMACIÓN<br />
+
+                    MODALIDAD DISTANCIA / TELEFORMACIÓN
+                </p>
+
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+
+                    <tr>
+
+                        <td width="103" valign="middle"><img width="259" height="120" src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/EBR-.jpg" /></td>
+
+                        <td width="517" valign="top">
+                            <p align="center">
+                                <strong>EMPRESA    ORGANIZADORA</strong><br />
+
+                                <strong>EUROBRAZIL    INVESTMENTS S.L. CIF B66335472</strong><strong>
+                                    <br />
+
+                                    Granvia de    les Corts Catalanes 584 1er 2na 08029    Barcelona<br />
+
+                                    Teléfono    93 122 09 38<br />
+
+                                    eurobrazilinvestments@gmail.com
+                                </strong>
+                            </p>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td width="118" valign="top" bgcolor="#CCCCCC"><strong>COMERCIAL :</strong></td>
+
+                        <td width="562" valign="top">EBR</td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td width="147" valign="top" bgcolor="#CCCCCC"><strong>EL SOLICITANTE: </strong></td>
+
+                        <td width="290" valign="top">@Model.Autonomo.TrabajadorNome</td>
+
+                        <td width="84" valign="top" bgcolor="#CCCCCC"><strong>DNI:</strong></td>
+
+                        <td width="143" valign="top">@Model.Autonomo.TrabajadorNif</td>
+
+                    </tr>
+
+                </table>
+
+                <br />
+
+                <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+
+                    <tr>
+
+                        <td width="180" bgcolor="#CCCCCC">NOMBRE COMERCIAL</td>
+
+                        <td colspan="3">@Model.Empresas.Nombre_Comercial</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC">DIRECCI&oacute;N</td>
+
+                        <td width="182">@Model.Empresas.Direccion</td>
+
+                        <td width="103" bgcolor="#CCCCCC">C.P.</td>
+
+                        <td width="235">@Model.Empresas.Cp</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC">LOCALIDAD</td>
+
+                        <td>@Model.Empresas.Localidad</td>
+
+                        <td bgcolor="#CCCCCC">PROVINCIA</td>
+
+                        <td>@Model.Empresas.Provincia</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC">TELEFONOS</td>
+
+                        <td>@Model.Empresas.Telefono</td>
+
+                        <td bgcolor="#CCCCCC">EMAIL</td>
+
+                        <td>@Model.Empresas.email</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td bgcolor="#CCCCCC">ACTIVIDAD PRINCIPAL</td>
+
+                        <td colspan="3">&nbsp;</td>
+
+                    </tr>
+
+                </table>
+
+                <table width="1000" border="0" cellpadding="0" cellspacing="0" class="texto">
+
+                    <tr>
+
+                        <td align="center">
+                            <div align="justify" class="texto">
+
+                                <p>
+                                    <strong>
+                                        Solicita&nbsp; a  EUROBRAZIL INVESTMENTS S.L. la gesti&oacute;n de la formaci&oacute;n a Distancia para la  obtenci&oacute;n del CERTIFICADO de
+
+                                        @Model.CursoNome.CursoNome
+
+                                    </strong>
+                                </p>
+
+                                <p>Se le hace entrega del MANUAL y un EXAMEN tipo TEST. Una vez rellenado dicho EXAMEN, el aut&oacute;nomo deber&aacute; enviarlo por correo ordinario junto al presente contrato firmado y el comprobante bancario del pago de 50 euros por el Servicio en la cuenta corriente de EUROBRAZIL, la Sociedad EUROBRAZIL INVESTMENTS S.L. </p>
+
+                                <p>@Model.Empresas.Cuenta</p>
+
+                                <p>
+                                    Dicho examen se corregir&aacute; y, si un m&iacute;nimo del 75% de las respuestas son correctas (para que el curso se considere superado), se har&aacute; entrega del <strong>
+                                        CERTIFICADO  de
+
+                                        @Model.CursoNome.CursoNome
+
+                                        .
+                                    </strong>
+                                </p>
+
+                                <p>El aut&oacute;nomo que se acoja a este tipo de formaci&oacute;n no puede tener trabajadores a su cargo. En caso contrario, debe optar por la formaci&oacute;n de empresa. No obstante, si posteriormente a la realizaci&oacute;n del curso desease contratar trabajadores, se modificar&iacute;a este contrato bonific&aacute;ndole el importe abonado durante el a&ntilde;o en curso.</p>
+
+                                <p>La mercantil EUROBRAZIL INVESTMENTS S.L. permite  al trabajador por cuenta propia optar entre realizar la formaci&oacute;n con el MANUAL A DISTANCIA o optar por el modelo de TELEFORMACI&Oacute;N. El trabajador aut&oacute;nomo podr&aacute; acceder a la plataforma en el horario formativo establecido en el contrato y realizar las horas que correspondan a su formaci&oacute;n del Certificado de profesionalidad.</p>
+
+                                <p>Posteriormente a la superaci&oacute;n de dicho examen, se le enviar&aacute; la CERTIFICACI&Oacute;N acreditando la FORMACI&Oacute;N, la correcci&oacute;n del examen y la factura de haber abonado los 50 Euros, teniendo en cuenta que la formaci&oacute;n est&aacute; exenta de IVA.          </p>
+
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <p>@Model.Empresas.Provincia a @DateTime.Now.Day de @DateTime.Now.Month del @DateTime.Now.Year      </p>
+
+                <table width="1000" border="1" cellpadding="0" cellspacing="0" class="texto">
+
+                    <tr>
+
+                        <td width="360" height="175" valign="top">
+                            <p><u>Representante legal de la    empresa solicitante</u>            </p>
+
+                            <p> </p>
+
+                            <p>&nbsp;</p>
+
+                            <p>
+                                Fdo. <strong> </strong>
+
+                                @Model.Empresas.Nombrereprensentante
+
+                                <br />
+
+                                <strong>
+                                    NIF / NIE
+
+                                    @Model.Empresas.nifrepresentante
+
+                                </strong>
+                            </p>
+                        </td>
+
+                        <td width="312" valign="top">
+                            <p align="center">
+                                <img src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/firma.png" alt="" width="385" height="146" align="middle" /> <br />
+
+                                DNI&nbsp;&nbsp;&nbsp; 37636273 Q
+
+                            </p>
+
+                            </p>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <p class="texto">* La formaci&oacute;n est&aacute; exenta de  I.V.A. (art&iacute;culo 20, apartado 1 n&uacute;mero 96 de la Ley 37/1992 del 28 de diciembre)</p>
+            </td>
+
+        </tr>
+
+    </table>
+
+
+
+    </p>
+
+</body>
+
+
+
+
+
+
+
