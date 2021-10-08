@@ -6,8 +6,8 @@ namespace Plataforma.Controllers
     {
         public string empresa { get; set; }
         public string nombre_comercial { get; set; }
-        public string ss { get; set; }
-        public string nif { get; set; }
+        public object ss { get; set; }
+        public object nif { get; set; }
         public string direccion { get; set; }
         public int cp { get; set; }
         public string provincia { get; set; }
@@ -16,23 +16,23 @@ namespace Plataforma.Controllers
         public int cpCom { get; set; }
         public string provinciaCom { get; set; }
         public string localidadCom { get; set; }
-        public string telefono { get; set; }
-        public string email { get; set; }
+        public object telefono { get; set; }
+        public object email { get; set; }
         public string cc { get; set; }
         public string sector { get; set; }
         public int convenio { get; set; }
         public string actividad { get; set; }
-        public string cnae { get; set; }
+        public object cnae { get; set; }
         public string legal { get; set; }
-        public string fecha_creacion { get; set; }
+        public object fecha_creacion { get; set; }
 
         public string nombre_representante { get; set; }
         public string genero_representante { get; set; }
-        public string nif_representante { get; set; }
+        public object nif_representante { get; set; }
         public string fecha_firma { get; set; }
         public string nombre_gestor { get; set; }
         public string gestoria { get; set; }
-        public string telefono_gestor { get; set; }
+        public object telefono_gestor { get; set; }
        
         public string mes { get; set; }
 

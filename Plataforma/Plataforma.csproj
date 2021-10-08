@@ -106,4 +106,6 @@
     <Folder Include="wwwroot\Uploads\" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties data_4empresas2019_1json__JsonSchema="https://citation-file-format.github.io/1.2.0/schema.json" /></VisualStudio></ProjectExtensions>
+
 </Project>
