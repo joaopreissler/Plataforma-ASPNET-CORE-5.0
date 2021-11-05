@@ -1,29 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\João Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\Plataforma.csproj": {}
+    "C:\\Users\\joaov\\Desktop\\Projects\\GitHub\\Plataforma-ASPNET-CORE-5.0\\Plataforma\\Plataforma.csproj": {}
   },
   "projects": {
-    "C:\\Users\\João Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\Plataforma.csproj": {
+    "C:\\Users\\joaov\\Desktop\\Projects\\GitHub\\Plataforma-ASPNET-CORE-5.0\\Plataforma\\Plataforma.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\João Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\Plataforma.csproj",
+        "projectUniqueName": "C:\\Users\\joaov\\Desktop\\Projects\\GitHub\\Plataforma-ASPNET-CORE-5.0\\Plataforma\\Plataforma.csproj",
         "projectName": "Plataforma",
-        "projectPath": "C:\\Users\\João Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\Plataforma.csproj",
-        "packagesPath": "C:\\Users\\João Victor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\João Victor\\Desktop\\Plataforma\\Plataforma\\Plataforma\\obj\\",
+        "projectPath": "C:\\Users\\joaov\\Desktop\\Projects\\GitHub\\Plataforma-ASPNET-CORE-5.0\\Plataforma\\Plataforma.csproj",
+        "packagesPath": "C:\\Users\\joaov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaov\\Desktop\\Projects\\GitHub\\Plataforma-ASPNET-CORE-5.0\\Plataforma\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\João Victor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\joaov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -106,7 +109,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

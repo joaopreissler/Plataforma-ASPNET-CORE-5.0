@@ -26,33 +26,21 @@ namespace Plataforma.Controllers
         }
 
         // GET: Empresas
+
         
-        
-        public async Task<IActionResult> Index(int anos)
+        public async Task<IActionResult> Index(int anosearch)
         {
-
-
-            if (anos == 0)
+            DateTime mydate = DateTime.Now;
+            var anos = mydate.Year;
+            if (anosearch != 0)
             {
-                DateTime mydate = DateTime.Now;
-                anos = mydate.Year;
-
+                anos = anosearch;
             }
+          
+           
             var queryanos = await(from c in _context.Empresa select new Anos { ano = c.ano }).Distinct().ToListAsync();
 
-            var queryEnero = await(from c in _context.Empresa
-                                   let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                   where c.Idcurso.Equals(1)
-                                   where c.ano.Equals(anos)
-                                   select new teste
-                                   {
-                                       Nombre_Empresa = c.Nombre_Empresa,
-                                       Nombre_Comercial = c.Nombre_Comercial,
-                                       Nif = c.Nif,
-                                       Final = variable,
-                                       Id = c.Id,
-                                       venta = c.venta
-                                   }).ToListAsync();
+            var queryEnero = await _context.Empresa.Where(x => x.Idcurso == 1).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
             var queryFebrero = await(from c in _context.Empresa
                                      let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
                                      where c.Idcurso.Equals(2)
@@ -221,13 +209,14 @@ namespace Plataforma.Controllers
                 Outubro = queryOctubre,
                 Novembro = queryNoviembre,
                 Dezembro = queryDeciembre,
-                anoatual = anos
+                anoatual = (int)anos
             };
 
            
 
             return View(empresas);
         }
+
 
         // GET: Empresas/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -512,8 +501,9 @@ namespace Plataforma.Controllers
                     emailgestoria = empresas.emailgestoria,
                     telefonogestoria = empresas.telefonogestoria,
                     ano = obj.Ano,
-                    Idcurso = obj.mes
-
+                    Idcurso = obj.mes,
+                    seguridad_social = empresas.seguridad_social
+                    
                 };
                 _context.Empresa.Add(empresa);
                 _context.SaveChanges();

@@ -72,7 +72,7 @@ namespace Plataforma.Services
            var empresas = new EmpresasIndexViewModel()
             {
                 anos = queryanos,
-                Enero = queryEnero,
+                Enero = (IEnumerable<Empresa>)queryEnero,
                 Febrero = queryFebrero,
                 anoatual = anos
             };

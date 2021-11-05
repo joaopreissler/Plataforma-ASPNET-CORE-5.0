@@ -22,7 +22,7 @@ namespace Plataforma.ViewModels
 
     public class EmpresasIndexViewModel
     {
-        public IEnumerable<teste> Enero;
+        public IEnumerable<Empresa> Enero;
         public IEnumerable<teste> Febrero;
         public IEnumerable<teste> Marzo;
         public IEnumerable<teste> Abril;

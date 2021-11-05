@@ -32,7 +32,7 @@ namespace Plataforma
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(
-                Configuration.GetConnectionString("DefaultConnection")
+                Configuration.GetConnectionString("DefaultConnection"), options => options.EnableRetryOnFailure()
                 ));
             services.AddScoped<Itest, Test>();
             services.AddControllersWithViews();

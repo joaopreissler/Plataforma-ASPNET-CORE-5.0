@@ -164,6 +164,7 @@
             <th scope="col">Fecha de Nacimiento</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -173,23 +174,24 @@
             {
 
 
-                <tr class="btn-warning">
-                    <th scope="row">@item.Id</th>
-                    <td>@item.TrabajadorNome</td>
-                    <td>@item.TrabajadorNif</td>
-                    <td>@item.SeguridadSocial</td>
-                    <td>
-                        @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
-                        {<p>Sin Fecha</p> }
-                        else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
-                        { <p>Sin Fecha</p> }
-                        else
-                        {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
+        <tr class="btn-warning">
+            <th scope="row">@item.Id</th>
+            <td>@item.TrabajadorNome</td>
+            <td>@item.TrabajadorNif</td>
+            <td>@item.SeguridadSocial</td>
+            <td>
+                @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
+                {<p>Sin Fecha</p> }
+                else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
+                { <p>Sin Fecha</p> }
+                else
+                {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
 
-                    </td>
-                    <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
-                    <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
-                </tr>
+            </td>
+            <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
+            <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+            <th></th>
+        </tr>
             }
             else
             {
@@ -221,6 +223,7 @@
 <table class="table">
     <thead class="table-danger">
     <th>Trabajadores Baja</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>

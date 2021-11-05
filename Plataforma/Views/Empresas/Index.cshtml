@@ -7,9 +7,9 @@
 <div style="display:flex;justify-content:space-between">
     <h1>Empresas participantes - @Model.anoatual</h1>
     
-    <form method="post" asp-action="Index" >
+    <form method="get" asp-action="Index" >
         
-            <!select asp-for="anos" name="anos" id="mytable" selected="@Model.anoatual">
+            <!select asp-for="anosearch" name="anosearch" id="mytable" selected="@Model.anoatual">
                 @foreach (var item in Model.anos)
                 {
                     if (Model.anoatual == @item.ano)
@@ -74,33 +74,7 @@
 
                 </td>
             </tr>
-            @if (item.Final.Date <= ((DateTime.Now).AddDays(3)) || item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+         
         }
     </tbody>
     <tbody>

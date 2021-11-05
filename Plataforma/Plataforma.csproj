@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include=".ebextensions\init.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\PRL\1.jpg" />
     <None Include="wwwroot\PRL\1273014462.png" />
     <None Include="wwwroot\PRL\2.jpg" />
@@ -106,6 +102,6 @@
     <Folder Include="wwwroot\Uploads\" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties data_4empresas2019_1json__JsonSchema="https://citation-file-format.github.io/1.2.0/schema.json" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
