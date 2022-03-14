@@ -9,7 +9,7 @@ using Plataforma.Data;
 using Plataforma.Models;
 using Plataforma.ViewModels;
 using Microsoft.AspNetCore.Authorization;
-using Plataforma.Interface;
+
 
 namespace Plataforma.Controllers
 {
@@ -18,11 +18,11 @@ namespace Plataforma.Controllers
     public class EmpresasController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly Itest _test;
-        public EmpresasController(ApplicationDbContext context, Itest test)
+        
+        public EmpresasController(ApplicationDbContext context)
         {
             _context = context;
-            _test = test;
+            
         }
 
         // GET: Empresas
@@ -38,154 +38,21 @@ namespace Plataforma.Controllers
             }
           
            
-            var queryanos = await(from c in _context.Empresa select new Anos { ano = c.ano }).Distinct().ToListAsync();
+            var queryanos = await(from c in _context.Empresa select new Anos { ano = c.ano }).Distinct().OrderBy(c => c.ano).ToListAsync();
 
             var queryEnero = await _context.Empresa.Where(x => x.Idcurso == 1).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
-            var queryFebrero = await(from c in _context.Empresa
-                                     let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                     where c.Idcurso.Equals(2)
-                                     where c.ano.Equals(anos)
-                                     select new teste
-                                     {
-                                         Nombre_Empresa = c.Nombre_Empresa,
-                                         Nombre_Comercial = c.Nombre_Comercial,
-                                         Nif = c.Nif,
-                                         Final = variable,
-                                         Id = c.Id,
-                                         venta = c.venta
-                                     }).ToListAsync();
-            var queryMarzo = await (from c in _context.Empresa
-                                      let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                      where c.Idcurso.Equals(3)
-                                      where c.ano.Equals(anos)
-                                      select new teste
-                                      {
-                                          Nombre_Empresa = c.Nombre_Empresa,
-                                          Nombre_Comercial = c.Nombre_Comercial,
-                                          Nif = c.Nif,
-                                          Final = variable,
-                                          Id = c.Id,
-                                          venta = c.venta
-                                      }).ToListAsync();
-            var queryAbril = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(4)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var queryMayo = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(5)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var queryJunio = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(6)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var queryJulio = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(7)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var queryAgosto = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(8)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var querySeptembro = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(9)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var queryOctubre = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(10)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var queryNoviembre = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(11)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            var queryDeciembre = await (from c in _context.Empresa
-                                    let variable = _context.EmpresaCurso.Where(y => y.IdEmpresa == c.Id).Select(x => x.Final).OrderByDescending(b => b).FirstOrDefault()
-                                    where c.Idcurso.Equals(12)
-                                    where c.ano.Equals(anos)
-                                    select new teste
-                                    {
-                                        Nombre_Empresa = c.Nombre_Empresa,
-                                        Nombre_Comercial = c.Nombre_Comercial,
-                                        Nif = c.Nif,
-                                        Final = variable,
-                                        Id = c.Id,
-                                        venta = c.venta
-                                    }).ToListAsync();
-            /*
-             * select Nombre_Empresa,Nombre_Comercial,Nif,Final from Plataforma.dbo.Empresa as B
+            var queryFebrero = await _context.Empresa.Where(x => x.Idcurso == 2).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryMarzo = await _context.Empresa.Where(x => x.Idcurso == 3).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryAbril = await  _context.Empresa.Where(x => x.Idcurso == 4).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryMayo = await _context.Empresa.Where(x => x.Idcurso == 5).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryJunio = await _context.Empresa.Where(x => x.Idcurso == 6).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryJulio = await _context.Empresa.Where(x => x.Idcurso == 7).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryAgosto = await _context.Empresa.Where(x => x.Idcurso == 8).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var querySeptembro = await _context.Empresa.Where(x => x.Idcurso == 9).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryOctubre = await _context.Empresa.Where(x => x.Idcurso == 10).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryNoviembre = await _context.Empresa.Where(x => x.Idcurso == 11).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            var queryDeciembre = await _context.Empresa.Where(x => x.Idcurso == 12).Where(y => y.ano == anos).OrderBy(id => id).ToListAsync();
+            /* select Nombre_Empresa,Nombre_Comercial,Nif,Final from Plataforma.dbo.Empresa as B
              outer apply 
              (SELECT TOP 1 * FROM Plataforma.dbo.EmpresaCurso A 
              where A.IdEmpresa = B.Id ORDER BY A.Final DESC) as A
@@ -381,7 +248,7 @@ namespace Plataforma.Controllers
             _context.SaveChanges();
 
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit", new { id = id });
         }
         public IActionResult BajaTrabajador(int id)
         {
@@ -592,6 +459,15 @@ namespace Plataforma.Controllers
             _context.SaveChanges();
             return View(empresa);
         }
+        public IActionResult BorrarCurso(int id)
+        { var curso = _context.EmpresaCurso.Where(x => x.Id == id).FirstOrDefault();
+            var empresa = _context.Empresa.Where(x => x.Id == curso.IdEmpresa).FirstOrDefault();
+            _context.EmpresaCurso.Remove(curso);
+            _context.SaveChanges();
+            
+            return RedirectToAction("Edit", new { empresa.Id });
+        }
     }
+  
     
 }

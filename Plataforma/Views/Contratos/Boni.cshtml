@@ -4,13 +4,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Instruccións per a la Bonificació</title>
-    <link href="css/estilo2.css" rel="stylesheet" type="text/css" />
+    
    
 </head>
 
 <body>
    
-    <table width="1000" border="0" align="center" class="texto2">
+    <table width="1000" border="0" align="center" style="font-size:18px;">
         <tr>
             <td>
                 <p>
@@ -28,115 +28,126 @@
                 </p>
                 <hr />
                 <p>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  EMPRESA:&nbsp;@Model.Nombre_Empresa <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Importe a bonificar:<strong>&nbsp;<span class="textoboni">(</span></strong><span class="textoboni"><strong style="color:red;">@Model.creditodisponible€</strong>&nbsp;<strong>)</strong></span><br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mes a bonificar:&nbsp;<strong>a partir de</strong>&nbsp;<span class="textoboni"><strong>
-                    
-                    @{
-                        var mes = @Model.Fechafirma.ToString("MM");
-                        switch (mes)
-                        {
-                            case "01":
-                                mes = "Enero";
-                                break;
-                            case "02":
-                                mes = "Febrero";
-                                break;
-                            case "03":
-                                mes = "Marzo";
-                                break;
-                            case "04":
-                                mes = "Abril";
-                                break;
-                            case "05":
-                                mes = "Mayo";
-                                break;
-                            case "06":
-                                mes = "Junio";
-                                break;
-                            case "07":
-                                mes = "Julio";
-                                break;
-                            case "08":
-                                mes = "Agosto";
-                                break;
-                            case "09":
-                                mes = "Septiembre";
-                                break;
-                            case "10":
-                                mes = "Octubre";
-                                break;
-                            case "11":
-                                mes = "Noviembre";
-                                break;
-                            case "12":
-                                mes = "Diciembre";
-                                break;
-                        }
-                        var mes2 = Model.Fechafirma.ToString("MM");
-                        switch (mes2)
-                        {
-                            case "01":
-                                mes2 = "Enero";
-                                break;
-                            case "02":
-                                mes2 = "Febrero";
-                                break;
-                            case "03":
-                                mes2 = "Marzo";
-                                break;
-                            case "04":
-                                mes2 = "Abril";
-                                break;
-                            case "05":
-                                mes2 = "Mayo";
-                                break;
-                            case "06":
-                                mes2 = "Junio";
-                                break;
-                            case "07":
-                                mes2 = "Julio";
-                                break;
-                            case "08":
-                                mes2 = "Agosto";
-                                break;
-                            case "09":
-                                mes2 = "Septiembre";
-                                break;
-                            case "10":
-                                mes2 = "Octubre";
-                                break;
-                            case "11":
-                                mes2 = "Noviembre";
-                                break;
-                            case "12":
-                                mes2 = "Diciembre";
-                                break;
-                        }
+                    <div style="font-size: 1.5rem">
+                        <span style="font-size:1.5rem;">EMPRESA: @Model.Nombre_Empresa </span><br />
+                        Importe a bonificar:<strong><span class="textoboni">(</span></strong><span class="textoboni"><strong style="color:red;">@Model.creditodisponible€</strong><strong>)</strong></span><br />
+                        Mes a bonificar:<strong>a partir de</strong><span class="textoboni">
+                            <strong style="color:red;text-transform: uppercase;">
 
-                        }@mes2</strong></span><strong>&nbsp;(*)</strong>&nbsp;(seguros sociales pagaderos en&nbsp;<strong class="textoboni" style="color:red;">@mes</strong>).&nbsp;&nbsp;<br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+                                @{
+                                    var mes = " ";
+                                    var mes2 = " ";
+                                    switch (@Model.Idcurso)
+                                    {
+                                        case 1:
+                                            mes ="ENERO";
+                                            break;
+                                        case 2:
+                                            mes = "FEBRERO";
+                                            break;
+                                        case 3:
+                                            mes = "MARZO";
+                                            break;
+                                        case 4:
+                                            mes = "ABRIL";
+                                            break;
+                                        case 5:
+                                            mes = "MAYO";
+                                            break;
+                                        case 6:
+                                            mes = "JUNIO";
+                                            break;
+                                        case 7:
+                                            mes = "JULIO";
+                                            break;
+                                        case 8:
+                                            mes = "AGOSTO";
+                                            break;
+                                        case 9:
+                                            mes = "SEPTIEMBRE";
+                                            break;
+                                        case 10:
+                                            mes = "OCTUBRE";
+                                            break;
+                                        case 11:
+                                            mes = "NOVIEMBRE";
+                                            break;
+
+                                        default:
+                                            mes = "DECIEMBRE";
+                                            break;
+                                    }
+
+                                    switch (mes)
+                                    {
+                                        case "ENERO":
+                                            mes2 = "FEBRERO";
+                                            break;
+                                        case "FEBRERO":
+                                            mes2 = "MARZO";
+                                            break;
+                                        case "MARZO":
+                                            mes2 = "ABRIL";
+                                            break;
+                                        case "ABRIL":
+                                            mes2 = "MAYO";
+                                            break;
+                                        case "MAYO":
+                                            mes2 = "JUNIO";
+                                            break;
+                                        case "JUNIO":
+                                            mes2 = "JULIO";
+                                            break;
+                                        case "JULIO":
+                                            mes2 = "AGOSTO";
+                                            break;
+                                        case "AGOSTO":
+                                            mes2 = "SEPTIEMBRE";
+                                            break;
+                                        case "SEPTIEMBRE":
+                                            mes2 = "OCTUBRE";
+                                            break;
+                                        case "OCTUBRE":
+                                            mes2 = "NOVIEMBRE";
+                                            break;
+                                        case "NOVIEMBRE":
+                                            mes2 = "DECIEMBRE";
+                                            break;
+
+                                        default:
+                                            mes2 = "ENERO";
+                                            break;
+                                    }
+
+                                   
+
+
+                                }@mes
+                            </strong>
+                        </span><strong>(*)</strong>(seguros sociales pagaderos en <strong class="textoboni" style="color:red;text-transform:uppercase">@mes2</strong>).<br />
+                        <br />
+                    </div>
                     <strong>(*) SI  SE HAN BONIFICADO ANTES DE ESTE MES, ROGAMOS SE PONGAN EN CONTACTO CON NOSOTROS  PUES, EN ESE CASO,  HABRÁN PRACTICADO UNA BONIFICACIÓN INDEBIDA.</strong> <br />
-                    A continuación, se detalla la forma de aplicar estas bonificaciones, según el  medio de presentación:&nbsp;<u>Sistema&nbsp;</u><acronym>RED</acronym>&nbsp;o&nbsp;<u>papel  (TC2 normalizado)</u>. <br />
+                    A continuación, se detalla la forma de aplicar estas bonificaciones, según el  medio de presentación:<u>Sistema</u><acronym>RED</acronym>o<u>papel  (TC2 normalizado)</u>. <br />
                     <br />
                     <u>SISTEMA RED</u> <br />
                     Los usuarios del sistema  RED comunicarán las bonificaciones por formación profesional continua en el  fichero FAN, en un segmento totalizador (EDTCA80). Este segmento totalizador no  está asociado a datos de trabajador. El importe de esta bonificación se  acumulará en el segmento EDTCA60 de &quot;suma de bonificaciones, subvenciones  y compensaciones&quot;.<br />
                     <br />
                     Las empresas que transmitan a través del Sistema RED la relación nominal de  trabajadores y efectúen el ingreso de cuotas mediante documento de la serie TC1  (es decir, aquellas que no utilizan los sistemas de pago de cargo en cuenta o  pago electrónico, o cuya liquidación no resulte acreedora), deberán aplicar el  importe de la bonificación en la casilla 601 del TC1 de la liquidación normal  del mes que se trate. <br />
-                    &nbsp;Cumplimentación del fichero FAN: <br />
+                    Cumplimentación del fichero FAN: <br />
                     <br />
-                    Se crea una nueva clave de bonificación a nivel de datos  totalizadores: CA80 &quot;Bonificación&nbsp;<acronym>SPEE</acronym>&nbsp;formación  continua&quot;. <br />
+                    Se crea una nueva clave de bonificación a nivel de datos  totalizadores: CA80 &quot;Bonificación<acronym>SPEE</acronym>formación  continua&quot;. <br />
                     <br />
-                    &nbsp;&nbsp;Esta bonificación totalizará en el segmento EDTCA60  &quot;Suma de bonificaciones, subvenciones y compensaciones&quot;.<br />
-                    CA60 = Sumatorio de EDLCD07 + EDLCD09 + EDLCD10 + EDLCD11 + EDLCD12 + EDLCD13 +  EDLCD16 + EDLCD18 + EDLCD19 + EDTCA80.&nbsp; <br />
-                    &nbsp;<br />
+                    Esta bonificación totalizará en el segmento EDTCA60  &quot;Suma de bonificaciones, subvenciones y compensaciones&quot;.<br />
+                    CA60 = Sumatorio de EDLCD07 + EDLCD09 + EDLCD10 + EDLCD11 + EDLCD12 + EDLCD13 +  EDLCD16 + EDLCD18 + EDLCD19 + EDTCA80. <br />
+                    <br />
                     La clave CA80 sólo se admitirá en las liquidaciones L00. <br />
                     Por este sistema, la empresa se descontará, automáticamente, del  importe a pagar dicha bonificación, pagando por tanto menor cuantía en  seguridad social de ese mes. <br />
                     <br />
                     <u>TC2  NORMALIZADO.</u><br />
-                    Si la cumplimentación se realiza por el sistema Normalizado, las  empresas deberán presentar un TC1 complementario que no llevará asociado ningún  documento TC2. Este documento estará codificado de la siguiente forma: a la  derecha, entre el cuadro para firmar la Administración y el cuadro para firmar  por la empresa, hay 3 cuadros con las iniciales CL&nbsp; C&nbsp; C, pues bien,  en ellas se debe poner 4&nbsp; 9&nbsp; 5, que significa: (CL) &ldquo;4:  complementaria&rdquo; y la clave de control (CC) &ldquo;95: Bonificaciones por Formación  Continua. La casilla 601 deberá contener el importe de las Bonificaciones por  Formación Continua. Y en la casilla 800 el importe A PERCIBIR (que será el  mismo importe de la bonificación). En este TC1 complementario no deben aparecer  más datos económicos ni de ningún otro tipo. <br />
+                    Si la cumplimentación se realiza por el sistema Normalizado, las  empresas deberán presentar un TC1 complementario que no llevará asociado ningún  documento TC2. Este documento estará codificado de la siguiente forma: a la  derecha, entre el cuadro para firmar la Administración y el cuadro para firmar  por la empresa, hay 3 cuadros con las iniciales CL C C, pues bien,  en ellas se debe poner 4 9 5, que significa: (CL) &ldquo;4:  complementaria&rdquo; y la clave de control (CC) &ldquo;95: Bonificaciones por Formación  Continua. La casilla 601 deberá contener el importe de las Bonificaciones por  Formación Continua. Y en la casilla 800 el importe A PERCIBIR (que será el  mismo importe de la bonificación). En este TC1 complementario no deben aparecer  más datos económicos ni de ningún otro tipo. <br />
                     El importe de esta liquidación resultará siempre a percibir  debiéndose presentar en la Dirección Provincial de la Tesorería General de la  Seguridad Social o Administración correspondiente, dentro del plazo  reglamentario de presentación. <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+                     <br />
                     <strong>NOTA: La  aplicación de la Bonificación en la cotización exigirá que la empresa se  encuentre al corriente de pago en sus obligaciones con Hacienda y de cotización  a la Seguridad Social, así como haber abonado el importe de la Formación a  EUROBRAZIL INVESTMENTS S.L.U.</strong>
                 </p>
                 <p>Sin más, confiando haberles servido de ayuda, aprovecho la ocasión  para enviarles un cordial saludo. Asimismo, les indicamos que estamos a su  disposición para responder a cualquier reclamo o requerimiento que reciban por  parte de la Tesorería, INEM y/o Fundación Tripartita, por lo que rogamos nos  hagan conocedores de ello para actuar dentro del plazo que se ofrezca.  </p>

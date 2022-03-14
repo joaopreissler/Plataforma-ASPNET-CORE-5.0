@@ -211,7 +211,7 @@ div.WordSection1
 							<table width="600" border="0" align="right" cellpadding="2" cellspacing="2" class="texto2">
 								<tr>
 									<div style="text-align:right;">
-										<img src="https://s3.us-east-2.amazonaws.com/eurobrazil-formacion/storage/signaturas/<?=$fila2[" empresa"];?>.png"/>
+										<img src="https://s3.us-east-2.amazonaws.com/eurobrazil-formacion/storage/signaturas/<?=$fila2[" empresa"];?>"/>
 										<td align="center">FIRMA Y SELLO DEL  REPRESENTANTE LEGAL DE LA EMPRESA</td>
 									</div>
 								</tr>
@@ -222,7 +222,7 @@ div.WordSection1
 									</td>
 								</tr>
 								<tr>
-									<td align="center">En @Model.Empresa.Localidad a @DateTime.Now.Day de @DateTime.Now.Month del @DateTime.Now.Year    </td>
+                                    <td align="center">En @Model.Empresa.Localidad  a @Model.Empresa.Fechafirma.Day de @Model.Empresa.Fechafirma.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) del @DateTime.Now.Year    </td>
 								</tr>
 							</table>
 						</td>

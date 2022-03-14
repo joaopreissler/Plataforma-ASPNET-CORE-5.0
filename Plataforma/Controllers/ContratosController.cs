@@ -7,18 +7,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Plataforma.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using Plataforma.Interface;
+
 
 namespace Plataforma.Controllers
 {
     public class ContratosController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly Itest _test;
-        public ContratosController(ApplicationDbContext context, Itest test)
+        
+        public ContratosController(ApplicationDbContext context)
         {
             _context = context;
-            _test = test;
+            
         }
         
         public IActionResult Index(int id)
@@ -28,11 +28,7 @@ namespace Plataforma.Controllers
                                 where a.Id.Equals(id)
                                 select a).FirstOrDefault();
 
-
-
-                /*  var autonomo = (from a in _context.Trabajadores
-                                  where a.Trabajadortipo.Equals("Autonomo") where a.IdEmpresa.Equals(empresas.Id)
-                                  select a).FirstOrDefault();*/
+            EmpresaCurso curso = _context.EmpresaCurso.Where(x => x.IdEmpresa == id).FirstOrDefault();
                 Empresa empresa = new Empresa()
                 {
                     Nombre_Empresa = empresas.Nombre_Empresa,
@@ -75,13 +71,8 @@ namespace Plataforma.Controllers
 
                 ContratoEncomiendaViewModel contratoencomienda = new ContratoEncomiendaViewModel()
                 {
-                    Empresas = empresa/*,
-                Autonomo = new ContratoEncomiendaViewModel.autonomo()
-                {
-                    TrabajadorNome = autonomo.TrabajadorNome,
-                    TrabajadorNif = autonomo.TrabajadorNif
-                }*/
-
+                    Empresas = empresa,
+                    curso = curso
                 };
                 return View(contratoencomienda);
 
@@ -101,7 +92,8 @@ namespace Plataforma.Controllers
                            where a.Id.Equals(id)
                            select a).FirstOrDefault();
             var trabajadores = (from a in _context.Trabajadores
-                                where a.IdEmpresa.Equals(id) && a.Trabajadortipo != "Autonomo" && a.AnoTrabajador.Equals(empresa.ano)
+                                where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Trabajador" && a.AnoTrabajador.Equals(empresa.ano)
+                                && a.TrabajadorAlta.Equals(true)
                                 select a).ToList();
             var curso = (from a in _context.EmpresaCurso
                          where a.IdEmpresa.Equals(id)
@@ -145,10 +137,18 @@ namespace Plataforma.Controllers
                          where a.IdEmpresa.Equals(id)
                          orderby a.Id
                          select a).LastOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Trabajador" && a.AnoTrabajador.Equals(empresa.ano)
+                                && a.TrabajadorAlta == true && a.Fundae == true
+                                select a).ToList();
+            var query = _context.Empresa.Where(x => x.Idcurso == empresa.Idcurso).Where(y => y.ano == empresa.ano).OrderBy(id => id).ToList();
+            int index = query.FindIndex(c => c.Nif == empresa.Nif)+1;
             FacturaViewModel viewmodel = new FacturaViewModel()
             {
                 empresa = empresa,
                 cursos = curso,
+                trabajadores = trabajadores,
+                numero = index
             };
             return View(viewmodel);
         }
@@ -318,7 +318,7 @@ namespace Plataforma.Controllers
                                 select a).ToList();
             var autonomo = (from a in _context.Trabajadores
                                 where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Autonomo" && a.AnoTrabajador.Equals(empresa.ano)
-                                select a).SingleOrDefault();
+                                select a).FirstOrDefault();
 
             ContratoEncomiendaViewModel datos = new ContratoEncomiendaViewModel()
             {
@@ -340,12 +340,15 @@ namespace Plataforma.Controllers
                            where a.Id.Equals(id)
                            select a).FirstOrDefault();
             var trabajadores = (from a in _context.Trabajadores
-                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano) && a.Trabajadortipo.Equals("Trabajador")
                                 select a).ToList();
             var autonomo = (from a in _context.Trabajadores
                             where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Autonomo" && a.AnoTrabajador.Equals(empresa.ano)
-                            select a).SingleOrDefault();
-
+                            select a).FirstOrDefault();
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
             ContratoEncomiendaViewModel datos = new ContratoEncomiendaViewModel()
             {
                 Empresas = empresa,
@@ -355,7 +358,8 @@ namespace Plataforma.Controllers
                     TrabajadorNif = autonomo.TrabajadorNif
                 },
 
-                trabajadores = trabajadores
+                trabajadores = trabajadores,
+                curso = curso
             };
 
             return View(datos);
@@ -366,7 +370,10 @@ namespace Plataforma.Controllers
                            where a.Id.Equals(id)
                            select a).FirstOrDefault();
             var trabajadores = (from a in _context.Trabajadores
-                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Trabajador" && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
+                                select a).ToList();
+            var trabajadoresfundae = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Trabajador" && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano) && a.Fundae == true
                                 select a).ToList();
             var curso = (from a in _context.EmpresaCurso
                          where a.IdEmpresa.Equals(id)
@@ -377,7 +384,7 @@ namespace Plataforma.Controllers
             {
                 Empresa = empresa,
                 Curso = curso,
-
+                Fundae = trabajadoresfundae,
                 Trabajadores = trabajadores
             };
 
@@ -390,8 +397,8 @@ namespace Plataforma.Controllers
                            select a).FirstOrDefaultAsync();
             
             var trabajadores = await (from a in _context.Trabajadores
-                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano)
-                                select a).ToListAsync();
+                                where a.IdEmpresa.Equals(id) && a.TrabajadorAlta == true && a.AnoTrabajador.Equals(empresa.ano) && a.Trabajadortipo == "Trabajador"
+                                      select a).ToListAsync();
             var curso = await (from a in _context.EmpresaCurso
                          where a.IdEmpresa.Equals(id)
                          orderby a.Id

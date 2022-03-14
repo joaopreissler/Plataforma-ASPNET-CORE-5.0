@@ -65,10 +65,51 @@
                                     <td bgcolor="#CCCCCC" class="texto">N DE FACTURA</td>
 
                                     <td class="texto">
-
-                                        @DateTime.Now.Month -
-
-                                        @Model.empresa.Id -
+                                       @{ var control = Model.empresa.Idcurso;
+                                           var mes = "";
+                                           switch (control)
+                                           {
+                                               case 1:
+                                                   mes = "E";
+                                                   break;
+                                               case 2:
+                                                   mes = "F";
+                                                   break;
+                                               case 3:
+                                                   mes = "M";
+                                                   break;
+                                               case 4:
+                                                   mes = "A";
+                                                   break;
+                                               case 5:
+                                                   mes = "MG";
+                                                   break;
+                                               case 6:
+                                                   mes = "JN";
+                                                   break;
+                                               case 7:
+                                                   mes = "JL";
+                                                   break;
+                                               case 8:
+                                                   mes = "AG";
+                                                   break;
+                                               case 9:
+                                                   mes = "S";
+                                                   break;
+                                               case 10:
+                                                   mes = "O";
+                                                   break;
+                                               case 11:
+                                                   mes = "N";
+                                                   break;
+                                               
+                                               default:
+                                                   mes = "D";
+                                                   break;
+                                           }
+                                       }
+                                        @mes -
+                                        @Model.numero -
 
                                         SS-
 
@@ -169,21 +210,7 @@
                         <td width="481" valign="top">
                             <table width="100%" border="0">
 
-                                <tr>
-
-                                    <td bgcolor="#CCCCCC" class="texto">Acci&oacute;n formativa: </td>
-
-                                    <td width="65%" class="texto"><?=$fila10["accionformativa"];?></td>
-
-                                </tr>
-
-                                <tr>
-
-                                    <td bgcolor="#CCCCCC" class="texto">Grupo:</td>
-
-                                    <td class="texto"><?=$fila9["grupo"];?></td>
-
-                                </tr>
+                              
 
                                 <tr>
 
@@ -230,7 +257,7 @@
                                     <td bgcolor="#CCCCCC" class="texto">N&uacute;mero de participantes    :</td>
 
                                     <td class="texto">
-                                       
+                                       @Model.trabajadores.Count()
                                     </td>
 
                                 </tr>
@@ -239,7 +266,7 @@
 
                                     <td bgcolor="#CCCCCC" class="texto">Fecha de inicio :</td>
 
-                                    <td class="texto">@Model.cursos.Inicio</td>
+                                    <td class="texto">@Model.cursos.Inicio.ToString("dd/MM/yyyy")</td>
 
                                 </tr>
 
@@ -247,7 +274,7 @@
 
                                     <td bgcolor="#CCCCCC" class="texto">Fecha de fin :</td>
 
-                                    <td class="texto">@Model.cursos.Final</td>
+                                    <td class="texto">@Model.cursos.Final.ToString("dd/MM/yyyy")</td>
 
                                 </tr>
 

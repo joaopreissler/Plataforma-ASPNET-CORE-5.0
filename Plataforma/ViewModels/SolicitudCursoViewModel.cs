@@ -9,6 +9,7 @@ namespace Plataforma.ViewModels
     {
         public Empresa Empresa;
         public IEnumerable<Trabajadores> Trabajadores;
+        public IEnumerable<Trabajadores> Fundae;
         public EmpresaCurso Curso;
     }
 }

@@ -283,7 +283,7 @@ div.WordSection1
 
 			<tr>
 
-			  <td align="center">En @Model.Empresa.Localidad a @DateTime.Now.Day de @DateTime.Now.Month del @DateTime.Now.Year</td>
+                <td align="center">En @Model.Empresa.Localidad  a @Model.Empresa.Fechafirma.Day de @Model.Empresa.Fechafirma.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) del @DateTime.Now.Year</td>
 
 			</tr>
 

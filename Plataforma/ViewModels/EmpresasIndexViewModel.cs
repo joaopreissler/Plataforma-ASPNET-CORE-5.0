@@ -6,15 +6,7 @@ using System.Threading.Tasks;
 
 namespace Plataforma.ViewModels
 {
-    public class teste {
-        public string Nombre_Empresa;
-        public string Nombre_Comercial;
-        public string Nif;
-        public DateTime Final;
-        public int Id;
-        public Boolean venta;
-
-}
+    
     public class Anos
     {
         public int ano;
@@ -23,17 +15,17 @@ namespace Plataforma.ViewModels
     public class EmpresasIndexViewModel
     {
         public IEnumerable<Empresa> Enero;
-        public IEnumerable<teste> Febrero;
-        public IEnumerable<teste> Marzo;
-        public IEnumerable<teste> Abril;
-        public IEnumerable<teste> Mayo;
-        public IEnumerable<teste> Junio;
-        public IEnumerable<teste> Julio;
-        public IEnumerable<teste> Agosto;
-        public IEnumerable<teste> Setembro;
-        public IEnumerable<teste> Outubro;
-        public IEnumerable<teste> Novembro;
-        public IEnumerable<teste> Dezembro;
+        public IEnumerable<Empresa> Febrero;
+        public IEnumerable<Empresa> Marzo;
+        public IEnumerable<Empresa> Abril;
+        public IEnumerable<Empresa> Mayo;
+        public IEnumerable<Empresa> Junio;
+        public IEnumerable<Empresa> Julio;
+        public IEnumerable<Empresa> Agosto;
+        public IEnumerable<Empresa> Setembro;
+        public IEnumerable<Empresa> Outubro;
+        public IEnumerable<Empresa> Novembro;
+        public IEnumerable<Empresa> Dezembro;
         public IEnumerable<Anos> anos;
         public int anoatual;
         

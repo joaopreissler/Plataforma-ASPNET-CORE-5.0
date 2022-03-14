@@ -9,7 +9,7 @@
     { 
     <div>    
     <a asp-action="AddTrabajador" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Añadir Trabajador</a>
-        <a asp-action="Empresaano" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Insertar empresa al otro año</a>
+        <a asp-action="Empresaano" asp-route-id="@item.Id" class="btn btn-warning" style="height: fit-content;">Insertar empresa en otro año</a>
         <div style="display:flex;">
 
 
@@ -18,12 +18,14 @@
                 <tbody>
                     <tr><td>Razón Social</td><td>@item.Nombre_Empresa</td></tr>
                     <tr><td>Nombre Comercial</td><td>@item.Nombre_Comercial</td></tr>
-                    <tr><td>Nif</td><td>@item.Nif</td></tr>
+                    <tr><td>CIF/NIF/NIE</td><td>@item.Nif</td></tr>
                     <tr><td>Direccion</td><td>@item.Direccion</td></tr>
                     <tr><td>CP</td><td>@item.Cp</td></tr>
                     <tr><td>Provincia</td><td>@item.Provincia</td></tr>
                     <tr><td>Localidad</td><td>@item.Localidad</td></tr>
                     <tr><td>Direccion Comercial</td><td>@item.DireccionComercial</td></tr>
+                    <tr><td>Banco</td><td>@item.Banco</td></tr>
+                    <tr><td>Cuenta Corriente</td><td>@item.CuentaCotizacion</td></tr>
                     <tr><td>Seguridad Social</td><td>@item.seguridad_social</td></tr>
                     <tr><td>CP Comercial</td><td>@item.CPComercial</td></tr>
                     <tr><td>Provincia Comercial</td><td>@item.ProvinciaComercial</td></tr>
@@ -35,6 +37,7 @@
                     <tr><td>NIF Representante</td><td>@item.nifrepresentante</td></tr>
                     <tr><td>Fecha Firma</td><td>@item.Fechafirma</td></tr>
                     <tr><td>Nombre Gestoria</td><td>@item.nombregestoria</td></tr>
+                    <tr><td>Persona Contacto</td><td>@item.contatogestoria</td></tr>
                     <tr><td>Telefono Gestoria</td><td>@item.telefonogestoria</td></tr>
                     <tr><td>Email Gestoria</td><td>@item.emailgestoria</td></tr>
                 </tbody>
@@ -67,7 +70,7 @@
                     <div class="card-header" style="        background-color: #17a2b8 !important;
         color: white;
         font-weight: 600;">
-                        Certificados y Testes
+                        Certificados y Examenes
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"> <a asp-controller="Contratos" asp-action="Caratulas" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Caratulas</a></li>
@@ -93,7 +96,7 @@
                 </div>
                 <a asp-controller="Contratos" asp-action="Renovacion" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Renovación</a>
                 <a asp-controller="Contratos" asp-action="TodosContratos" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Todos los Contractos</a>
-                <a asp-controller="Contratos" asp-action="prl" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Imprimir Curso</a>
+                <a asp-controller="Contratos" asp-action="prl" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">PRL Nuevo</a>
             </div>
             }
         </div>
@@ -106,7 +109,7 @@
     <form method="post" asp-action="Edit" style="max-width: 22rem; float: right;  margin-bottom: 10px; ">
 
         <div>
-            <label asp-for="CursoNome"></label>
+            <label asp-for="CursoNome">Nombre Curso</label>
         </div>
         <select asp-for="CursoNome" name="CursoNome">
             @foreach (var item in Model.Curso)
@@ -119,15 +122,15 @@
             <label asp-for="Inicio"></label>
         </div>
         <div>
-            <input type="date" asp-for="Inicio" />
+            <input type="date" asp-for="Inicio" required/>
         </div>
         <div>
             <label asp-for="Final"></label>
         </div>
         <div>
-            <input type="date" asp-for="Final" />
+            <input type="date" asp-for="Final" required/>
         </div>
-        <input type="submit" class="btn btn-info w-100" value="Save" />
+        <input type="submit" class="btn btn-info w-100" value="Guardar" />
     </form>
 </div>
     <table class="table table-dark">
@@ -143,12 +146,20 @@
             @foreach (var item in Model.CursosNome)
             {
 
-                <tr>
-                    <th>@item.CursoNome</th>
-                    <td>@item.Inicio.ToString("dd/MM/yyyy")</td>
-                    <td >@item.Final.ToString("dd/MM/yyyy")</td>
-
-                </tr>
+            <tr>
+                <th>@item.CursoNome</th>
+                <td>@item.Inicio.ToString("dd/MM/yyyy")</td>
+                <td>@item.Final.ToString("dd/MM/yyyy")</td>
+               
+                <td>
+                    <a type="button" class="btn btn-warning" asp-action="BorrarCurso" asp-route-id="@item.Id" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
+                        </svg>
+                        Borrar
+                    </a>
+                </td>
+            </tr>
             }
 
         </tbody>
@@ -164,6 +175,8 @@
                 <th scope="col">Fecha de Nacimiento</th>
                 <th></th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -173,23 +186,25 @@
                 {
 
 
-                    <tr class="btn-warning">
-                        <th scope="row">@item.Id</th>
-                        <td>@item.TrabajadorNome</td>
-                        <td>@item.TrabajadorNif</td>
-                        <td>@item.SeguridadSocial</td>
-                        <td>
-                            @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
-                            {<p>Sin Fecha</p> }
-                            else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
-                            { <p>Sin Fecha</p> }
-                            else
-                            {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
+            <tr class="btn-warning">
+                <th scope="row">@item.Id</th>
+                <td>@item.TrabajadorNome</td>
+                <td>@item.TrabajadorNif</td>
+                <td>@item.SeguridadSocial</td>
+                <td>
+                    @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
+                    {<p>Sin Fecha</p> }
+                    else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
+                    { <p>Sin Fecha</p> }
+                    else
+                    {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
 
-                        </td>
-                        <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
-                        <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
-                    </tr>
+                </td>
+                <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
+                <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                <td></td>
+                <td></td>
+            </tr>
                 }
 
                 else if (item.Trabajadortipo == "Autonomo")
@@ -212,6 +227,7 @@
                         <td><a asp-controller="Contratos" asp-action="contratoAutonomo" asp-route-id="@item.Id">Contrato Autonomo</a></td>
                         <td><a asp-action="BajaTrabajador" asp-route-id="@item.Id">Dar Baja</a></td>
                         <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                        <th></th>
                     </tr>
                 }
 
@@ -244,8 +260,9 @@
         </tbody>
     </table>
     <table class="table">
-        <thead class="table-danger">
+        <thead class="bg-danger">
         <th>Trabajadores Baja</th>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>
@@ -264,23 +281,23 @@
             @foreach (var item in Model.TrabajadoresBaja)
             {
 
-        <tr>
-            <th scope="row">@item.Id</th>
-            <td>@item.TrabajadorNome</td>
-            <td>@item.TrabajadorNif</td>
-            <td>@item.SeguridadSocial</td>
-            <td>
-                @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
-                {<p>Sin Fecha</p> }
-                else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
-                { <p>Sin Fecha</p> }
-                else
-                {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
-                
-            </td>
-            <td><a asp-action="AltaTrabajador" asp-route-id="@item.Id">Dar Alta</a></td>
-            <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
-        </tr>
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.TrabajadorNome</td>
+                    <td>@item.TrabajadorNif</td>
+                    <td>@item.SeguridadSocial</td>
+                    <td>
+                        @if (DateTime.Now.Year - item.FechaTrabajador.Year > 100)
+                        {<p>Sin Fecha</p> }
+                        else if (DateTime.Now.Year - item.FechaTrabajador.Year < 18)
+                        { <p>Sin Fecha</p> }
+                        else
+                        {<p>@item.FechaTrabajador.ToString("dd / MM / yyyy")</p>}
+
+                    </td>
+                    <td><a asp-action="AltaTrabajador" asp-route-id="@item.Id">Dar Alta</a></td>
+                    <td><a asp-action="EditTrabajador" asp-route-id="@item.Id">Editar</a></td>
+                </tr>
 
 
             }

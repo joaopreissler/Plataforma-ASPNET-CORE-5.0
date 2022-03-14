@@ -10,9 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Plataforma.Interface;
+
 using Plataforma.ViewModels;
-using Plataforma.Services;
+
 using Microsoft.AspNetCore.Identity;
 using Plataforma.Areas.Identity.Data;
 
@@ -34,7 +34,7 @@ namespace Plataforma
             options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection"), options => options.EnableRetryOnFailure()
                 ));
-            services.AddScoped<Itest, Test>();
+            
             services.AddControllersWithViews();
             services.AddRazorPages();
             

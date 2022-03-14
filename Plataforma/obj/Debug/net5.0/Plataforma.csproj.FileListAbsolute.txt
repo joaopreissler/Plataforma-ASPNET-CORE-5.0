@@ -502,4 +502,6 @@ C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\obj
 C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\obj\Debug\net5.0\ref\Plataforma.dll
 C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\obj\Debug\net5.0\Plataforma.pdb
 C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\obj\Debug\net5.0\Plataforma.genruntimeconfig.cache
-C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\bin\Debug\net5.0\Data\empresas2021.json
+C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\bin\Debug\net5.0\Data\Empresas.json
+C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\bin\Debug\net5.0\Data\empresas2020.json
+C:\Users\joaov\Desktop\Projects\GitHub\Plataforma-ASPNET-CORE-5.0\Plataforma\bin\Debug\net5.0\Data\alumnos2021.json

@@ -19,7 +19,7 @@ namespace Plataforma.ViewModels
                    }
         public Empresa Empresas;
         public autonomo Autonomo;
-
+        public EmpresaCurso curso;
         public IEnumerable<Trabajadores> trabajadores;
 
     }

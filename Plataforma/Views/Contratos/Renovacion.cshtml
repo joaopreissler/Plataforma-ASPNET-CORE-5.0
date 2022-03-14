@@ -19,7 +19,7 @@
 
 
 
-    <a id="datos"><strong>Población:</strong> @Model.Empresas.Provincia</a>  <a id="datos">           <strong>Código Postal:</strong> @Model.Empresas.Cp</a><br><br>
+    <a id="datos"><strong>Población:</strong> @Model.Empresas.Localidad</a>  <a id="datos">           <strong>Código Postal:</strong> @Model.Empresas.Cp</a><br><br>
 
 
 
@@ -58,7 +58,7 @@
 
 
     <a id="datos">
-        <strong>Responsable de la Prevención:</strong> JORDI PUIG NAVARRO<br><br>
+        <strong>Responsable de la Prevención:</strong>@Model.Empresas.Nombrereprensentante<br><br>
 
 
 
@@ -464,7 +464,8 @@
 
 
 
-                            BARCELONA
+
+                            @Model.Empresas.Localidad
 
 
                         </td>
@@ -494,7 +495,7 @@
 
 
 
-                            933132259// JORDI 691212300
+                            @Model.Empresas.Telefono
 
 
                         </td>
@@ -608,7 +609,7 @@
 
 
 
-                            Peluqueria y otros
+                            @Model.Empresas.actividadprincial
 
 
                         </td>
@@ -1097,7 +1098,7 @@
 
 
 
-        En BARCELONA, a <input placeholder="..." type="text"> de <input placeholder="..." type="text"> de @DateTime.Now.Year<br><br><br><br>LA DIRECCIÓN
+        En @Model.Empresas.Localidad, a <input placeholder="..." type="text"> de <input placeholder="..." type="text"> de @DateTime.Now.Year<br><br><br><br>LA DIRECCIÓN
 
 
 
@@ -1243,7 +1244,7 @@
 
 
 
-                En BARCELONA, a <input placeholder="..." type="text"> de <input placeholder="..." type="text"> de @DateTime.Now.Year<br><br>
+                En @Model.Empresas.Localidad, a <input placeholder="..." type="text"> de <input placeholder="..." type="text"> de @DateTime.Now.Year<br><br>
 
 
 
@@ -1427,7 +1428,7 @@
 
                             <td width="50%">
 
-                                @Model.Empresas.CuentaCotizacion
+                                @Model.Empresas.seguridad_social
                             </td>
 
                         </tr>
@@ -1457,7 +1458,7 @@
 
                             <td width="50%">
 
-                                @Model.Empresas.Cp / BARCELONA
+                                @Model.Empresas.Cp /  @Model.Empresas.Localidad
                             </td>
 
                         </tr>
@@ -1472,7 +1473,7 @@
 
                             <td width="50%">
 
-                                BARCELONA
+                                @Model.Empresas.Provincia
                             </td>
 
                         </tr>
@@ -1487,7 +1488,7 @@
 
                             <td width="50%">
 
-                                @Model.Empresas.Representacionlegal
+                                @Model.Empresas.Nombrereprensentante
                             </td>
 
                         </tr>
@@ -1509,18 +1510,7 @@
 
                         </tr>
 
-                        <tr>
-
-                            <td width="50%">
-
-                                N.º DE CTA. BANCARIA
-
-                            </td>
-
-                            <td width="50%">
-                            </td>
-
-                        </tr>
+                        
 
                         <tr>
 
@@ -1532,7 +1522,7 @@
 
                             <td width="50%">
 
-                                0
+                                @Model.Empresas.convenio
                             </td>
 
                         </tr>
@@ -1606,7 +1596,7 @@
 
                             <th colspan="2">
 
-                                DATOS DE LOS CENTROS DE TRABAJO DE LA EMPRESA
+                                ADMINISTRADOR
 
                             </th>
 
@@ -1985,7 +1975,7 @@
 
                             <td width="50%">
 
-                                @Model.Empresas.Representacionlegal
+                                @Model.Empresas.Nombrereprensentante
                             </td>
 
                         </tr>
@@ -2000,7 +1990,7 @@
 
                             <td width="50%">
 
-                                933132259// JORDI 691212300
+                                @Model.Empresas.Telefono
                             </td>
 
                         </tr>
@@ -2061,7 +2051,7 @@
 
                             <td width="50%">
 
-                                @Model.Empresas.nombregestoria
+                                @Model.Empresas.contatogestoria
                             </td>
 
                         </tr>
@@ -2124,7 +2114,7 @@
 
             </div>
 
-            <img src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/seprelatitulo.png" width="500px" height="400px">
+            <img src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/seprelatitulo.png" width="400px" height="300px">
 
             <span style="font-size: 30px;float:right;margin-top: 30%;"><span lang="es-ES"><strong>37</strong></span></span><p></p>
 
@@ -2165,7 +2155,7 @@
                     POR ELLO INFORMAMOS A LA EMPRESA  <strong> @Model.Empresas.Nombre_Empresa</strong> CON NIF <strong> @Model.Empresas.Nif</strong>
                 </a>QUE DEBE TENER CONCERTADO UN SERVICIO EXTERNO DE LA VIGILANCIA DE LA SALUD CON UNA EMPRESA AUTORIZADA. EL HECHO DE NO TENER ESTE SERVICIO PODRA SER SANCIONADA LA EMPRESA ECONOMICAMENTE.<br><br>
 
-                <br><br>
+               
 
             </p>
 
@@ -2179,7 +2169,7 @@
 
 
 
-                <img class="imgleft" src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/seloeb.jpg" width="500px" height="300px" style="margin-right: 0% !important;float:right;">
+                <img class="imgleft" src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/seloeb.jpg" width="400px" height="200px" style="margin-right: 0% !important;float:right;">
 
             </p>
 
@@ -2188,14 +2178,14 @@
             <p>
                 En
 
-                BARCELONA a
+                @Model.Empresas.Localidad a
 
                 <span placeholder="..." type="text" style="margin-right: 15px;"> @DateTime.Now.Day
                     de <span style="margin-right: 15px;" placeholder="..." type="text">
-    @DateTime.Now.Month
-                    de @DateTime.Now.Year. <br><br><br><br>
+     @DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("es-ES"))
+    de @DateTime.Now.Year. <br><br><br><br>
 
-                </span>
+</span>
                 </span>
             </p>
         </div>
@@ -2253,34 +2243,26 @@
 
             <h3><strong>RENUNCIA VOLUNTARIA POR PARTE DEL PROPIO TRABAJADOR/ A  PARA REALIZAR EL RECONOCIMIENTO MÉDICO PERIÓDICO ANUAL.</strong></h3><br><br>
 
-            En BARCELONA, a <span placeholder="..." type="text" style="margin-right: 15px;">
+            En @Model.Empresas.Localidad, a <span placeholder="..." type="text" style="margin-right: 15px;">
     @DateTime.Now.Day de <span placeholder="..." type="text" style="margin-right: 15px;">
-        @DateTime.Now.Month de @DateTime.Now.Year<br><br>
+    @DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) de @DateTime.Now.Year<br><br>
 
 
 
-        D.<strong>@item.TrabajadorNome</strong>	con D.N.I.  <strong>@item.TrabajadorNif</strong>
+    D.<strong>@item.TrabajadorNome</strong>	con D.N.I.  <strong>@item.TrabajadorNif</strong>
 
 
 
-        Trabajador/a  de <strong>@Model.Empresas.Nombre_Empresa</strong>, que ocupa el puesto de <u>PELUQUERA</u> <span placeholder="..." type="text" style="margin-right: 15px;">
-            comunica a la empresa que,
+    Trabajador/a  de <strong>@Model.Empresas.Nombre_Empresa</strong> <span placeholder="..." type="text" style="margin-right: 15px;">
+        comunica a la empresa que,
 
 
 
-            "R E N U N C I A " voluntariamente a la realización del Reconocimiento Médico
+        "R E N U N C I A " voluntariamente a la realización del Reconocimiento Médico
 
 
 
-            periódico anual  que la empresa <strong>@Model.Empresas.Nombre_Empresa</strong> le ha ofrecido realizar.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
-            Fdo : _______________________________
+        periódico anual  que la empresa <strong>@Model.Empresas.Nombre_Empresa</strong> le ha ofrecido realizar.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
@@ -2288,13 +2270,21 @@
 
 
 
+        Fdo : _______________________________
 
 
-            <a style="float: right;margin-top: 30%;"><b>38</b></a><a>
 
-            </a>
-        </span>
+
+
+
+
+
+
+        <a style="float: right;margin-top: 15%;"><b>38</b></a><a>
+
+        </a>
     </span>
+</span>
 </span>
         </div>}
        
@@ -2522,7 +2512,7 @@
 
 
 
-                En BARCELONA a <input width="48" placeholder="..." type="text"> de <input width="48" placeholder="..." type="text"> de @DateTime.Now.Year. <br><br><br><br><br><br>
+                En @Model.Empresas.Localidad a <input width="48" placeholder="..." type="text"> de <input width="48" placeholder="..." type="text"> de @DateTime.Now.Year. <br><br><br><br><br><br>
 
 
 
@@ -3213,7 +3203,7 @@
 
                     <td><strong>LOCALIDAD:</strong></td>
 
-                    <td colspan="3">BARCELONA</td>
+                    <td colspan="3">@Model.Empresas.Localidad</td>
 
                 </tr>
 
@@ -3276,7 +3266,7 @@
 
         El número de personas encargadas de las emergencias estará en función del número de trabajadores, dimensiones y grado de ocupación del centro, actividades desarrolladas, y gravedad de los riesgos previsibles que puedan ocurrir (tanto por su probabilidad como por sus posibles consecuencias), de forma que siempre se encuentren presentes medios humanos suficientes para afrontar situaciones de emergencia.
 
-        <div style="page-break-after:always;float:right;margin-top: 10%">51</div>
+        <div style="page-break-after:always;float:right;">51</div>
 
 
 
@@ -3404,7 +3394,7 @@
             <tr><td></td></tr>
             <tr><td></td></tr>
             <tr><td></td></tr>
-            <tr><td></td></tr>
+            
             
         </tbody>
     </table>
@@ -3444,9 +3434,9 @@
 
     <div style=";left:103.20px;top:450.71px" class="cls_005"><li class="cls_004"> <span class="cls_004">  Todos los trabajadores deben estar informados de los medios humanos y materiales</span></li></div>
 
-    <div style=";left:121.20px;top:464.11px" class="cls_004"><span class="cls_004">disponibles  en  el  centro  de  trabajo  para  combatr   las  posibles  situaciones  de</span></div>
+    <div style=";left:121.20px;top:464.11px" class="cls_004"><span class="cls_004">disponibles  en  el  centro  de  trabajo  para  combatr   las  posibles  situaciones  de emergencia.</span></div>
 
-    <div style=";left:121.20px;top:477.61px" class="cls_004"><span class="cls_004">emergencia.</span></div>
+    
 
     
 
@@ -3782,7 +3772,7 @@
 
 
 
-        <strong>Población: </strong>BARCELONA<br>
+        <strong>Población: </strong>@Model.Empresas.Localidad<br>
 
 
 
@@ -3794,7 +3784,7 @@
 
 
 
-        <strong>Teléfono: </strong> 933132259// JORDI 691212300<br>
+        <strong>Teléfono: </strong> @Model.Empresas.Telefono<br>
 
 
 

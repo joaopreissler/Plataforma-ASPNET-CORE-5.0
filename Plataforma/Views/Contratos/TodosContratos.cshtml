@@ -106,7 +106,7 @@
 
 	height: 842px;
 
-	width: 595px;;
+	width: 595px;
 
 }
 
@@ -308,9 +308,9 @@ div.WordSection1
 
 										<br>
 
-										<strong>DON&nbsp; JORDI MUNTANÉ PAVILLARD</strong>,  con número de <strong><u>DNI 37636273-Q</u></strong> en nombre y representación de la mercantil&nbsp; <strong><u>EUROBRAZIL INVESTMENTS S.L.U</u></strong> con número de <strong>NIF B<u>66335472</u></strong> con domicilio en la <strong>GRAN VIA DE LES CORTS CATALANES 584 ( 08011</strong>)  de Barcelona <br>
+										<strong>DON&nbsp; JORDI MUNTANÉ PAVILLARD</strong>,  con número de <strong><u>DNI 37636273-Q</u></strong> en nombre y representación de la mercantil&nbsp; <strong><u>EUROBRAZIL INVESTMENTS S.L.U</u></strong> con número de <strong>NIF B<u>66335472</u></strong> con domicilio en la <strong>GRAN VIA DE LES CORTS CATALANES 584 ( 08011</strong>)  de Barcelona 
 
-										<br>
+										
 
 									</p>
 								</td>
@@ -478,7 +478,7 @@ div.WordSection1
 								<td width="243">
 									<strong>
 
-										933132259// JORDI 691212300
+										@Model.Empresa.Telefono
 									</strong>
 								</td>
 
@@ -518,16 +518,38 @@ div.WordSection1
 
 								<td bgcolor="#CCCCCC"><strong>CONVENIO COLECTIVO SECTORIAL</strong></td>
 
-								<td><strong>Peluqueria y otros</strong></td>
+								<td><strong>
+									@{ var Convenio = "";
+                                        switch (Model.Curso.CursoNome)
+                                        {
+                                            case "Prevención de Riesgos Laborales en Hosteleria":
+                                                Convenio = "Hosteleria";
+                                                break;
+                                            case "Prevención de Riesgos Laborales en Peluquerias":
+                                                Convenio = "Peluquerias y otros";
+                                                break;
 
-							</tr>
 
-						</tbody>
-					</table>
 
-					
+                                        };
 
-					<table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
+                                    }
+                                        @Convenio
+									
+                                    </strong></td>
+
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+
+
+
+                    <table width="1000" border="1" cellpadding="2" cellspacing="2" class="texto">
 
 						<tbody>
 							<tr>
@@ -537,41 +559,54 @@ div.WordSection1
 										HORAS DEL CONVENIO ANUAL<br>
 
 									</strong>Para empresas de más de 8    trabajadores
-								</td>
+                                </td>
 
 								<td width="44">&nbsp;</td>
 
 								<td width="310" bgcolor="#CCCCCC"><strong>Nº INSCRIPCION SEGURIDAD SOCIAL</strong></td>
 
 								<td width="233">
-									<strong>
 
-										@Model.Empresa.seguridad_social
-									</strong>
-								</td>
+                                    <strong>
 
-							</tr>
+                                        @Model.Empresa.seguridad_social
+                                    </strong>
 
-						</tbody>
-					</table>
+                                </td>
 
-					
 
-					<table width="1000" border="1" cellspacing="2" cellpadding="2">
+                            </tr>
 
-						<tbody>
-							<tr>
 
-								<td width="93" bgcolor="#CCCCCC"><strong>CNAE</strong></td>
+                        </tbody>
 
-								<td width="269">
-									<strong>
+                    </table>
 
-										@Model.Empresa.CNAE
-									</strong>
-								</td>
 
-								<td width="262" bgcolor="#CCCCCC"><strong>PLANTILLA MEDIA AÑO 2015</strong></td>
+
+
+                    <table width="1000" border="1" cellspacing="2" cellpadding="2">
+
+
+                        <tbody>
+
+                            <tr>
+
+
+                                <td width="93" bgcolor="#CCCCCC"><strong>CNAE</strong></td>
+
+
+                                <td width="269">
+
+                                    <strong>
+
+                                        @Model.Empresa.CNAE
+                                    </strong>
+
+                                </td>
+
+
+                                <td width="262" bgcolor="#CCCCCC"><strong>PLANTILLA MEDIA AÑO @DateTime.Today.AddYears(-1).Year </strong>></td>
 
 								<td width="76">&nbsp;</td>
 
@@ -774,41 +809,41 @@ div.WordSection1
 										Estos costes no podrán superar el  10% del coste de la actividad formativa , si bien podrán alcanzar hasta un  máximo de un 15% en caso de acciones formativas , dirigidas a&nbsp; trabajadores de empresas que cuenten entre 6  y 9 trabajadores en plantilla y un máximo de 20% en caso de las empresas con hasta  5 trabajadores en plantilla.
 									</p>
 
-									<p>
-										<strong><u>SEXTO.- ADHESION DE OTRAS EMPRESAS </u></strong><br>
+                                    <p>
+                                        <strong><u>SEXTO.- ADHESION DE OTRAS EMPRESAS </u></strong><br>
 
-										Las partes podrán acordar la  posibilidad de que otras empresas se adhieran al presente contrato. A tales  efectos, las entidades interesadas suscribirán&nbsp;  el correspondiente documento de adhesión.- Para ello se delega en la  entidad externa la facultad de representar a la empresa en la suscripción de  la adhesión en cuestión. Se podrán indicar aquí si las partes consideran  conveniente las características sector territorio plantilla etc.- que deban  concurrir en las empresas que deseen adherirse al presente contrato.<br>
+                                        Las partes podrán acordar la  posibilidad de que otras empresas se adhieran al presente contrato. A tales  efectos, las entidades interesadas suscribirán&nbsp;  el correspondiente documento de adhesión.- Para ello se delega en la  entidad externa la facultad de representar a la empresa en la suscripción de  la adhesión en cuestión. Se podrán indicar aquí si las partes consideran  conveniente las características sector territorio plantilla etc.- que deban  concurrir en las empresas que deseen adherirse al presente contrato.<br>
 
-										<br>
+                                        <br>
 
-										<strong><u>SEPTIMO.- DESESTIMIENTO UNILATERAL</u></strong> ,. Cualquier empresa que  haya suscrito el contrato podrá desistir del mismo con anterioridad de su  finalización, sin perjuicio de las obligaciones contraídas durante su vigencia.<br>
+                                        <strong><u>SEPTIMO.- DESESTIMIENTO UNILATERAL</u></strong> ,. Cualquier empresa que  haya suscrito el contrato podrá desistir del mismo con anterioridad de su  finalización, sin perjuicio de las obligaciones contraídas durante su vigencia.<br>
 
-										Lo anterior deberá instrumentarse  Jurídicamente mediante documento firmado por ambas partes <br>
+                                        Lo anterior deberá instrumentarse  Jurídicamente mediante documento firmado por ambas partes <br>
 
-										<br>
+                                        <br>
 
-										<strong><u>OCTAVO.- PROTECCION DE DATOS &nbsp;&nbsp;</u></strong>&nbsp;Los firmantes del presente contrato  garantizarán el cumplimiento de lo establecido en la Ley Orgánica 15/1999 de 13  de Diciembre de protección de datos de carácter personal asumiendo las  obligaciones y responsabilidades que se derivan de la misma y de la suscripción  del presente documento.<br>
+                                        <strong><u>OCTAVO.- PROTECCION DE DATOS &nbsp;&nbsp;</u></strong>&nbsp;Los firmantes del presente contrato  garantizarán el cumplimiento de lo establecido en la Ley Orgánica 15/1999 de 13  de Diciembre de protección de datos de carácter personal asumiendo las  obligaciones y responsabilidades que se derivan de la misma y de la suscripción  del presente documento.<br>
 
-										<br>
+                                        <br>
 
-										Todos los datos de carácter  personal que se comuniquen por razón de objeto de este contrato tendrán  carácter confidencial y serán utilizados exclusivamente para los propósitos del  contrato, sin que se puedan aplicar a un fin distinto ni tampoco&nbsp; comunicarlos, ni siquiera para su mera  conservación, a&nbsp; otras personas. Esta  obligación se mantendrá vigente incluso después de laterminación de la vigencia  del contrato, por cualquier razón que fuere .
+                                        Todos los datos de carácter  personal que se comuniquen por razón de objeto de este contrato tendrán  carácter confidencial y serán utilizados exclusivamente para los propósitos del  contrato, sin que se puedan aplicar a un fin distinto ni tampoco&nbsp; comunicarlos, ni siquiera para su mera  conservación, a&nbsp; otras personas. Esta  obligación se mantendrá vigente incluso después de laterminación de la vigencia  del contrato, por cualquier razón que fuere .
 
-										<br>
+                                        <br>
 
-										Las partes adoptarán las medidas  de índole técnica y organizativas necesarias que garanticen la seguridad de los  datos y evite su alteración , pérdida, tratamiento o acceso no autorizado ,  habida cuenta del estado de la tecnología , la naturaleza de los datos  almacenados y los riesgos que están expuestos, ya provengan&nbsp; de la acción humana o&nbsp; del medio físico o natural.<br>
+                                        Las partes adoptarán las medidas  de índole técnica y organizativas necesarias que garanticen la seguridad de los  datos y evite su alteración , pérdida, tratamiento o acceso no autorizado ,  habida cuenta del estado de la tecnología , la naturaleza de los datos  almacenados y los riesgos que están expuestos, ya provengan&nbsp; de la acción humana o&nbsp; del medio físico o natural.<br>
 
-										<br>
+                                        <br>
 
-										<strong><u>NOVENO.</u>- Entrada en Vigor y vigencia del contrato</strong><br>
+                                        <strong><u>NOVENO.</u>- Entrada en Vigor y vigencia del contrato</strong><br>
 
-										<br>
+                                       
 
-										El presente contrato entrará en  Vigor el día de su firma por las partes<br>
+                                        El presente contrato entrará en  Vigor el día de su firma por las partes<br>
 
-										<br>
+                                        
 
-										En&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BARCELONA &nbsp;&nbsp;&nbsp; a&nbsp; 08&nbsp;&nbsp;&nbsp; de @DateTime.Now.Month &nbsp;  de @DateTime.Now.Month
-									</p>
+                                        En&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Model.Empresa.Localidad &nbsp;&nbsp;&nbsp; a&nbsp;  @Model.Empresa.Fechafirma.Day &nbsp;&nbsp;&nbsp; de @Model.Empresa.Fechafirma.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) &nbsp;  de @DateTime.Now.Year
+                                    </p>
 								</td>
 
 							</tr>
@@ -948,8 +983,8 @@ div.WordSection1
 									</strong>        &nbsp;<br>
 									y domiciliada en (
 									@Model.Empresa.Direccion,
-									@Model.Empresa.Provincia,
-									BARCELONA ),<br>
+									@Model.Empresa.Localidad,
+									@Model.Empresa.Provincia ),<br>
 									circunstancia que se  acredita mediante escritura…
 								</td>
 							</tr>
@@ -970,10 +1005,10 @@ div.WordSection1
 									<p>-&nbsp;&nbsp; Que conoce el contenido de las condiciones y obligaciones incluidas en el  referido contrato.</p>
 									<p>-&nbsp;&nbsp; Que por el presente  documento acepta las obligaciones  y derechos que en dicho contrato se contienen y se adhiere al mismo desde la fecha de su firma,  momento en el que empezarán  a surtir sus efectos.</p>
 									<p>&nbsp;</p>
-									<p>
-										Lugar y Fecha:<br>
-										En&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BARCELONA &nbsp;&nbsp;&nbsp; a&nbsp; @DateTime.Now.Day &nbsp;&nbsp;&nbsp; de @DateTime.Now.Month &nbsp;  de @DateTime.Now.Year
-									</p>
+                                    <p>
+                                        Lugar y Fecha:<br>
+                                        En&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Model.Empresa.Localidad &nbsp;&nbsp;&nbsp; a&nbsp; @Model.Empresa.Fechafirma.Day &nbsp;&nbsp;&nbsp; de @Model.Empresa.Fechafirma.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) &nbsp;  de @DateTime.Now.Year
+                                    </p>
 								</td>
 							</tr>
 						</tbody>
@@ -1058,22 +1093,22 @@ div.WordSection1
 					<td width="590" align="center">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img width="250" height="100" src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/tri2.PNG">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="216" height="100" src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/EBR-.jpg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="126" height="100" src="http://plataforma-dev.us-east-2.elasticbeanstalk.com/PRL/euro.jpg"><br>
 
-						<strong>
-							<br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <strong>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <br>
 
-							SOLICITUD&nbsp; DE CURSO <br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           SOLICITUD&nbsp; DE CURSO <br>
 
-							<br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <br>
 
-							del @Model.Curso.Inicio.Day
-							de @Model.Curso.Inicio.Month
-							al @Model.Curso.Final.Day de @Model.Curso.Final.Month del @Model.Curso.Final.Year
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           del @Model.Curso.Inicio.Day 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           de @Model.Curso.Inicio.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           al @Model.Curso.Final.Day de @Model.Curso.Final.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) del @Model.Curso.Final.Year
 
-							<br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <br>
 
-							<br>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <br>
 
-						</strong>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </strong>
 
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 
@@ -1198,7 +1233,7 @@ div.WordSection1
 
 									<td align="center">@item.SeguridadSocial</td>
 
-									<td align="center">@item.FechaTrabajador</td>
+									<td align="center"></td>
 
 									<td width="75" align="center"></td>
 
@@ -1248,7 +1283,7 @@ div.WordSection1
 
 								<tr>
 
-									<td align="center">En Barcelona a @DateTime.Now.Day de @DateTime.Now.Month del @DateTime.Now.Year &nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<td align="center">En @Model.Empresa.Localidad a @Model.Empresa.Fechafirma.Day de @Model.Empresa.Fechafirma.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) del @DateTime.Now.Year &nbsp;&nbsp;&nbsp;&nbsp;</td>
 
 								</tr>
 
@@ -1284,8 +1319,7 @@ div.WordSection1
 
 
 
-	<title>Documento sin título</title>
-
+	
 
 
 	<link href="css/estilo.css" rel="stylesheet" type="text/css">
@@ -1324,7 +1358,7 @@ div.WordSection1
 
 
 
-					<h3>INICIO: @Model.Curso.Inicio   FIN: @Model.Curso.Final</h3>
+                                                                                                                          <h3>INICIO: @Model.Curso.Inicio.ToShortDateString()   FIN: @Model.Curso.Final.ToShortDateString() </h3>
 
 
 
@@ -1532,11 +1566,11 @@ div.WordSection1
 
 
 
-								<td width="117" align="center" nowrap="nowrap">44192844T</td>
+								<td width="117" align="center" nowrap="nowrap">@Model.Empresa.Nombrereprensentante</td>
 
 
 
-								<td align="center" nowrap="nowrap">JORDI PUIG NAVARRO</td>
+								<td align="center" nowrap="nowrap">@Model.Empresa.nifrepresentante</td>
 
 
 
@@ -1638,7 +1672,7 @@ div.WordSection1
 
 
 
-								<td align="center">En BARCELONA a @DateTime.Now.Day de @DateTime.Now.Month del @DateTime.Now.Year</td>
+                                <td align="center">En @Model.Empresa.Localidad  a @Model.Empresa.Fechafirma.Day de @Model.Empresa.Fechafirma.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) del @DateTime.Now.Year</td>
 
 
 
@@ -1717,11 +1751,11 @@ div.WordSection1
 							</tr>
 							<tr>
 								<td colspan="2" align="center" valign="top">
-									<p>
-										del
-										@Model.Curso.Inicio.Day
-										de @Model.Curso.Inicio.Month al @Model.Curso.Final.Day de @Model.Curso.Final.Month del @Model.Curso.Final.Year
-									</p>
+                                    <p>
+                                        del
+                                        @Model.Curso.Inicio.Day
+                                        de  @DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("es-ES"))  al @Model.Curso.Final.Day  de  @DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) del @Model.Curso.Final.Year
+                                    </p>
 								</td>
 							</tr>
 							<tr>
@@ -1746,7 +1780,7 @@ div.WordSection1
 								<td align="center" bgcolor="#CCCCCC">Contraseña*</td>
 								<td align="center" bgcolor="#CCCCCC">Horas</td>
 							</tr>
-							@foreach (var item in Model.Trabajadores) {
+							@foreach (var item in Model.Fundae) {
 							<tr class="nombre2">
 								<td align="center">@item.TrabajadorNif</td>
 								<td align="center">@item.TrabajadorNif</td>

@@ -37,4 +37,9 @@ namespace Plataforma.Controllers
         public string mes { get; set; }
 
     }
+    public class number
+    {
+        public int id { get; set; }
+        public int numero { get; set; }
+    }
 }

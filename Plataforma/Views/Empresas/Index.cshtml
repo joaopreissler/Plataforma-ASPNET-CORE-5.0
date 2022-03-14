@@ -30,7 +30,53 @@
         <a asp-action="Create">Añadir Empresa</a>
     </p>
     
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="#">Mesos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#Gener">Gener <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Febrer">Febrer<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Març">Març</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Abril">Abril</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Maig">Maig</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Juny">Juny</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Juliol">Juliol</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Agost">Agost</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Septembre">Septembre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Octubre">Octubre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Novembre">Novembre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Desembre">Desembre</a>
+                </li>
+            </ul>
 
+        </div>
+    </nav>
 
 <table class="table">
     <thead>
@@ -49,32 +95,65 @@
         </tr>
         </thead>
     <tbody>
-        <h2>Enero</h2>
+        <h2 id="Gener">Enero</h2>
         @{ var numero = 0;}
         @foreach (var item in Model.Enero)
         {
-            numero++;
-            <tr class="@item.Nif">
+            @if (item.venta == false)
+            {
+                numero++;
+                <tr class="@item.Nif;" style="color:orangered">
 
-                <td>
-                    E-@numero @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
+                    <td>
+                        E-@numero @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nif)
+                    </td>
+                    <td>
+                        <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                        <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+                    </td>
+                </tr>
+            }
+            else
+            {
+                numero++;
+                <tr class="@item.Nif;" @if (item.venta == false) { }>
+
+                    <td>
+                        E-@numero @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nif)
+                    </td>
+                    <td>
+                        <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                        <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+                    </td>
+                </tr>
+}
 
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
 
-                </td>
-            </tr>
-         
         }
     </tbody>
     <tbody>
@@ -97,59 +176,63 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Febrero</h2>
+        <h2 id="Febrer">Febrero</h2>
         @{var numero2 = 0; }
         @foreach (var item in Model.Febrero)
         {
-            numero2++;
-            <tr class="@item.Nif">
-                <td>
-                    F-@numero2
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
-
-
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
-
-
-                </td>
-            </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            @if (item.venta == false)
             {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
+                numero2++;
+                <tr class="@item.Nif;" style="color:orangered">
 
+                    <td>
+                        F-@numero2 @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nif)
+                    </td>
+                    <td>
+                        <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                        <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+                    </td>
+                </tr>
             }
             else
             {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
+                numero2++;
+                <tr class="@item.Nif;">
 
+                    <td>    
+                        F-@numero2 @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nif)
+                    </td>
+                    <td>
+                        <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                        <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+                    </td>
+                </tr>
             }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+
         }
     </tbody>
     
@@ -172,59 +255,63 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Marzo</h2>
+        <h2 id="Març">Marzo</h2>
         @{var numero3 = 0; }
         @foreach (var item in Model.Marzo)
         {
-            numero3++;
-            <tr class="@item.Nif">
-                <td>
-                    M-@numero3
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
-
-
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
-
-
-                </td>
-            </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
+            @if (item.venta == false)
             {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
+                numero3++;
+                <tr class="@item.Nif;" style="color:orangered">
 
+                    <td>
+                        M-@numero3 @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nif)
+                    </td>
+                    <td>
+                        <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                        <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+                    </td>
+                </tr>
             }
             else
             {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
+                numero3++;
+                <tr class="@item.Nif;">
 
+                    <td>
+                        M-@numero3 @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nif)
+                    </td>
+                    <td>
+                        <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                        <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+
+                    </td>
+                </tr>
             }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+
         }
     </tbody>
 
@@ -246,59 +333,35 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Abril</h2>
+        <h2 id="Abril">Abril</h2>
         @{var numero4 = 0; }
         @foreach (var item in Model.Abril)
         {
             numero4++;
-            <tr class="@item.Nif">
-                <td>
-                    AB-@numero4
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
+    <tr class="@item.Nif">
+        <td>
+            AB-@numero4
+            @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Localidad)
+        </td>
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+            <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
 
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
-
-
-                </td>
-            </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+        </td>
+    </tr>
+           
         }
     </tbody>
 
@@ -320,59 +383,35 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Mayo</h2>
+        <h2 id="Maig">Mayo</h2id="Febrer">
         @{var numero5 = 0; }
         @foreach (var item in Model.Mayo)
         {
             numero5++;
-            <tr class="@item.Nif">
-                <td>
-                    MG-@numero5
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
+        <tr class="@item.Nif">
+            <td>
+                MG-@numero5
+                @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nif)
+            </td>
+
+            <td>
+                <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+                <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
 
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
-
-
-                </td>
-            </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+            </td>
+        </tr>
+          
         }
     </tbody>
 
@@ -395,72 +434,36 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Junio</h2>
+        <h2 id="Juny">Junio</h2>
         @{var numero6 = 0; }
         @foreach (var item in Model.Junio)
         {
             numero6++;
-            <tr class="@item.Nif">
-                <td>
-                    JN-@numero6
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
+    <tr class="@item.Nif">
+        <td>
+            JN-@numero6
+            @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nif)
+        </td>
+
+        <td>
+            <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+            <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Borrar </a>
 
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar </a>
-
-                    
-                </td>
-                <td>
-                    @if (@item.Final.Date.ToString("MM dd yyy") == "01 01 001") {
-
-
-<b>
-                        Sin Curso
-                    </b>
-                    }
-                    else
-                    {
-                <b> @item.Final.Date.ToString("MM dd yyy")</b>
-                    }
-                    </td>
-            </tr>
-            @if (@item.Final <= (DateTime.Now.AddDays(3)))
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else if (item.Final >= (DateTime.Now.AddDays(3)))
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+        </td>
+       
+    </tr>
+            
         }
     </tbody>
 
@@ -482,59 +485,35 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Julio</h2>
+        <h2 id="Juliol">Julio</h2>
         @{var numero7 = 0; }
         @foreach (var item in Model.Julio)
         {
             numero7++;
-            <tr class="@item.Nif">
-                <td>
-                    JL-@numero7
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
+    <tr class="@item.Nif">
+        <td>
+            JL-@numero7
+            @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nif)
+        </td>
+        <td>
+            <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+        </td>
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+            <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
 
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
-
-
-                </td>
-            </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+        </td>
+    </tr>
+            
         }
     </tbody>
 
@@ -556,59 +535,35 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Agosto</h2>
+        <h2 id="Agost" >Agosto</h2>
         @{var numero8 = 0; }
         @foreach (var item in Model.Agosto)
         {
             numero8++;
-            <tr class="@item.Nif">
-                <td>
-                    AG-@numero8
-                    @Html.DisplayFor(modelItem => item.Nombre_Empresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre_Comercial)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nif)
-                </td>
+    <tr class="@item.Nif">
+        <td>
+            AG-@numero8
+            @Html.DisplayFor(modelItem => item.Nombre_Empresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Comercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nif)
+        </td>
+        <td>
+            <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+        </td>
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
+            <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
 
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
-                    <a asp-action="Editar" asp-route-id="@item.Id">Modificar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
-
-
-                </td>
-            </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+        </td>
+    </tr>
+            
         }
     </tbody>
 
@@ -630,7 +585,7 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Septiembre</h2>
+        <h2 id="Septembre">Septiembre</h2>
         @{var numero9 = 0; }
         @foreach (var item in Model.Setembro)
         {
@@ -646,7 +601,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Nif)
                 </td>
-
+                <td>
+                    <b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b>
+                </td>
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
@@ -656,33 +613,7 @@
 
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+            
         }
     </tbody>
 
@@ -704,7 +635,7 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Octubre</h2>
+        <h2 id="Octubre">Octubre</h2>
         @{var numero10 = 0; }
         @foreach (var item in Model.Outubro)
         {
@@ -720,7 +651,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Nif)
                 </td>
-
+                <td><b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b></td>
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
@@ -730,33 +661,7 @@
 
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+           
         }
     </tbody>
 
@@ -778,7 +683,7 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Noviembre</h2>
+        <h2 id="Novembre">Noviembre</h2>
         @{var numero11 = 0; }
         @foreach (var item in Model.Novembro)
         {
@@ -794,7 +699,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Nif)
                 </td>
-
+                <td><b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b></td>
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
@@ -804,33 +709,7 @@
 
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+            
         }
     </tbody>
 
@@ -852,7 +731,7 @@
         </tr>
     </thead>
     <tbody>
-        <h2>Deciembre</h2>
+        <h2 id="Desembre">Deciembre</h2>
         @{var numero12 = 0; }
         @foreach (var item in Model.Dezembro)
         {
@@ -868,7 +747,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Nif)
                 </td>
-
+                <td><b style="color:red"> @Html.DisplayFor(modelItem => item.Localidad)</b></td>
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Datos</a> |
@@ -878,33 +757,7 @@
 
                 </td>
             </tr>
-            @if (item.Final <= ((DateTime.Now).AddDays(3)) && item.Final > DateTime.Now)
-            {
-                <style>
-                .@item.Nif {
-                    background-color: coral;
-                }
-                </style>
-
-            }
-            else
-            {
-                <style>
-                    .@item.Nif {
-                        background-color: darkseagreen;
-                    }
-                </style>
-
-            }
-            @if (item.venta == false)
-            {
-                <style>
-                    .@item.Nif {
-                        color: red;
-                        font-weight: 600;
-                    }
-                </style>
-            }
+          
         }
     </tbody>
 
