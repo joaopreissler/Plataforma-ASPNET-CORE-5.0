@@ -5832,7 +5832,7 @@
 
             En @Model.Empresa.Localidad, a <span placeholder="..." type="text" style="margin-right: 15px;">
                 @DateTime.Now.Day de <span placeholder="..." type="text" style="margin-right: 15px;">
-                    Enero de @DateTime.Now.Year<br><br>
+    @DateTime.Now.ToString("MMMM", new System.Globalization.CultureInfo("es-ES")) de @DateTime.Now.Year<br><br>
 
 
 
@@ -5841,7 +5841,7 @@
 
 
 
-                    D.<strong>@item.TrabajadorNome </strong>	con D.N.I.  <strong>@item.TrabajadorNif</strong>
+    D.<strong>@item.TrabajadorNome </strong>	con D.N.I.  <strong>@item.TrabajadorNif</strong>
 
 
 
@@ -5849,8 +5849,8 @@
 
 
 
-                    Trabajador/a  de ILUROPARK , que ocupa el puesto de <span>_____________________</span>  <span placeholder="..." type="text" style="margin-right: 15px;">
-                        comunica a la empresa que,
+    Trabajador/a  de ILUROPARK , que ocupa el puesto de <span>_____________________</span>  <span placeholder="..." type="text" style="margin-right: 15px;">
+        comunica a la empresa que,
 
 
 
@@ -5858,7 +5858,7 @@
 
 
 
-                        "R E N U N C I A " voluntariamente a la realización del Reconocimiento Médico
+        "R E N U N C I A " voluntariamente a la realización del Reconocimiento Médico
 
 
 
@@ -5866,7 +5866,7 @@
 
 
 
-                        periódico anual  que la empresa @Model.Empresa.Nombre_Empresa le ha ofrecido realizar.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        periódico anual  que la empresa @Model.Empresa.Nombre_Empresa le ha ofrecido realizar.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 
@@ -5882,7 +5882,7 @@
 
 
 
-                        Fdo : _______________________________
+        Fdo : _______________________________
 
 
 
@@ -5902,13 +5902,13 @@
 
 
 
-                        <a style="float: right;"><b>38</b></a><a>
+        <a style="float: right;"><b>38</b></a><a>
 
 
 
-                        </a>
-                    </span>
-                </span>
+        </a>
+    </span>
+</span>
             </span>
         </div>
 

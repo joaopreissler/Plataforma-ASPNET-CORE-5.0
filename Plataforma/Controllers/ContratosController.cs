@@ -86,6 +86,13 @@ namespace Plataforma.Controllers
                             select a).FirstOrDefault();
             return View(empresa);
         }
+        public IActionResult evaluacionfinal(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+            return View(empresa);
+        }
         public IActionResult SolicitudCurso(int id)
         {
             var empresa = (from a in _context.Empresa
@@ -143,6 +150,32 @@ namespace Plataforma.Controllers
                                 select a).ToList();
             var query = _context.Empresa.Where(x => x.Idcurso == empresa.Idcurso).Where(y => y.ano == empresa.ano).OrderBy(id => id).ToList();
             int index = query.FindIndex(c => c.Nif == empresa.Nif)+1;
+            FacturaViewModel viewmodel = new FacturaViewModel()
+            {
+                empresa = empresa,
+                cursos = curso,
+                trabajadores = trabajadores,
+                numero = index
+            };
+            return View(viewmodel);
+        }
+
+        public IActionResult FacturaccEuro(int id)
+        {
+            var empresa = (from a in _context.Empresa
+                           where a.Id.Equals(id)
+                           select a).FirstOrDefault();
+
+            var curso = (from a in _context.EmpresaCurso
+                         where a.IdEmpresa.Equals(id)
+                         orderby a.Id
+                         select a).LastOrDefault();
+            var trabajadores = (from a in _context.Trabajadores
+                                where a.IdEmpresa.Equals(id) && a.Trabajadortipo == "Trabajador" && a.AnoTrabajador.Equals(empresa.ano)
+                                && a.TrabajadorAlta == true && a.Fundae == true
+                                select a).ToList();
+            var query = _context.Empresa.Where(x => x.Idcurso == empresa.Idcurso).Where(y => y.ano == empresa.ano).OrderBy(id => id).ToList();
+            int index = query.FindIndex(c => c.Nif == empresa.Nif) + 1;
             FacturaViewModel viewmodel = new FacturaViewModel()
             {
                 empresa = empresa,

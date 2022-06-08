@@ -1,0 +1,102 @@
+﻿@model Plataforma.Models.Empresa
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>EVALUACION FINAL</title>
+
+
+
+<style>
+
+    body {
+        font-family: arial, sans-serif;
+        font-size: 20px;
+    }
+
+    #titulo {
+        position: relative;
+        left: 6cm;
+        font-size: 30px;
+    }
+
+    #numpag {
+    }
+
+    table, td {
+        font-size: 20px;
+        border: 1px solid black;
+    }
+
+    input {
+        border: none;
+        font-size: 20px;
+    }
+
+    th {
+        font-size: 20px;
+        border: 1px solid black;
+    }
+
+    #responsable {
+        position: relative;
+        left: 2cm;
+    }
+
+    #space {
+        height: 90px;
+        vertical-align: text-top;
+    }
+</style>
+
+<div id="divbody" style="page-break-before:always;">
+    <a>
+
+        <h3><strong>EVALUACIÓN  DE  RIESGOS  LABORALES</strong></h3><br>
+
+
+
+        <strong>Establecimiento:</strong> @Model.Nombre_Empresa<br><br>
+
+        <strong>Sector: </strong>  <br><br>
+
+        <strong>Centro de Trabajo:</strong> <input placeholder="..." type="text"><br><br>
+
+        <strong>Fecha de realización de la evaluació de Riesgos: </strong><input placeholder="..." type="text"><br><br>
+
+        <strong>Persona Asignada:</strong> @Model.Nombrereprensentante<br> <br>
+
+        <strong>Cargo: </strong><input placeholder="..." type="text"><br><br>
+
+        <strong>Evaluacion: </strong><br>
+
+
+
+        O - Favorable<br>
+
+        O - Desfavorable<br><br>
+
+
+
+        <strong>Correcciones a realizar:</strong> <input placeholder="..." type="text"><br><br>
+
+        <strong>Fecha a realizar:</strong> <input placeholder="..." type="text"><br><br><br>
+
+        <table>
+
+            <tbody>
+                <tr>
+
+                    <th id="space">Firma del responsable de la Prevenció de Riesgos Laborales</th>
+
+                </tr>
+
+
+
+            </tbody>
+        </table>
+
+    </a><a style="float:right; margin-top: 50% ">81</a><a>
+
+
+
+    </a>
+</div>

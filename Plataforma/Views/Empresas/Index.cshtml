@@ -3,7 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<form asp-controller="Empresas" asp-action="UploadFile" method="post" onsubmit="myFunction()"
+      enctype="multipart/form-data" style="float:right; id="videoUploadFile">
+    <span>Enviar ITA</span>
+    <input type="file" name="file" accept="application/pdf" />
+    <span style="color: red; display:none;" id="errono">Ningún archivo ha sido insertado!</span>
+    <span style="color: red; display:none;" id="erropdf">Solo se acepta archivos PDF!</span>
+    <button type="submit">Enviar ITA</button>
+</form>
 <div style="display:flex;justify-content:space-between">
     <h1>Empresas participantes - @Model.anoatual</h1>
     

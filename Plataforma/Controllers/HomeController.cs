@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Plataforma.Models;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 namespace Plataforma.Controllers
 {
@@ -17,6 +18,7 @@ namespace Plataforma.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 

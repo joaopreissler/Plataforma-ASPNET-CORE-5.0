@@ -44,60 +44,79 @@
             </table>
             @if (Model.Trabajadores.Count() > 0 && Model.NewCurso != null)
             {
-            <div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header" style="        background-color: #17a2b8 !important;
+        <div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header" style="        background-color: #17a2b8 !important;
         color: white;
         font-weight: 600;">
-                        Contratos Inicio
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Index" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Contrato Encomienda</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Adhesion" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Adhesion</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="SolicitudCurso" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Solicitud Curso</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="SolicitudAutonomo" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Solicitud Curso Autonomo</a></li>
-                    </ul>
+                    Contratos Inicio
                 </div>
-                <div>
-
-
-
-
-                </div>
-
-
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header" style="        background-color: #17a2b8 !important;
-        color: white;
-        font-weight: 600;">
-                        Certificados y Examenes
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"> <a asp-controller="Contratos" asp-action="Caratulas" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Caratulas</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestAlergenos" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Alergenos</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestManipulador" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Manipulador</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestPrevencion" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Prevencion</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestPeluqueria" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Peluqueria</a></li>
-                        <li class="list-group-item">  <a asp-controller="Contratos" asp-action="CertificadoCat" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">CertificadoCat</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="CertificadoCas" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">CertificadoCas</a></li>
-                    </ul>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header" style="        background-color: #17a2b8 !important;
-        color: white;
-        font-weight: 600;">
-                        Fase Final
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Factura" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Factura</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="Boni" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Boni</a></li>
-                        <li class="list-group-item"><a asp-controller="Contratos" asp-action="lopd" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">LOPD</a></li>
-                    </ul>
-                </div>
-                <a asp-controller="Contratos" asp-action="Renovacion" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Renovación</a>
-                <a asp-controller="Contratos" asp-action="TodosContratos" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Todos los Contractos</a>
-                <a asp-controller="Contratos" asp-action="prl" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">PRL Nuevo</a>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="Index" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Contrato Encomienda</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="Adhesion" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Adhesion</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="SolicitudCurso" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Solicitud Curso</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="SolicitudAutonomo" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Solicitud Curso Autonomo</a></li>
+                   
+                </ul>
+                <ul class="list-group list-group-flush">
+                </ul>
             </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header" style="        background-color: #17a2b8 !important;
+        color: white;
+        font-weight: 600;">
+                    Fichas PRL
+                </div>
+                <ul class="list-group list-group-flush">
+                   
+                    <li class="list-group-item"><a href="https://win.eurobrazil-investments.com/intranet/PRL/hojaevaluacion.pdf" class="btn btn-light" style="height: fit-content;">Control de Luces</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="evaluacionfinal" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Evaluación Final</a></li>
+                    
+                </ul>
+                <ul class="list-group list-group-flush">
+                </ul>
+            </div>
+            <div>
+
+
+
+
+            </div>
+
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-header" style="        background-color: #17a2b8 !important;
+        color: white;
+        font-weight: 600;">
+                    Certificados y Examenes
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> <a asp-controller="Contratos" asp-action="Caratulas" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Caratulas</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestAlergenos" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Alergenos</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestManipulador" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Manipulador</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestPrevencion" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Prevencion</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="TestPeluqueria" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Test Peluqueria</a></li>
+                    <li class="list-group-item">  <a asp-controller="Contratos" asp-action="CertificadoCat" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">CertificadoCat</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="CertificadoCas" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">CertificadoCas</a></li>
+                </ul>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header" style="        background-color: #17a2b8 !important;
+        color: white;
+        font-weight: 600;">
+                    Fase Final
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="Factura" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Factura</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="FacturaccEuro" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Factura cc Euro</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="Boni" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">Boni</a></li>
+                    <li class="list-group-item"><a asp-controller="Contratos" asp-action="lopd" asp-route-id="@item.Id" class="btn btn-light" style="height: fit-content;">LOPD</a></li>
+                </ul>
+            </div>
+            <a asp-controller="Contratos" asp-action="Renovacion" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Renovación</a>
+            <a asp-controller="Contratos" asp-action="TodosContratos" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">Todos los Contractos</a>
+            <a asp-controller="Contratos" asp-action="prl" asp-route-id="@item.Id" class="btn btn-success" style="height: fit-content;">PRL Nuevo</a>
+        </div>
             }
         </div>
         </div>}

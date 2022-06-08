@@ -121,9 +121,6 @@ C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.Develop
 C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.json
 C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\appsettings.Production.json
 C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\aws-beanstalk-tools-defaults.json
-C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\Data\alumnos2021.json
-C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\Data\Empresas.json
-C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\Data\empresas2020.json
 C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.dll
 C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.runtimeconfig.json
 C:\Users\joaov\AppData\Local\Temp\AWSDeploy.126759c4\package\Plataforma.pdb

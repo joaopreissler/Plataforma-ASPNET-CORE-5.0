@@ -372,14 +372,20 @@ namespace Plataforma.Controllers
             for (int i = trabajadoresInicio + 1; i <= trabajadoresFin-1; i++)
             {
                 var empresa = _context.Empresa.Where(x => x.Nombre_Empresa == returnData[1]).OrderBy(y => y.Id).LastOrDefault();
-                var nombre = names[i].Split('0' , 2);
+                var digits = names[i].SkipWhile(c => !Char.IsDigit(c))
+                  .TakeWhile(Char.IsDigit)
+                  .ToArray();
+
+                var str = new string(digits);
+                
+                var nombre = names[i].Split(str , 2);
                // var nombrefix = Regex.Replace(nombre.ToString(), "[0 - 9]{ 2,}", "");
-                var nif = names[i].Split('0', 3);
-                var seguridadsocial = names[i].Split('0', 2);
+                var seguridadsocial = str + nombre[1].Substring(0, 11);
+                var nif = nombre[1].Substring(14, 10);
                 var control = names[i].Length;
-                var nombrenif = nombre[1].Substring(15, 10);
-                if (nombre[1].Substring(15, 10).StartsWith("0")){
-                  nombrenif = nombre[1].Substring(16, 10);
+               
+                if (nif.StartsWith("0")){
+                  nif = nombre[1].Substring(15, 9);
                 }
                 
                 if (names[i].Length > 50 && nombre[0].Any(char.IsLetter) == true) { 
@@ -387,9 +393,9 @@ namespace Plataforma.Controllers
                 Trabajadores newTrabajadores = new Trabajadores
                 {
                     TrabajadorNome = nombre[0].TrimEnd(new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }),
-                    TrabajadorNif = nombrenif,
+                    TrabajadorNif = nif,
                     IdEmpresa = empresa.Id,
-                    SeguridadSocial =Regex.Replace(names[i].Substring(nombre[0].TrimEnd(new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }).Length, 13), " ", ""),
+                    SeguridadSocial =seguridadsocial,
                     Trabajadortipo = "Trabajador",
                     AnoTrabajador = empresa.ano,
                     Mestrabajador = empresa.Idcurso,

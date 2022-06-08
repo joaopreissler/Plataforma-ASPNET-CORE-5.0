@@ -22,10 +22,11 @@ namespace Plataforma
             {
                 var services = scope.ServiceProvider;
                 var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
-                   
+                  
                     await StoreContextSeed.SeedAsync(context, loggerFactory);
                 }
                 catch (Exception ex)

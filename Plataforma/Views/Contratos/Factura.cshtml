@@ -65,49 +65,49 @@
                                     <td bgcolor="#CCCCCC" class="texto">N DE FACTURA</td>
 
                                     <td class="texto">
-                                       @{ var control = Model.empresa.Idcurso;
-                                           var mes = "";
-                                           switch (control)
-                                           {
-                                               case 1:
-                                                   mes = "E";
-                                                   break;
-                                               case 2:
-                                                   mes = "F";
-                                                   break;
-                                               case 3:
-                                                   mes = "M";
-                                                   break;
-                                               case 4:
-                                                   mes = "A";
-                                                   break;
-                                               case 5:
-                                                   mes = "MG";
-                                                   break;
-                                               case 6:
-                                                   mes = "JN";
-                                                   break;
-                                               case 7:
-                                                   mes = "JL";
-                                                   break;
-                                               case 8:
-                                                   mes = "AG";
-                                                   break;
-                                               case 9:
-                                                   mes = "S";
-                                                   break;
-                                               case 10:
-                                                   mes = "O";
-                                                   break;
-                                               case 11:
-                                                   mes = "N";
-                                                   break;
-                                               
-                                               default:
-                                                   mes = "D";
-                                                   break;
-                                           }
-                                       }
+                                        @{ var control = Model.empresa.Idcurso;
+                                            var mes = "";
+                                            switch (control)
+                                            {
+                                                case 1:
+                                                    mes = "E";
+                                                    break;
+                                                case 2:
+                                                    mes = "F";
+                                                    break;
+                                                case 3:
+                                                    mes = "M";
+                                                    break;
+                                                case 4:
+                                                    mes = "A";
+                                                    break;
+                                                case 5:
+                                                    mes = "MG";
+                                                    break;
+                                                case 6:
+                                                    mes = "JN";
+                                                    break;
+                                                case 7:
+                                                    mes = "JL";
+                                                    break;
+                                                case 8:
+                                                    mes = "AG";
+                                                    break;
+                                                case 9:
+                                                    mes = "S";
+                                                    break;
+                                                case 10:
+                                                    mes = "O";
+                                                    break;
+                                                case 11:
+                                                    mes = "N";
+                                                    break;
+
+                                                default:
+                                                    mes = "D";
+                                                    break;
+                                            }
+                                        }
                                         @mes -
                                         @Model.numero -
 
@@ -157,7 +157,7 @@
 
                         <td class="texto">
 
-                           @Model.empresa.Telefono
+                            @Model.empresa.Telefono
 
                         </td>
 
@@ -191,7 +191,7 @@
 
 
 
-                
+
 
 
 
@@ -210,7 +210,7 @@
                         <td width="481" valign="top">
                             <table width="100%" border="0">
 
-                              
+
 
                                 <tr>
 
@@ -257,7 +257,7 @@
                                     <td bgcolor="#CCCCCC" class="texto">N&uacute;mero de participantes    :</td>
 
                                     <td class="texto">
-                                       @Model.trabajadores.Count()
+                                        @Model.trabajadores.Count()
                                     </td>
 
                                 </tr>
@@ -309,11 +309,14 @@
 
                 <p class="texto2">* La formaci&oacute;n est&aacute; exenta de  I.V.A. (art&iacute;culo 20, apartado 1 n&uacute;mero 96 de la Ley 37/1992 del 28 de  diciembre)</p>
 
-                <p class="texto2">
-                    Forma de pago : <br />
+               
+            <p class="texto2">
+                Forma de pago : <br />
 
-                    Cargo en cuenta
-                </p>
+                Cargo en cuenta
+            </p>
+            
+                
             </td>
 
         </tr>
